@@ -116,7 +116,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="698"/>
                                 <color key="backgroundColor" name="PrimaryColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="orderCell" rowHeight="57" id="2lz-LT-c9H">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="orderCell" rowHeight="57" id="2lz-LT-c9H" customClass="OrderCell" customModule="PizzaShop" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="57"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2lz-LT-c9H" id="74R-iE-SGM">
@@ -146,6 +146,10 @@
                                                 <constraint firstItem="hxb-XH-IfH" firstAttribute="leading" secondItem="GdI-vY-3A6" secondAttribute="trailing" constant="157" id="uMR-yJ-XpA"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="orderNameLabel" destination="GdI-vY-3A6" id="G3I-Wn-9wH"/>
+                                            <outlet property="orderPriceLabel" destination="hxb-XH-IfH" id="Yfh-bu-IVy"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -259,7 +263,7 @@
         <!--Menu-->
         <scene sceneID="s5u-v2-gRv">
             <objects>
-                <viewController id="aSk-Kf-CyK" sceneMemberID="viewController">
+                <viewController id="aSk-Kf-CyK" customClass="MenuViewController" customModule="PizzaShop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="icv-Di-htR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -268,7 +272,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <color key="backgroundColor" name="PrimaryColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="foodCell" rowHeight="120" id="axA-jH-XQH">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="foodCell" rowHeight="120" id="axA-jH-XQH" customClass="MenuCell" customModule="PizzaShop" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="axA-jH-XQH" id="gVe-H0-602">
@@ -311,7 +315,10 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" name="PrimaryColor"/>
                                         <connections>
-                                            <segue destination="dRb-JT-rfw" kind="show" id="ngR-Et-GLL"/>
+                                            <outlet property="foodImageView" destination="Rsx-dF-HY0" id="zN3-sW-70I"/>
+                                            <outlet property="foodNameLabel" destination="dUP-a8-Uoe" id="MeJ-C3-cel"/>
+                                            <outlet property="foodPriceLabel" destination="i7G-4d-OQp" id="eTN-MV-71t"/>
+                                            <segue destination="dRb-JT-rfw" kind="presentation" identifier="toFoodDetailViewController" id="ngR-Et-GLL"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -327,15 +334,18 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Menu" image="list.bullet" catalog="system" id="MPI-xG-GQ6"/>
+                    <connections>
+                        <outlet property="tableView" destination="ehn-ew-scV" id="CL7-nH-BCf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vSs-yh-MiD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1450.7246376811595" y="-272.54464285714283"/>
         </scene>
-        <!--View Controller-->
+        <!--Food Detail View Controller-->
         <scene sceneID="wHj-1K-qpp">
             <objects>
-                <viewController id="dRb-JT-rfw" sceneMemberID="viewController">
+                <viewController id="dRb-JT-rfw" customClass="FoodDetailViewController" customModule="PizzaShop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dCf-au-kvO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -376,6 +386,9 @@
                                 <state key="normal" title="Add to Cart">
                                     <color key="titleColor" name="PrimaryColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="addToCartTapped:" destination="dRb-JT-rfw" eventType="touchUpInside" id="ZVo-Ty-C9M"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="QFc-rA-Fhc"/>
@@ -399,6 +412,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="cdd-tA-s2Q"/>
+                    <connections>
+                        <outlet property="foodImageView" destination="KYz-Es-2MR" id="fep-Z7-AfK"/>
+                        <outlet property="foodIngredientsLabel" destination="L3N-Rt-IMV" id="kCr-na-qUQ"/>
+                        <outlet property="foodNameLabel" destination="VlZ-Rd-Ebv" id="4p5-fj-nfN"/>
+                        <outlet property="foodPriceLabel" destination="zja-ix-RhY" id="JWP-Ff-m0N"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vBm-sQ-ZKr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -10,10 +10,11 @@ import Foundation
 struct K {
     
     static let appName = "Pizza Pizza"
-    static let cellIdentifier = "Cell"
-    static let cellNibName = "MessageCell"
+    static let foodCellIdentifier = "foodCell"
+    static let orderCellIdentifier = "orderCell"
     static let menuSegue = "toMenuViewController"
     static let authSegue = "toAuthViewController"
+    static let detailSegue = "toFoodDetailViewController"
     
     struct colors {
         static let primaryColor = "PrimaryColor"
