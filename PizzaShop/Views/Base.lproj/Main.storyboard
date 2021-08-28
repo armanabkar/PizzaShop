@@ -107,7 +107,7 @@
         <!--Cart-->
         <scene sceneID="UrI-cV-B86">
             <objects>
-                <viewController id="DcY-MV-QjU" sceneMemberID="viewController">
+                <viewController id="DcY-MV-QjU" customClass="CartViewController" customModule="PizzaShop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ely-zB-Vyp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -160,6 +160,9 @@
                                 <state key="normal" title="Submit Order">
                                     <color key="titleColor" name="PrimaryColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="submitOrderTapped:" destination="DcY-MV-QjU" eventType="touchUpInside" id="G7I-VC-n8f"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IYu-1H-61n"/>
@@ -178,6 +181,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Cart" image="cart" catalog="system" id="9vE-Ap-0pv"/>
+                    <connections>
+                        <outlet property="tableView" destination="Req-rj-6Id" id="myv-IS-ZyV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u3P-pc-lht" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -347,7 +353,7 @@
             <objects>
                 <viewController id="dRb-JT-rfw" customClass="FoodDetailViewController" customModule="PizzaShop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dCf-au-kvO">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KYz-Es-2MR">

@@ -12,4 +12,5 @@ struct Order {
     let phone: String
     let address: String
     let items: [String]
+    let totalPrice: Float
 }
