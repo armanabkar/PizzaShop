@@ -16,29 +16,15 @@ struct K {
     static let authSegue = "toAuthViewController"
     static let detailSegue = "toFoodDetailViewController"
     
-    struct colors {
-        static let primaryColor = "PrimaryColor"
-        static let accentColor = "AccentColor"
-        static let linkColor = "LinkColor"
-    }
-    
     struct error {
         static let title = "Error"
         static let invalidFieldMessage = "Please enter a valid username/password."
     }
     
-    struct icons {
-        static let camera = "camera.viewfinder"
-    }
-    
-    struct Firestore {
-        static let collectionName = "Posts"
-        static let storageFolderName = "media"
-        static let postedByField = "postedBy"
-        static let imageUrlField = "imageUrl"
-        static let postCommentField = "postComment"
-        static let dateField = "date"
-        static let likesField = "likes"
+    struct URL {
+        static let baseUrl = "https://pizzashop-server.herokuapp.com/"
+        static let foodUrl = "https://pizzashop-server.herokuapp.com/api/v1/foods"
+        static let newOrderUrl = "https://pizzashop-server.herokuapp.com/orders/add"
     }
     
 }

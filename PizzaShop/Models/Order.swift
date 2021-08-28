@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Order {
+struct Order: Codable {
     let name: String
     let phone: String
     let address: String

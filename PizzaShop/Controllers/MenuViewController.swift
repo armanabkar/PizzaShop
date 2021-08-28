@@ -11,13 +11,27 @@ class MenuViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var items: [Food] = []
+    var items: [Food?] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        WebService().getAllFoods { result in
+            switch result {
+                case .success(let fetchedFoods):
+                    if let fetchedFoods = fetchedFoods {
+                        DispatchQueue.main.async {
+                            self.items.append(contentsOf: fetchedFoods)
+                            self.tableView.reloadData()
+                        }
+                    }
+                case .failure(let error):
+                    print(error.localizedDescription)
+            }
+        }
     }
     
 }
@@ -25,14 +39,22 @@ class MenuViewController: UIViewController {
 extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        items.count
+        return items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.foodCellIdentifier, for: indexPath) as! MenuCell
-        cell.foodNameLabel.text = items[indexPath.row].name
-        cell.foodPriceLabel.text = String(items[indexPath.row].price)
-        cell.foodImageView.image = UIImage()
+        DispatchQueue.main.async {
+            if let food = self.items[indexPath.row] {
+                cell.foodNameLabel.text = food.name
+                cell.foodPriceLabel.text = String(food.price)
+                ImageLoader.sharedInstance.imageForUrl(urlString: "\(K.URL.baseUrl)\(food.image)") { (image, url) in
+                    if image != nil {
+                        cell.foodImageView.image = image
+                    }
+                }
+            }
+        }
         return cell
     }
     
@@ -43,10 +65,13 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationVC = segue.destination as! FoodDetailViewController
         if let indexPath = tableView.indexPathForSelectedRow {
-            destinationVC.foodNameLabel.text = items[indexPath.row].name
-            destinationVC.foodPriceLabel.text = String(items[indexPath.row].price)
-            destinationVC.foodIngredientsLabel.text = items[indexPath.row].ingredients
-            destinationVC.foodImageView.image = UIImage()
+            
+            if let item = items[indexPath.row] {
+                destinationVC.foodName = item.name
+                destinationVC.foodPrice = String(item.price)
+                destinationVC.foodIngredients = item.ingredients
+                destinationVC.foodImage = "\(K.URL.baseUrl)\(item.image)"
+            }
         }
     }
     

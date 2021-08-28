@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct Food {
+struct Food: Decodable {
     let id: Int
     let name: String
     let type: String
-    let price: Int
+    let price: Float
     let ingredients: String?
     let image: String
 }
