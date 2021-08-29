@@ -24,7 +24,7 @@ struct K {
     struct URL {
         static let baseUrl = "https://pizzashop-server.herokuapp.com/"
         static let foodUrl = "https://pizzashop-server.herokuapp.com/api/v1/foods"
-        static let newOrderUrl = "https://pizzashop-server.herokuapp.com/orders/add"
+        static let newOrderUrl = "https://pizzashop-server.herokuapp.com/api/v1/orders/add"
     }
     
 }

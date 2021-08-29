@@ -35,13 +35,17 @@ class WebService {
         .resume()
     }
     
-    func submitOrder(completion: @escaping (Result<Int?, NetworkError>) -> Void) {
+    func submitOrder(order: Order, completion: @escaping (Result<Int?, NetworkError>) -> Void) {
         guard let url = URL(string: K.URL.newOrderUrl) else {
             return completion(.failure(.badURL))
         }
         
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
+        let orderJsonData = try! encoder.encode(order)
+        request.httpBody = orderJsonData
         
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard let _ = data, error == nil else {

@@ -9,6 +9,8 @@ import UIKit
 
 class FoodDetailViewController: UIViewController {
     
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
     var foodImage = ""
     var foodName = ""
     var foodIngredients: String?
@@ -40,6 +42,17 @@ class FoodDetailViewController: UIViewController {
     }
     
     @IBAction func addToCartTapped(_ sender: Any) {
+        DispatchQueue.main.async {
+            let newCart = Cart(context: self.context)
+            newCart.name = self.foodName
+            newCart.price = Float(self.foodPrice) ?? 0
+            do {
+                try self.context.save()
+            } catch {
+                print("Error saving notes \(error)")
+            }
+        }
+
     }
     
 }
