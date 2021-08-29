@@ -42,10 +42,16 @@ class WebService {
         
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
+        request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
         let encoder = JSONEncoder()
-        encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
-        let orderJsonData = try! encoder.encode(order)
-        request.httpBody = orderJsonData
+        do {
+            let orderJsonData = try encoder.encode(order)
+            encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
+            request.httpBody = orderJsonData
+            request.timeoutInterval = 20
+        } catch {
+            completion(.failure(.decodingError))
+        }
         
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard let _ = data, error == nil else {
@@ -60,5 +66,4 @@ class WebService {
         }
         .resume()
     }
-    
 }

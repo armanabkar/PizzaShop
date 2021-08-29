@@ -16,8 +16,9 @@ class CartViewController: UIViewController {
     @IBOutlet weak var navigationBar: UINavigationBar!
     
     var cartItems: [Cart] = []
+    var orderNames: [String] = []
     var totalPrice: Float {
-        cartItems.reduce(0) { $0 + $1.price }
+        Float(String(format: "%.2f" ,cartItems.reduce(0) { $0 + $1.price })) ?? 0
     }
     
     override func viewDidLoad() {
@@ -32,27 +33,26 @@ class CartViewController: UIViewController {
         
         loadCartItems()
         navigationBar.topItem?.title = String(format: "Total: %.2f$", totalPrice)
+        
+        for item in cartItems {
+            if let name = item.name {
+                orderNames.append(name)
+            }
+        }
     }
     
     @IBAction func submitOrderTapped(_ sender: Any) {
-        let request : NSFetchRequest<Cart> = Cart.fetchRequest()
-        if let result = try? context.fetch(request) {
-            for object in result {
-                context.delete(object)
-            }
-        }
         guard let name = UserDefaults.standard.string(forKey: "name") else { return }
         guard let phone = UserDefaults.standard.string(forKey: "phone") else { return }
         guard let address = UserDefaults.standard.string(forKey: "address") else { return }
-        WebService().submitOrder(order: Order(name: name, phone: phone, address: address, items: [""], totalPrice: totalPrice), completion: { result in
+        WebService().submitOrder(order: Order(name: name, phone: phone, address: address, items: orderNames, totalPrice: totalPrice), completion: { result in
             switch result {
-                case .success(let responseCode):
-                    if let responseCode = responseCode, responseCode == 200 {
-                        DispatchQueue.main.async {
-                            self.cartItems.removeAll()
-                            self.tableView.reloadData()
-                            self.navigationBar.topItem?.title = "Total: 0$"
-                        }
+                case .success( _):
+                    DispatchQueue.main.async {
+                        self.resetAllRecords(in: "Cart")
+                        self.cartItems.removeAll()
+                        self.tableView.reloadData()
+                        self.navigationBar.topItem?.title = "Total: 0$"
                     }
                 case .failure(let error):
                     print(error.localizedDescription)
@@ -70,6 +70,18 @@ class CartViewController: UIViewController {
         }
         
         tableView.reloadData()
+    }
+    
+    func resetAllRecords(in entity : String) {
+        let context = ( UIApplication.shared.delegate as! AppDelegate ).persistentContainer.viewContext
+        let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)
+        do {
+            try context.execute(deleteRequest)
+            try context.save()
+        } catch {
+            print ("There was an error")
+        }
     }
 }
 
