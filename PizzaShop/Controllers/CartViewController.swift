@@ -32,7 +32,7 @@ class CartViewController: UIViewController {
         super.viewWillAppear(true)
         
         loadCartItems()
-        navigationBar.topItem?.title = String(format: "Total: %.2f$", totalPrice)
+        navigationBar.topItem?.title = "Total: \(totalPrice)$"
         
         for item in cartItems {
             if let name = item.name {
@@ -49,13 +49,15 @@ class CartViewController: UIViewController {
             switch result {
                 case .success( _):
                     DispatchQueue.main.async {
-                        self.resetAllRecords(in: "Cart")
+                        CoreDataService.resetAllRecords(in: "Cart", from:self)
                         self.cartItems.removeAll()
                         self.tableView.reloadData()
                         self.navigationBar.topItem?.title = "Total: 0$"
+                        UIAlertController.showAlert(title: "Thank You", message: "Your order has been received. We will deliver it to you as soon as possible.", from: self)
+
                     }
                 case .failure(let error):
-                    print(error.localizedDescription)
+                    UIAlertController.showAlert(message: error.localizedDescription, from: self)
             }
         })
     }
@@ -66,23 +68,13 @@ class CartViewController: UIViewController {
         do{
             cartItems = try context.fetch(request)
         } catch {
-            print("Error loading notes \(error)")
+            UIAlertController.showAlert(message: "Error loading cart: \(error.localizedDescription)",
+                                        from: self)
         }
         
         tableView.reloadData()
     }
     
-    func resetAllRecords(in entity : String) {
-        let context = ( UIApplication.shared.delegate as! AppDelegate ).persistentContainer.viewContext
-        let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
-        let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)
-        do {
-            try context.execute(deleteRequest)
-            try context.save()
-        } catch {
-            print ("There was an error")
-        }
-    }
 }
 
 extension CartViewController: UITableViewDelegate, UITableViewDataSource {

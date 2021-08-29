@@ -29,7 +29,7 @@ class MenuViewController: UIViewController {
                         }
                     }
                 case .failure(let error):
-                    print(error.localizedDescription)
+                    UIAlertController.showAlert(message: error.localizedDescription, from: self)
             }
         }
     }

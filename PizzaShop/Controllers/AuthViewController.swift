@@ -28,7 +28,7 @@ class AuthViewController: UIViewController {
             UserDefaults.standard.set(addressField.text, forKey: "address")
             self.performSegue(withIdentifier: K.menuSegue, sender: nil)
         } else {
-            print("Fields are empty")
+            UIAlertController.showAlert(message: "Fields are empty", from: self)
         }
     }
     
