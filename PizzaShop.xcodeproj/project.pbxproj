@@ -19,10 +19,10 @@
 		F0125A5726D8AB2F00C5AA8C /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125A5626D8AB2F00C5AA8C /* OrderCell.swift */; };
 		F0125A6526DA5F4400C5AA8C /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125A6426DA5F4400C5AA8C /* WebService.swift */; };
 		F0125A6D26DAABE800C5AA8C /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125A6C26DAABE800C5AA8C /* ImageLoader.swift */; };
-		F0125A8826DB502F00C5AA8C /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125A8726DB502F00C5AA8C /* CartViewModel.swift */; };
 		F0125A8E26DB564B00C5AA8C /* CartModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F0125A8C26DB564B00C5AA8C /* CartModel.xcdatamodeld */; };
 		F0125A9D26DC1B6900C5AA8C /* UIAlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125A9C26DC1B6900C5AA8C /* UIAlertControllerExtension.swift */; };
 		F0125AA726DC20E200C5AA8C /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125AA626DC20E200C5AA8C /* CoreDataService.swift */; };
+		F0125AC226DD353D00C5AA8C /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125AC126DD353D00C5AA8C /* UserDefaultsService.swift */; };
 		F0349D7326D78E4400C6B154 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0349D7226D78E4400C6B154 /* AppDelegate.swift */; };
 		F0349D7526D78E4400C6B154 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0349D7426D78E4400C6B154 /* SceneDelegate.swift */; };
 		F0349D7A26D78E4400C6B154 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0349D7826D78E4400C6B154 /* Main.storyboard */; };
@@ -62,10 +62,10 @@
 		F0125A5626D8AB2F00C5AA8C /* OrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
 		F0125A6426DA5F4400C5AA8C /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		F0125A6C26DAABE800C5AA8C /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
-		F0125A8726DB502F00C5AA8C /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
 		F0125A8D26DB564B00C5AA8C /* CartModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CartModel.xcdatamodel; sourceTree = "<group>"; };
 		F0125A9C26DC1B6900C5AA8C /* UIAlertControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertControllerExtension.swift; sourceTree = "<group>"; };
 		F0125AA626DC20E200C5AA8C /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
+		F0125AC126DD353D00C5AA8C /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
 		F0349D6F26D78E4400C6B154 /* PizzaShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PizzaShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0349D7226D78E4400C6B154 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0349D7426D78E4400C6B154 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -131,16 +131,9 @@
 			children = (
 				F0125A6426DA5F4400C5AA8C /* WebService.swift */,
 				F0125AA626DC20E200C5AA8C /* CoreDataService.swift */,
+				F0125AC126DD353D00C5AA8C /* UserDefaultsService.swift */,
 			);
 			path = Services;
-			sourceTree = "<group>";
-		};
-		F0125A8626DB500100C5AA8C /* View Model */ = {
-			isa = PBXGroup;
-			children = (
-				F0125A8726DB502F00C5AA8C /* CartViewModel.swift */,
-			);
-			path = "View Model";
 			sourceTree = "<group>";
 		};
 		F0349D6626D78E4400C6B154 = {
@@ -166,7 +159,6 @@
 		F0349D7126D78E4400C6B154 /* PizzaShop */ = {
 			isa = PBXGroup;
 			children = (
-				F0125A8626DB500100C5AA8C /* View Model */,
 				F0125A6326DA5F3400C5AA8C /* Services */,
 				F0125A4326D8A84400C5AA8C /* Models */,
 				F0125A2926D81F6F00C5AA8C /* Utils */,
@@ -365,7 +357,6 @@
 				F0125A6526DA5F4400C5AA8C /* WebService.swift in Sources */,
 				F0125A4D26D8A93700C5AA8C /* Order.swift in Sources */,
 				F0125A1426D81CB900C5AA8C /* MenuViewController.swift in Sources */,
-				F0125A8826DB502F00C5AA8C /* CartViewModel.swift in Sources */,
 				F0349D7326D78E4400C6B154 /* AppDelegate.swift in Sources */,
 				F0125A5226D8AB2100C5AA8C /* MenuCell.swift in Sources */,
 				F0125A8E26DB564B00C5AA8C /* CartModel.xcdatamodeld in Sources */,
@@ -374,6 +365,7 @@
 				F0125AA726DC20E200C5AA8C /* CoreDataService.swift in Sources */,
 				F0125A9D26DC1B6900C5AA8C /* UIAlertControllerExtension.swift in Sources */,
 				F0125A1A26D81CCF00C5AA8C /* CartViewController.swift in Sources */,
+				F0125AC226DD353D00C5AA8C /* UserDefaultsService.swift in Sources */,
 				F0125A3926D82AD800C5AA8C /* ProfileViewController.swift in Sources */,
 				F0125A5726D8AB2F00C5AA8C /* OrderCell.swift in Sources */,
 				F0349D7526D78E4400C6B154 /* SceneDelegate.swift in Sources */,

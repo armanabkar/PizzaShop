@@ -26,11 +26,11 @@ class AuthViewController: UIViewController {
            let phone = phoneField.text,
            let address = addressField.text,
            nameField.text != "" && phoneField.text != "" && addressField.text != "" {
-            saveToUserDefaults(name: name, phone: phone, address: address)
+            UserDefaultsService.saveToUserDefaults(name: name, phone: phone, address: address)
             self.performSegue(withIdentifier: K.menuSegue, sender: nil)
         }
         else {
-            UIAlertController.showAlert(message: "Fields are empty", from: self)
+            UIAlertController.showAlert(message: "Some fields are empty", from: self)
         }
     }
     
@@ -44,12 +44,6 @@ class AuthViewController: UIViewController {
             }
             charIndex += 1
         }
-    }
-    
-    private func saveToUserDefaults(name: String, phone: String, address: String) {
-        UserDefaults.standard.set(name, forKey: "name")
-        UserDefaults.standard.set(phone, forKey: "phone")
-        UserDefaults.standard.set(address, forKey: "address")
     }
     
 }

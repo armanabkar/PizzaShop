@@ -42,10 +42,11 @@ class CartViewController: UIViewController {
     }
     
     @IBAction func submitOrderTapped(_ sender: Any) {
-        guard let name = UserDefaults.standard.string(forKey: "name") else { return }
-        guard let phone = UserDefaults.standard.string(forKey: "phone") else { return }
-        guard let address = UserDefaults.standard.string(forKey: "address") else { return }
-        WebService().submitOrder(order: Order(name: name, phone: phone, address: address, items: orderNames, totalPrice: totalPrice), completion: { result in
+        WebService().submitOrder(order: Order(name: UserDefaultsService.name,
+                                              phone: UserDefaultsService.phone,
+                                              address: UserDefaultsService.address,
+                                              items: orderNames,
+                                              totalPrice: totalPrice), completion: { result in
             switch result {
                 case .success( _):
                     DispatchQueue.main.async {
@@ -108,7 +109,6 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
             cartItems.remove(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .fade)
             navigationBar.topItem?.title = "Total: \(totalPrice)$"
-            
             self.saveCartItems()
         }
     }

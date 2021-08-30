@@ -16,20 +16,14 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        nameLabel.text = UserDefaults.standard.string(forKey: "name")
-        phoneLabel.text = UserDefaults.standard.string(forKey: "phone")
-        addressLabel.text = UserDefaults.standard.string(forKey: "address")
+        nameLabel.text = UserDefaultsService.name
+        phoneLabel.text = UserDefaultsService.phone
+        addressLabel.text = UserDefaultsService.address
     }
     
     @IBAction func logOutTapped(_ sender: UIButton) {
-        removeUserFromUserDefaults()
+        UserDefaultsService.removeUserFromUserDefaults()
         CoreDataService.resetAllRecords(in: "Cart", from: self)
         self.performSegue(withIdentifier: K.authSegue, sender: nil)
-    }
-    
-    private func removeUserFromUserDefaults() {
-        UserDefaults.standard.removeObject(forKey: "name")
-        UserDefaults.standard.removeObject(forKey: "phone")
-        UserDefaults.standard.removeObject(forKey: "address")
     }
 }
