@@ -22,10 +22,14 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func logOutTapped(_ sender: UIButton) {
+        removeUserFromUserDefaults()
+        CoreDataService.resetAllRecords(in: "Cart", from: self)
+        self.performSegue(withIdentifier: K.authSegue, sender: nil)
+    }
+    
+    private func removeUserFromUserDefaults() {
         UserDefaults.standard.removeObject(forKey: "name")
         UserDefaults.standard.removeObject(forKey: "phone")
         UserDefaults.standard.removeObject(forKey: "address")
-        CoreDataService.resetAllRecords(in: "Cart", from: self)
-        self.performSegue(withIdentifier: K.authSegue, sender: nil)
     }
 }

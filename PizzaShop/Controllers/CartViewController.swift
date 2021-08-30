@@ -62,6 +62,17 @@ class CartViewController: UIViewController {
         })
     }
     
+    func saveCartItems() {
+        do {
+            try context.save()
+        } catch {
+            UIAlertController.showAlert(message: "Error saving cart: \(error.localizedDescription)",
+                                        from: self)
+        }
+        
+        tableView.reloadData()
+    }
+    
     func loadCartItems() {
         let request : NSFetchRequest<Cart> = Cart.fetchRequest()
         
@@ -88,6 +99,18 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
         cell.orderNameLabel.text = cartItems[indexPath.row].name
         cell.orderPriceLabel.text = "\(String(cartItems[indexPath.row].price))$"
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let commit = cartItems[indexPath.row]
+            context.delete(commit)
+            cartItems.remove(at: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: .fade)
+            navigationBar.topItem?.title = "Total: \(totalPrice)$"
+            
+            self.saveCartItems()
+        }
     }
     
 }

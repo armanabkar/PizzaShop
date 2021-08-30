@@ -33,7 +33,6 @@ class FoodDetailViewController: UIViewController {
                     self.foodImageView.image = image
                 }
             }
-            
             if self.foodIngredients == nil {
                 self.foodIngredientsLabel.isHidden = true
             }

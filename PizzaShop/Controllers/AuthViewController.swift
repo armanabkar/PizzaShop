@@ -22,12 +22,14 @@ class AuthViewController: UIViewController {
     
     
     @IBAction func registerTapped(_ sender: UIButton) {
-        if nameField.text != "" && phoneField.text != "" && addressField.text != "" {
-            UserDefaults.standard.set(nameField.text, forKey: "name")
-            UserDefaults.standard.set(phoneField.text, forKey: "phone")
-            UserDefaults.standard.set(addressField.text, forKey: "address")
+        if let name = nameField.text,
+           let phone = phoneField.text,
+           let address = addressField.text,
+           nameField.text != "" && phoneField.text != "" && addressField.text != "" {
+            saveToUserDefaults(name: name, phone: phone, address: address)
             self.performSegue(withIdentifier: K.menuSegue, sender: nil)
-        } else {
+        }
+        else {
             UIAlertController.showAlert(message: "Fields are empty", from: self)
         }
     }
@@ -42,6 +44,12 @@ class AuthViewController: UIViewController {
             }
             charIndex += 1
         }
+    }
+    
+    private func saveToUserDefaults(name: String, phone: String, address: String) {
+        UserDefaults.standard.set(name, forKey: "name")
+        UserDefaults.standard.set(phone, forKey: "phone")
+        UserDefaults.standard.set(address, forKey: "address")
     }
     
 }
