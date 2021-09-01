@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AuthViewController: UIViewController {
+class AuthViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var appTitle: UILabel!
     @IBOutlet weak var nameField: UITextField!
@@ -18,6 +18,10 @@ class AuthViewController: UIViewController {
         super.viewDidLoad()
         
         animateText(K.appName)
+        
+        self.nameField.delegate = self
+        self.phoneField.delegate = self
+        self.addressField.delegate = self
     }
     
     
@@ -44,6 +48,11 @@ class AuthViewController: UIViewController {
             }
             charIndex += 1
         }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
     
 }
