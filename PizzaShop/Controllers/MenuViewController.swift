@@ -19,7 +19,11 @@ class MenuViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        WebService().getAllFoods { result in
+        getAllFoods()
+    }
+    
+    func getAllFoods() {
+        WebService.shared.getAllFoods { result in
             switch result {
                 case .success(let fetchedFoods):
                     if let fetchedFoods = fetchedFoods {
@@ -32,6 +36,7 @@ class MenuViewController: UIViewController {
                     UIAlertController.showAlert(message: error.localizedDescription, from: self)
             }
         }
+
     }
     
 }

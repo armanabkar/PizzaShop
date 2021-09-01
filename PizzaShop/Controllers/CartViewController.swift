@@ -42,20 +42,16 @@ class CartViewController: UIViewController {
     }
     
     @IBAction func submitOrderTapped(_ sender: Any) {
-        WebService().submitOrder(order: Order(name: UserDefaultsService.name,
-                                              phone: UserDefaultsService.phone,
-                                              address: UserDefaultsService.address,
-                                              items: orderNames,
-                                              totalPrice: totalPrice), completion: { result in
+        let newOrder: Order = Order(name: UserDefaultsService.shared.name, phone: UserDefaultsService.shared.phone, address: UserDefaultsService.shared.address, items: orderNames, totalPrice: totalPrice)
+        WebService.shared.submitOrder(order: newOrder, completion: { result in
             switch result {
                 case .success( _):
                     DispatchQueue.main.async {
-                        CoreDataService.resetAllRecords(in: "Cart", from:self)
+                        CoreDataService.shared.resetAllRecords(in: K.coreDataEntityName, from:self)
                         self.cartItems.removeAll()
                         self.tableView.reloadData()
                         self.navigationBar.topItem?.title = "Total: 0$"
-                        UIAlertController.showAlert(title: "Thank You", message: "Your order has been received. We will deliver it to you as soon as possible.", from: self)
-
+                        UIAlertController.showAlert(title: K.alert.orderTitle, message: K.alert.orderMessage, from: self)
                     }
                 case .failure(let error):
                     UIAlertController.showAlert(message: error.localizedDescription, from: self)
@@ -67,7 +63,7 @@ class CartViewController: UIViewController {
         do {
             try context.save()
         } catch {
-            UIAlertController.showAlert(message: "Error saving cart: \(error.localizedDescription)",
+            UIAlertController.showAlert(message: "Error saving to the cart: \(error.localizedDescription)",
                                         from: self)
         }
         

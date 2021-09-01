@@ -30,11 +30,11 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
            let phone = phoneField.text,
            let address = addressField.text,
            nameField.text != "" && phoneField.text != "" && addressField.text != "" {
-            UserDefaultsService.saveToUserDefaults(name: name, phone: phone, address: address)
+            UserDefaultsService.shared.saveToUserDefaults(name: name, phone: phone, address: address)
             self.performSegue(withIdentifier: K.menuSegue, sender: nil)
         }
         else {
-            UIAlertController.showAlert(message: "Some fields are empty", from: self)
+            UIAlertController.showAlert(message: K.alert.invalidFieldMessage, from: self)
         }
     }
     

@@ -7,25 +7,27 @@
 
 import UIKit
 
-struct UserDefaultsService {
+class UserDefaultsService {
     
-    static var name: String {
+    static let shared = UserDefaultsService()
+    
+    var name: String {
         UserDefaults.standard.string(forKey: "name") ?? ""
     }
-    static var phone: String {
+    var phone: String {
         UserDefaults.standard.string(forKey: "phone") ?? ""
     }
-    static var address: String {
+    var address: String {
         UserDefaults.standard.string(forKey: "address") ?? ""
     }
     
-    static func saveToUserDefaults(name: String, phone: String, address: String) {
+    func saveToUserDefaults(name: String, phone: String, address: String) {
         UserDefaults.standard.set(name, forKey: "name")
         UserDefaults.standard.set(phone, forKey: "phone")
         UserDefaults.standard.set(address, forKey: "address")
     }
     
-    static func removeUserFromUserDefaults() {
+    func removeUserFromUserDefaults() {
         UserDefaults.standard.removeObject(forKey: "name")
         UserDefaults.standard.removeObject(forKey: "phone")
         UserDefaults.standard.removeObject(forKey: "address")

@@ -20,7 +20,7 @@ class WebServiceTests: XCTestCase {
     func testGetAllFoods() throws {
         var foods: [Food] = []
         let foodsExpectation = expectation(description: "Fetch all foods from server")
-        WebService().getAllFoods { result in
+        WebService.shared.getAllFoods { result in
             switch result {
                 case .success(let fetchedFoods):
                     if let fetchedFoods = fetchedFoods {
@@ -32,14 +32,15 @@ class WebServiceTests: XCTestCase {
                     foodsExpectation.fulfill()
             }
         }
-        wait(for: [foodsExpectation], timeout: 15)
+        wait(for: [foodsExpectation], timeout: 10)
         XCTAssertEqual(foods[0].name, "BBQ Chicken Pizza")
     }
     
     func testSubmitOrder() throws {
         var responseCode: Int = 0
+        let newOrder = Order(name: "Example Name", phone: "09301231122", address: "example address", items: ["example 1"], totalPrice: 10.99)
         let orderExpectation = expectation(description: "Send order to server")
-        WebService().submitOrder(order: Order(name: "Example Name", phone: "09301231122", address: "example address", items: ["example 1"], totalPrice: 10.99), completion: { result in
+        WebService.shared.submitOrder(order: newOrder, completion: { result in
             switch result {
                 case .success(let statusCode):
                     if let statusCode = statusCode {
@@ -51,7 +52,7 @@ class WebServiceTests: XCTestCase {
                     orderExpectation.fulfill()
             }
         })
-        wait(for: [orderExpectation], timeout: 15)
+        wait(for: [orderExpectation], timeout: 10)
         XCTAssertEqual(responseCode, 200)
     }
     

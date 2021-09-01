@@ -14,20 +14,20 @@ class UserDefaultsServiceTests: XCTestCase {
     }
 
     override func tearDownWithError() throws {
-        UserDefaultsService.removeUserFromUserDefaults()
+        UserDefaultsService.shared.removeUserFromUserDefaults()
     }
 
     func testSaveToUserDefaults() throws {
-        UserDefaultsService.saveToUserDefaults(name: "Example Name", phone: "123456789", address: "example address")
-        XCTAssertEqual(UserDefaultsService.name, "Example Name")
-        XCTAssertEqual(UserDefaultsService.phone, "123456789")
-        XCTAssertEqual(UserDefaultsService.address, "example address")
+        UserDefaultsService.shared.saveToUserDefaults(name: "Example Name", phone: "123456789", address: "example address")
+        XCTAssertEqual(UserDefaultsService.shared.name, "Example Name")
+        XCTAssertEqual(UserDefaultsService.shared.phone, "123456789")
+        XCTAssertEqual(UserDefaultsService.shared.address, "example address")
     }
 
     func testRemoveUserFromUserDefaults() {
-        UserDefaultsService.removeUserFromUserDefaults()
-        XCTAssertEqual(UserDefaultsService.name, "")
-        XCTAssertEqual(UserDefaultsService.phone, "")
-        XCTAssertEqual(UserDefaultsService.address, "")
+        UserDefaultsService.shared.removeUserFromUserDefaults()
+        XCTAssertEqual(UserDefaultsService.shared.name, "")
+        XCTAssertEqual(UserDefaultsService.shared.phone, "")
+        XCTAssertEqual(UserDefaultsService.shared.address, "")
     }
 }

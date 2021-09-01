@@ -47,7 +47,7 @@ class FoodDetailViewController: UIViewController {
             newCart.price = Float(self.foodPrice) ?? 0
             do {
                 try self.context.save()
-                UIAlertController.showAlert(title: "Cart", message: "\(self.foodName) added to the cart.", from: self)
+                UIAlertController.showAlert(title: K.alert.cartTitle, message: "\(self.foodName) added to the cart.", from: self)
             } catch {
                 UIAlertController.showAlert(message: "Error saving cart: \(error.localizedDescription)",
                                             from: self)

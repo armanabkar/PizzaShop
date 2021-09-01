@@ -10,14 +10,16 @@ import CoreData
 
 class CoreDataService {
     
-    private static let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    static let shared = CoreDataService()
     
-    static func resetAllRecords(in entity : String, from controller: UIViewController) {
+    private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    func resetAllRecords(in entity : String, from controller: UIViewController) {
         let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)
         do {
-            try context.execute(deleteRequest)
-            try context.save()
+            try CoreDataService.shared.context.execute(deleteRequest)
+            try CoreDataService.shared.context.save()
         } catch {
             UIAlertController.showAlert(message: error.localizedDescription, from: controller)
         }

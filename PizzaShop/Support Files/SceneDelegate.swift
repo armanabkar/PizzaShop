@@ -12,7 +12,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        if UserDefaultsService.name != "" && UserDefaultsService.phone != "" && UserDefaultsService.address != "" {
+        if UserDefaultsService.shared.name != "" && UserDefaultsService.shared.phone != "" && UserDefaultsService.shared.address != "" {
             let board = UIStoryboard(name: "Main", bundle: nil)
             let tabBar = board.instantiateViewController(identifier: "tabBar") as! UITabBarController
             window?.rootViewController = tabBar

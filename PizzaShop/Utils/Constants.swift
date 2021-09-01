@@ -16,9 +16,14 @@ struct K {
     static let authSegue = "toAuthViewController"
     static let detailSegue = "toFoodDetailViewController"
     
-    struct error {
+    static let coreDataEntityName = "Cart"
+    
+    struct alert {
         static let title = "Error"
-        static let invalidFieldMessage = "Please enter a valid username/password."
+        static let cartTitle = "Cart"
+        static let orderTitle = "Thank You"
+        static let orderMessage = "Your order has been received. We will deliver it to you as soon as possible."
+        static let invalidFieldMessage = "Please enter a valid name, phone and address."
     }
     
     struct URL {

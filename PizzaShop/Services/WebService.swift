@@ -16,6 +16,8 @@ enum NetworkError: Error {
 
 class WebService {
     
+    static let shared = WebService()
+    
     func getAllFoods(completion: @escaping (Result<[Food]?, NetworkError>) -> Void) {
         guard let url = URL(string: K.URL.foodUrl) else {
             return completion(.failure(.badURL))
