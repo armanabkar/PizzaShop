@@ -25,6 +25,8 @@
 		F0125AC226DD353D00C5AA8C /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125AC126DD353D00C5AA8C /* UserDefaultsService.swift */; };
 		F0125ACE26DDF99000C5AA8C /* WebServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125ACD26DDF99000C5AA8C /* WebServiceTests.swift */; };
 		F0125AE626DE18E400C5AA8C /* UserDefaultsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125AE526DE18E400C5AA8C /* UserDefaultsServiceTests.swift */; };
+		F0125AF726E0E7B100C5AA8C /* CoreDataServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125AF626E0E7B100C5AA8C /* CoreDataServiceTests.swift */; };
+		F0125B0026E0EE6000C5AA8C /* ImageLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125AFF26E0EE6000C5AA8C /* ImageLoaderTests.swift */; };
 		F0349D7326D78E4400C6B154 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0349D7226D78E4400C6B154 /* AppDelegate.swift */; };
 		F0349D7526D78E4400C6B154 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0349D7426D78E4400C6B154 /* SceneDelegate.swift */; };
 		F0349D7A26D78E4400C6B154 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0349D7826D78E4400C6B154 /* Main.storyboard */; };
@@ -70,6 +72,8 @@
 		F0125AC126DD353D00C5AA8C /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
 		F0125ACD26DDF99000C5AA8C /* WebServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceTests.swift; sourceTree = "<group>"; };
 		F0125AE526DE18E400C5AA8C /* UserDefaultsServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsServiceTests.swift; sourceTree = "<group>"; };
+		F0125AF626E0E7B100C5AA8C /* CoreDataServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataServiceTests.swift; sourceTree = "<group>"; };
+		F0125AFF26E0EE6000C5AA8C /* ImageLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderTests.swift; sourceTree = "<group>"; };
 		F0349D6F26D78E4400C6B154 /* PizzaShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PizzaShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0349D7226D78E4400C6B154 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0349D7426D78E4400C6B154 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -145,15 +149,17 @@
 			children = (
 				F0125ACD26DDF99000C5AA8C /* WebServiceTests.swift */,
 				F0125AE526DE18E400C5AA8C /* UserDefaultsServiceTests.swift */,
+				F0125AF626E0E7B100C5AA8C /* CoreDataServiceTests.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
 		};
-		F0125AEA26DFA2CE00C5AA8C /* Screens */ = {
+		F0125AFE26E0EE2B00C5AA8C /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				F0125AFF26E0EE6000C5AA8C /* ImageLoaderTests.swift */,
 			);
-			path = Screens;
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		F0349D6626D78E4400C6B154 = {
@@ -192,7 +198,7 @@
 		F0349D8826D78E4500C6B154 /* PizzaShopTests */ = {
 			isa = PBXGroup;
 			children = (
-				F0125AEA26DFA2CE00C5AA8C /* Screens */,
+				F0125AFE26E0EE2B00C5AA8C /* Utils */,
 				F0125ACC26DDF97300C5AA8C /* Services */,
 				F0349D8926D78E4500C6B154 /* PizzaShopTests.swift */,
 				F0349D8B26D78E4500C6B154 /* Info.plist */,
@@ -398,6 +404,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0125B0026E0EE6000C5AA8C /* ImageLoaderTests.swift in Sources */,
+				F0125AF726E0E7B100C5AA8C /* CoreDataServiceTests.swift in Sources */,
 				F0125ACE26DDF99000C5AA8C /* WebServiceTests.swift in Sources */,
 				F0125AE626DE18E400C5AA8C /* UserDefaultsServiceTests.swift in Sources */,
 				F0349D8A26D78E4500C6B154 /* PizzaShopTests.swift in Sources */,

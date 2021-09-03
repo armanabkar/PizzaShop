@@ -23,7 +23,14 @@ class ProfileViewController: UIViewController {
     
     @IBAction func logOutTapped(_ sender: UIButton) {
         UserDefaultsService.shared.removeUserFromUserDefaults()
-        CoreDataService.shared.resetAllRecords(in: K.coreDataEntityName, from: self)
-        self.performSegue(withIdentifier: K.authSegue, sender: nil)
+        CoreDataService.shared.resetAllRecords(in: K.coreDataEntityName) { result in
+            switch result {
+                case .success(_):
+                    self.performSegue(withIdentifier: K.authSegue, sender: nil)
+                case .failure(let error):
+                    UIAlertController.showAlert(message: error.localizedDescription, from: self)
+            }
+
+        }
     }
 }

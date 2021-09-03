@@ -24,6 +24,7 @@ struct K {
         static let orderTitle = "Thank You"
         static let orderMessage = "Your order has been received. We will deliver it to you as soon as possible."
         static let invalidFieldMessage = "Please enter a valid name, phone and address."
+        static let emptyCart = "The cart is empty. Please add some items."
     }
     
     struct URL {

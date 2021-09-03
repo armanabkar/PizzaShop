@@ -10,13 +10,10 @@ import CoreData
 
 class CartViewController: UIViewController {
     
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var navigationBar: UINavigationBar!
     
     var cartItems: [Cart] = []
-    var orderNames: [String] = []
     var totalPrice: Float {
         Float(String(format: "%.2f" ,cartItems.reduce(0) { $0 + $1.price })) ?? 0
     }
@@ -33,54 +30,65 @@ class CartViewController: UIViewController {
         
         loadCartItems()
         navigationBar.topItem?.title = "Total: \(totalPrice)$"
-        
-        for item in cartItems {
-            if let name = item.name {
-                orderNames.append(name)
-            }
-        }
     }
     
     @IBAction func submitOrderTapped(_ sender: Any) {
-        let newOrder: Order = Order(name: UserDefaultsService.shared.name, phone: UserDefaultsService.shared.phone, address: UserDefaultsService.shared.address, items: orderNames, totalPrice: totalPrice)
-        WebService.shared.submitOrder(order: newOrder, completion: { result in
-            switch result {
-                case .success( _):
-                    DispatchQueue.main.async {
-                        CoreDataService.shared.resetAllRecords(in: K.coreDataEntityName, from:self)
-                        self.cartItems.removeAll()
-                        self.tableView.reloadData()
-                        self.navigationBar.topItem?.title = "Total: 0$"
-                        UIAlertController.showAlert(title: K.alert.orderTitle, message: K.alert.orderMessage, from: self)
-                    }
-                case .failure(let error):
-                    UIAlertController.showAlert(message: error.localizedDescription, from: self)
+        if !cartItems.isEmpty {
+            var orderNames: [String] = []
+            cartItems.forEach { item in
+                if let name = item.name {
+                    orderNames.append(name)
+                }
             }
-        })
+            let newOrder: Order = Order(name: UserDefaultsService.shared.name, phone: UserDefaultsService.shared.phone, address: UserDefaultsService.shared.address, items: orderNames, totalPrice: totalPrice)
+            DispatchQueue.main.async {
+                WebService.shared.submitOrder(order: newOrder, completion: { result in
+                    switch result {
+                        case .success( _):
+                            CoreDataService.shared.resetAllRecords(in: K.coreDataEntityName) { result in
+                                switch result {
+                                    case .success(_):
+                                        self.cartItems.removeAll()
+                                        self.tableView.reloadData()
+                                        self.navigationBar.topItem?.title = "Total: 0$"
+                                        UIAlertController.showAlert(title: K.alert.orderTitle, message: K.alert.orderMessage, from: self)
+                                    case .failure(let error):
+                                        UIAlertController.showAlert(message: error.localizedDescription, from: self)
+                                }
+                            }
+                        case .failure(let error):
+                            UIAlertController.showAlert(message: error.localizedDescription, from: self)
+                    }
+                })
+            }
+        } else {
+            UIAlertController.showAlert(message: K.alert.emptyCart, from: self)
+        }
     }
     
     func saveCartItems() {
-        do {
-            try context.save()
-        } catch {
-            UIAlertController.showAlert(message: "Error saving to the cart: \(error.localizedDescription)",
-                                        from: self)
+        CoreDataService.shared.saveCartItems { result in
+            switch result {
+                case .success(_):
+                    self.tableView.reloadData()
+                case .failure(let error):
+                    UIAlertController.showAlert(message: "Error saving to the cart: \(error.localizedDescription)",
+                                                from: self)
+            }
         }
-        
-        tableView.reloadData()
     }
     
     func loadCartItems() {
-        let request : NSFetchRequest<Cart> = Cart.fetchRequest()
-        
-        do{
-            cartItems = try context.fetch(request)
-        } catch {
-            UIAlertController.showAlert(message: "Error loading cart: \(error.localizedDescription)",
-                                        from: self)
+        CoreDataService.shared.loadCartItems { result in
+            switch result {
+                case .success(let cartItems):
+                    self.cartItems.append(contentsOf: cartItems)
+                    self.tableView.reloadData()
+                case .failure(let error):
+                    UIAlertController.showAlert(message: "Error loading cart: \(error.localizedDescription)",
+                                                from: self)
+            }
         }
-        
-        tableView.reloadData()
     }
     
 }
@@ -101,7 +109,7 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let commit = cartItems[indexPath.row]
-            context.delete(commit)
+            CoreDataService.shared.deleteCartItem(item: commit)
             cartItems.remove(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .fade)
             navigationBar.topItem?.title = "Total: \(totalPrice)$"
