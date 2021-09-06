@@ -28,6 +28,7 @@
 		F0125AF726E0E7B100C5AA8C /* CoreDataServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125AF626E0E7B100C5AA8C /* CoreDataServiceTests.swift */; };
 		F0125B0026E0EE6000C5AA8C /* ImageLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125AFF26E0EE6000C5AA8C /* ImageLoaderTests.swift */; };
 		F0125B1326E4E38900C5AA8C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125B1226E4E38900C5AA8C /* MainViewController.swift */; };
+		F0125B1826E4E7D800C5AA8C /* ReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125B1726E4E7D800C5AA8C /* ReservationViewController.swift */; };
 		F0349D7326D78E4400C6B154 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0349D7226D78E4400C6B154 /* AppDelegate.swift */; };
 		F0349D7526D78E4400C6B154 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0349D7426D78E4400C6B154 /* SceneDelegate.swift */; };
 		F0349D7A26D78E4400C6B154 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0349D7826D78E4400C6B154 /* Main.storyboard */; };
@@ -76,6 +77,7 @@
 		F0125AF626E0E7B100C5AA8C /* CoreDataServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataServiceTests.swift; sourceTree = "<group>"; };
 		F0125AFF26E0EE6000C5AA8C /* ImageLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderTests.swift; sourceTree = "<group>"; };
 		F0125B1226E4E38900C5AA8C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		F0125B1726E4E7D800C5AA8C /* ReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewController.swift; sourceTree = "<group>"; };
 		F0349D6F26D78E4400C6B154 /* PizzaShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PizzaShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0349D7226D78E4400C6B154 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0349D7426D78E4400C6B154 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 				F0125A5126D8AB2100C5AA8C /* MenuCell.swift */,
 				F0125A5626D8AB2F00C5AA8C /* OrderCell.swift */,
 				F0125B1226E4E38900C5AA8C /* MainViewController.swift */,
+				F0125B1726E4E7D800C5AA8C /* ReservationViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -397,6 +400,7 @@
 				F0125AA726DC20E200C5AA8C /* CoreDataService.swift in Sources */,
 				F0125A9D26DC1B6900C5AA8C /* UIAlertControllerExtension.swift in Sources */,
 				F0125A1A26D81CCF00C5AA8C /* CartViewController.swift in Sources */,
+				F0125B1826E4E7D800C5AA8C /* ReservationViewController.swift in Sources */,
 				F0125AC226DD353D00C5AA8C /* UserDefaultsService.swift in Sources */,
 				F0125A3926D82AD800C5AA8C /* ProfileViewController.swift in Sources */,
 				F0125A5726D8AB2F00C5AA8C /* OrderCell.swift in Sources */,
