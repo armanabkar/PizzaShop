@@ -53,7 +53,7 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
             if let food = self.items[indexPath.row] {
                 cell.foodNameLabel.text = food.name
                 cell.foodPriceLabel.text = String(food.price)
-                ImageLoader.sharedInstance.imageForUrl(urlString: "\(K.URL.baseUrl)\(food.image)") { (image, url) in
+                ImageLoader.sharedInstance.imageForUrl(urlString: "\(K.URL.baseUrl)/\(food.image)") { (image, url) in
                     if image != nil {
                         cell.foodImageView.image = image
                     }
@@ -75,7 +75,7 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
                 destinationVC.foodName = item.name
                 destinationVC.foodPrice = String(item.price)
                 destinationVC.foodIngredients = item.ingredients
-                destinationVC.foodImage = "\(K.URL.baseUrl)\(item.image)"
+                destinationVC.foodImage = "\(K.URL.baseUrl)/\(item.image)"
             }
         }
     }

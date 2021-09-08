@@ -68,4 +68,36 @@ class WebService {
         }
         .resume()
     }
+    
+    func submitReservation(reservation: Reservation, completion: @escaping (Result<Int?, NetworkError>) -> Void) {
+        guard let url = URL(string: K.URL.newReservationUrl) else {
+            return completion(.failure(.badURL))
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
+        let encoder = JSONEncoder()
+        do {
+            let reservationJsonData = try encoder.encode(reservation)
+            encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
+            request.httpBody = reservationJsonData
+            request.timeoutInterval = 20
+        } catch {
+            completion(.failure(.decodingError))
+        }
+        
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            guard let _ = data, error == nil else {
+                return completion(.failure(.noData))
+            }
+            
+            if let response = response as? HTTPURLResponse {
+                DispatchQueue.main.async {
+                    completion(.success(response.statusCode))
+                }
+            }
+        }
+        .resume()
+    }
 }

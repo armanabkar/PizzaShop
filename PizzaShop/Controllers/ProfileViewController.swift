@@ -21,6 +21,10 @@ class ProfileViewController: UIViewController {
         addressLabel.text = UserDefaultsService.shared.address
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     @IBAction func logOutTapped(_ sender: UIButton) {
         UserDefaultsService.shared.removeUserFromUserDefaults()
         CoreDataService.shared.resetAllRecords(in: K.coreDataEntityName) { result in

@@ -14,7 +14,6 @@ class WebServiceTests: XCTestCase {
     }
     
     override func tearDownWithError() throws {
-        // New data will get deleted in the server, so there is no need to cleanup
     }
     
     func testGetAllFoods() throws {
@@ -53,6 +52,26 @@ class WebServiceTests: XCTestCase {
             }
         })
         wait(for: [orderExpectation], timeout: 10)
+        XCTAssertEqual(responseCode, 200)
+    }
+    
+    func testSubmitReservation() throws {
+        var responseCode: Int = 0
+        let newReservation = Reservation(name: "Example Name", phone: "123456789", tableSize: "Medium", time: "2021-09-07 12:52", request: "Example Request")
+        let reservationExpectation = expectation(description: "Send reservation to server")
+        WebService.shared.submitReservation(reservation: newReservation, completion: { result in
+            switch result {
+                case .success(let statusCode):
+                    if let statusCode = statusCode {
+                        responseCode = statusCode
+                        reservationExpectation.fulfill()
+                    }
+                case .failure(let error):
+                    print(error.localizedDescription)
+                    reservationExpectation.fulfill()
+            }
+        })
+        wait(for: [reservationExpectation], timeout: 10)
         XCTAssertEqual(responseCode, 200)
     }
     

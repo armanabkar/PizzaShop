@@ -14,17 +14,9 @@ class PizzaShopUITests: XCTestCase {
     
     override func setUpWithError() throws {
         app.launch()
-        UserDefaultsService.shared.removeUserFromUserDefaults()
     }
     
     override func tearDownWithError() throws {
-        CoreDataService.shared.resetAllRecords(in: K.coreDataEntityName) { result in
-            switch result {
-                case .success(_): break
-                case .failure(_): break
-            }
-        }
-        UserDefaultsService.shared.removeUserFromUserDefaults()
     }
     
     func testRegister() throws {

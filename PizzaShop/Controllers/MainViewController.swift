@@ -39,4 +39,8 @@ class MainViewController: UIViewController {
         mapView.setRegion(viewRegion, animated: false)
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
 }
