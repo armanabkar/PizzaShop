@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Auth View Controller-->
+        <!--Register View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="AuthViewController" customModule="PizzaShop" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="RegisterViewController" customModule="PizzaShop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -75,7 +75,7 @@
                                     <color key="titleColor" name="PrimaryColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="registerTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NSS-rF-MxV"/>
+                                    <segue destination="ScL-sm-giF" kind="presentation" modalPresentationStyle="fullScreen" id="JAL-K2-xgW"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcom to" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSr-t6-RoJ">
@@ -85,8 +85,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pizza Pizza" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="usH-bu-rYi">
-                                <rect key="frame" x="43" y="186" width="288" height="48"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <rect key="frame" x="43" y="186" width="288" height="46.5"/>
+                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="38"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -241,6 +241,95 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u3P-pc-lht" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1451" y="31"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="liD-Pk-OIe">
+            <objects>
+                <viewController id="ScL-sm-giF" customClass="LoginViewController" customModule="PizzaShop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1vt-Tf-6lz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Your Phone Number" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cJX-1J-Xm3">
+                                <rect key="frame" x="43" y="380" width="328" height="39"/>
+                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="enm-71-ctr"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zYa-Bq-EG7">
+                                <rect key="frame" x="43" y="458" width="328" height="38.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38.5" id="KnC-WV-Lx8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" name="PrimaryColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginTapped:" destination="ScL-sm-giF" eventType="touchUpInside" id="sL4-ZK-Qsq"/>
+                                    <action selector="registerTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0f5-Og-BTG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HOs-7K-439">
+                                <rect key="frame" x="43" y="504" width="328" height="38.5"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38.5" id="pSi-My-4en"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <state key="normal" title="Don't have an account yet?">
+                                    <color key="titleColor" name="PrimaryColor"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="c6A-4X-SR9"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pizza Pizza" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="voP-wx-glX">
+                                <rect key="frame" x="43" y="194" width="328" height="136"/>
+                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="40"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="K0B-jj-0o8"/>
+                        <color key="backgroundColor" name="PrimaryColor"/>
+                        <constraints>
+                            <constraint firstItem="zYa-Bq-EG7" firstAttribute="trailing" secondItem="HOs-7K-439" secondAttribute="trailing" id="1xe-Xn-Y5K"/>
+                            <constraint firstItem="voP-wx-glX" firstAttribute="top" relation="lessThanOrEqual" secondItem="K0B-jj-0o8" secondAttribute="top" constant="150" id="C8M-eb-bdL"/>
+                            <constraint firstItem="HOs-7K-439" firstAttribute="leading" secondItem="K0B-jj-0o8" secondAttribute="leading" constant="43" id="Cjq-iU-DtL"/>
+                            <constraint firstItem="K0B-jj-0o8" firstAttribute="trailing" secondItem="zYa-Bq-EG7" secondAttribute="trailing" constant="43" id="EgE-Fm-531"/>
+                            <constraint firstItem="voP-wx-glX" firstAttribute="centerX" secondItem="1vt-Tf-6lz" secondAttribute="centerX" id="GXI-Ti-BKO"/>
+                            <constraint firstItem="K0B-jj-0o8" firstAttribute="trailing" secondItem="cJX-1J-Xm3" secondAttribute="trailing" constant="43" id="Mjg-kf-87j"/>
+                            <constraint firstItem="HOs-7K-439" firstAttribute="top" secondItem="zYa-Bq-EG7" secondAttribute="bottom" constant="7.5" id="NRo-Zr-NKr"/>
+                            <constraint firstItem="cJX-1J-Xm3" firstAttribute="leading" secondItem="K0B-jj-0o8" secondAttribute="leading" constant="43" id="OCU-FZ-RU9"/>
+                            <constraint firstItem="cJX-1J-Xm3" firstAttribute="trailing" secondItem="zYa-Bq-EG7" secondAttribute="trailing" id="OwM-LG-4ZJ"/>
+                            <constraint firstItem="zYa-Bq-EG7" firstAttribute="top" secondItem="cJX-1J-Xm3" secondAttribute="bottom" constant="39" id="UIn-5C-5Un"/>
+                            <constraint firstItem="voP-wx-glX" firstAttribute="leading" secondItem="cJX-1J-Xm3" secondAttribute="leading" id="c2K-sq-Ddp"/>
+                            <constraint firstItem="zYa-Bq-EG7" firstAttribute="leading" secondItem="K0B-jj-0o8" secondAttribute="leading" constant="43" id="cfY-NZ-8rs"/>
+                            <constraint firstItem="cJX-1J-Xm3" firstAttribute="leading" secondItem="zYa-Bq-EG7" secondAttribute="leading" id="eCN-sg-MOG"/>
+                            <constraint firstItem="K0B-jj-0o8" firstAttribute="bottom" secondItem="HOs-7K-439" secondAttribute="bottom" constant="319.5" id="fsv-9y-ms3"/>
+                            <constraint firstItem="K0B-jj-0o8" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="voP-wx-glX" secondAttribute="trailing" constant="43" id="gty-xC-8Ec"/>
+                            <constraint firstItem="cJX-1J-Xm3" firstAttribute="top" secondItem="voP-wx-glX" secondAttribute="bottom" constant="50" id="in0-oE-ECS"/>
+                            <constraint firstItem="voP-wx-glX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="K0B-jj-0o8" secondAttribute="leading" constant="43" id="qMv-nA-fNw"/>
+                            <constraint firstItem="zYa-Bq-EG7" firstAttribute="leading" secondItem="HOs-7K-439" secondAttribute="leading" id="uuc-IY-V55"/>
+                            <constraint firstItem="K0B-jj-0o8" firstAttribute="trailing" secondItem="HOs-7K-439" secondAttribute="trailing" constant="43" id="wcG-A4-SsL"/>
+                            <constraint firstItem="voP-wx-glX" firstAttribute="trailing" secondItem="cJX-1J-Xm3" secondAttribute="trailing" id="ywE-3g-mbt"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="sEE-cs-hki"/>
+                    <connections>
+                        <outlet property="appTitle" destination="voP-wx-glX" id="OhJ-8V-zpw"/>
+                        <outlet property="phoneField" destination="cJX-1J-Xm3" id="Pze-OC-zcy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X0Q-bm-YyD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-236.23188405797103" y="760.71428571428567"/>
         </scene>
         <!--Profile-->
         <scene sceneID="QtQ-3I-mSF">
@@ -749,6 +838,9 @@
             <point key="canvasLocation" x="1450.7246376811595" y="760.71428571428567"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="c6A-4X-SR9"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="bell" catalog="system" width="128" height="124"/>
         <image name="cart" catalog="system" width="128" height="102"/>

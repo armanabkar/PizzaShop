@@ -39,8 +39,8 @@ class FoodDetailViewController: UIViewController {
     }
     
     @IBAction func addToCartTapped(_ sender: Any) {
-        CoreDataService.shared.addToCart(foodName: foodName, foodPrice: foodPrice) { result in
-            DispatchQueue.main.async {
+        DispatchQueue.main.async {
+            CoreDataService.shared.addToCart(foodName: self.foodName, foodPrice: self.foodPrice) { result in
                 switch result {
                     case .success(_):
                         UIAlertController.showAlert(title: K.alert.cartTitle, message: "\(self.foodName) added to the cart.", from: self)

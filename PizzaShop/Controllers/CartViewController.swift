@@ -52,6 +52,7 @@ class CartViewController: UIViewController {
                                         self.tableView.reloadData()
                                         self.navigationBar.topItem?.title = "Total: 0$"
                                         UIAlertController.showAlert(title: K.alert.orderTitle, message: K.alert.orderMessage, from: self)
+                                        NotificationCenter.createNotification(title: "Dear \(UserDefaultsService.shared.name)", body: "Your order has been delivered. Thank you for choosing us.", date: Date().addingTimeInterval(10), from: self)
                                     case .failure(let error):
                                         UIAlertController.showAlert(message: error.localizedDescription, from: self)
                                 }
@@ -79,6 +80,7 @@ class CartViewController: UIViewController {
     }
     
     func loadCartItems() {
+        cartItems = []
         CoreDataService.shared.loadCartItems { result in
             switch result {
                 case .success(let cartItems):

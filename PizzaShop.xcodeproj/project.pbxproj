@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F0125A0F26D81CA300C5AA8C /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125A0E26D81CA300C5AA8C /* AuthViewController.swift */; };
+		F0125A0F26D81CA300C5AA8C /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125A0E26D81CA300C5AA8C /* RegisterViewController.swift */; };
 		F0125A1426D81CB900C5AA8C /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125A1326D81CB900C5AA8C /* MenuViewController.swift */; };
 		F0125A1A26D81CCF00C5AA8C /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125A1926D81CCF00C5AA8C /* CartViewController.swift */; };
 		F0125A2226D81CDD00C5AA8C /* FoodDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125A2126D81CDD00C5AA8C /* FoodDetailViewController.swift */; };
@@ -30,6 +30,8 @@
 		F0125B1326E4E38900C5AA8C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125B1226E4E38900C5AA8C /* MainViewController.swift */; };
 		F0125B1826E4E7D800C5AA8C /* ReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125B1726E4E7D800C5AA8C /* ReservationViewController.swift */; };
 		F0125B1D26E6AD3600C5AA8C /* Reservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125B1C26E6AD3600C5AA8C /* Reservation.swift */; };
+		F0125B2526E8A90900C5AA8C /* NotificationCenterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125B2426E8A90800C5AA8C /* NotificationCenterExtension.swift */; };
+		F0125B2A26E8B40E00C5AA8C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125B2926E8B40E00C5AA8C /* LoginViewController.swift */; };
 		F0349D7326D78E4400C6B154 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0349D7226D78E4400C6B154 /* AppDelegate.swift */; };
 		F0349D7526D78E4400C6B154 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0349D7426D78E4400C6B154 /* SceneDelegate.swift */; };
 		F0349D7A26D78E4400C6B154 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0349D7826D78E4400C6B154 /* Main.storyboard */; };
@@ -57,7 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		F0125A0E26D81CA300C5AA8C /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		F0125A0E26D81CA300C5AA8C /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		F0125A1326D81CB900C5AA8C /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		F0125A1926D81CCF00C5AA8C /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		F0125A2126D81CDD00C5AA8C /* FoodDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +82,8 @@
 		F0125B1226E4E38900C5AA8C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		F0125B1726E4E7D800C5AA8C /* ReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewController.swift; sourceTree = "<group>"; };
 		F0125B1C26E6AD3600C5AA8C /* Reservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reservation.swift; sourceTree = "<group>"; };
+		F0125B2426E8A90800C5AA8C /* NotificationCenterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenterExtension.swift; sourceTree = "<group>"; };
+		F0125B2926E8B40E00C5AA8C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F0349D6F26D78E4400C6B154 /* PizzaShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PizzaShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0349D7226D78E4400C6B154 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0349D7426D78E4400C6B154 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +130,7 @@
 				F0125A2A26D81F8D00C5AA8C /* Constants.swift */,
 				F0125A6C26DAABE800C5AA8C /* ImageLoader.swift */,
 				F0125A9C26DC1B6900C5AA8C /* UIAlertControllerExtension.swift */,
+				F0125B2426E8A90800C5AA8C /* NotificationCenterExtension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -236,7 +241,7 @@
 		F0349DAC26D78E9600C6B154 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				F0125A0E26D81CA300C5AA8C /* AuthViewController.swift */,
+				F0125A0E26D81CA300C5AA8C /* RegisterViewController.swift */,
 				F0125A1326D81CB900C5AA8C /* MenuViewController.swift */,
 				F0125A1926D81CCF00C5AA8C /* CartViewController.swift */,
 				F0125A2126D81CDD00C5AA8C /* FoodDetailViewController.swift */,
@@ -245,6 +250,7 @@
 				F0125A5626D8AB2F00C5AA8C /* OrderCell.swift */,
 				F0125B1226E4E38900C5AA8C /* MainViewController.swift */,
 				F0125B1726E4E7D800C5AA8C /* ReservationViewController.swift */,
+				F0125B2926E8B40E00C5AA8C /* LoginViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -388,9 +394,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F0125A0F26D81CA300C5AA8C /* AuthViewController.swift in Sources */,
+				F0125A0F26D81CA300C5AA8C /* RegisterViewController.swift in Sources */,
 				F0125A2226D81CDD00C5AA8C /* FoodDetailViewController.swift in Sources */,
 				F0125A6D26DAABE800C5AA8C /* ImageLoader.swift in Sources */,
+				F0125B2A26E8B40E00C5AA8C /* LoginViewController.swift in Sources */,
 				F0125A6526DA5F4400C5AA8C /* WebService.swift in Sources */,
 				F0125A4D26D8A93700C5AA8C /* Order.swift in Sources */,
 				F0125B1D26E6AD3600C5AA8C /* Reservation.swift in Sources */,
@@ -403,6 +410,7 @@
 				F0125A4526D8A85500C5AA8C /* Food.swift in Sources */,
 				F0125AA726DC20E200C5AA8C /* CoreDataService.swift in Sources */,
 				F0125A9D26DC1B6900C5AA8C /* UIAlertControllerExtension.swift in Sources */,
+				F0125B2526E8A90900C5AA8C /* NotificationCenterExtension.swift in Sources */,
 				F0125A1A26D81CCF00C5AA8C /* CartViewController.swift in Sources */,
 				F0125B1826E4E7D800C5AA8C /* ReservationViewController.swift in Sources */,
 				F0125AC226DD353D00C5AA8C /* UserDefaultsService.swift in Sources */,

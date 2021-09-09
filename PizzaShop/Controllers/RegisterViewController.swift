@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AuthViewController: UIViewController, UITextFieldDelegate {
+class RegisterViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var appTitle: UILabel!
     @IBOutlet weak var nameField: UITextField!
@@ -17,7 +17,7 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        animateText(K.appName)
+        animateText(text: K.appName)
         
         self.nameField.delegate = self
         self.phoneField.delegate = self
@@ -37,22 +37,28 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
             UIAlertController.showAlert(message: K.alert.invalidFieldMessage, from: self)
         }
     }
-    
-    private func animateText(_ text: String) {
-        appTitle.text = ""
-        var charIndex = 0.0
-        let titleText = text
-        for letter in titleText {
-            Timer.scheduledTimer(withTimeInterval: 0.1 * charIndex, repeats: false) { (timer) in
-                self.appTitle.text?.append(letter)
+
+    private func animateText(text: String) {
+        DispatchQueue.main.async {
+            self.appTitle.text = ""
+            var charIndex = 0.0
+            let titleText = text
+            for letter in titleText {
+                Timer.scheduledTimer(withTimeInterval: 0.1 * charIndex, repeats: false) { (timer) in
+                    self.appTitle.text?.append(letter)
+                }
+                charIndex += 1
             }
-            charIndex += 1
         }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
 }
