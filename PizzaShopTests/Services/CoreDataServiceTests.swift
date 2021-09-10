@@ -58,7 +58,7 @@ class CoreDataServiceTests: XCTestCase {
     
     func testResetAllRecords() throws {
         var successMessage = ""
-        CoreDataService.shared.resetAllRecords(in: K.coreDataEntityName) { result in
+        CoreDataService.shared.resetAllRecords(in: K.CoreData.entityName) { result in
             switch result {
                 case .success(let message):
                     successMessage = message
@@ -78,16 +78,11 @@ class CoreDataServiceTests: XCTestCase {
     }
     
     func deleteAllItems() {
-        CoreDataService.shared.resetAllRecords(in: K.coreDataEntityName) { result in
+        CoreDataService.shared.resetAllRecords(in: K.CoreData.entityName) { result in
             switch result {
                 case .success(_): break
                 case .failure(_): break
             }
-        }
-    }
-
-    func testPerformanceExample() throws {
-        self.measure {
         }
     }
 

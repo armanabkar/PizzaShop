@@ -16,9 +16,11 @@ struct K {
     static let authSegue = "toAuthViewController"
     static let detailSegue = "toFoodDetailViewController"
     
-    static let coreDataEntityName = "Cart"
+    struct CoreData {
+        static let entityName = "Cart"
+    }
     
-    struct alert {
+    struct Alert {
         static let title = "Error"
         static let cartTitle = "Cart"
         static let orderTitle = "Thank You"

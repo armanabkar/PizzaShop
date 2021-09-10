@@ -34,7 +34,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
             self.performSegue(withIdentifier: K.menuSegue, sender: nil)
         }
         else {
-            UIAlertController.showAlert(message: K.alert.invalidFieldMessage, from: self)
+            UIAlertController.showAlert(message: K.Alert.invalidFieldMessage, from: self)
         }
     }
 

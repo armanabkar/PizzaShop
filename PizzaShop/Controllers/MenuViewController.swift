@@ -23,20 +23,18 @@ class MenuViewController: UIViewController {
     }
     
     func getAllFoods() {
-        WebService.shared.getAllFoods { result in
+        WebService.shared.getAllFoods { [weak self] result in
             switch result {
                 case .success(let fetchedFoods):
                     if let fetchedFoods = fetchedFoods {
-                        DispatchQueue.main.async {
-                            self.items.append(contentsOf: fetchedFoods)
-                            self.tableView.reloadData()
-                        }
+                        self?.items.append(contentsOf: fetchedFoods)
+                        self?.tableView.reloadData()
                     }
                 case .failure(let error):
-                    UIAlertController.showAlert(message: error.localizedDescription, from: self)
+                    UIAlertController.showAlert(message: error.localizedDescription, from: self!)
             }
         }
-
+        
     }
     
 }
@@ -49,14 +47,12 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.foodCellIdentifier, for: indexPath) as! MenuCell
-        DispatchQueue.main.async {
-            if let food = self.items[indexPath.row] {
-                cell.foodNameLabel.text = food.name
-                cell.foodPriceLabel.text = String(food.price)
-                ImageLoader.sharedInstance.imageForUrl(urlString: "\(K.URL.baseUrl)/\(food.image)") { (image, url) in
-                    if image != nil {
-                        cell.foodImageView.image = image
-                    }
+        if let food = self.items[indexPath.row] {
+            cell.foodNameLabel.text = food.name
+            cell.foodPriceLabel.text = String(food.price)
+            ImageLoader.sharedInstance.imageForUrl(urlString: "\(K.URL.baseUrl)/\(food.image)") { (image, url) in
+                if image != nil {
+                    cell.foodImageView.image = image
                 }
             }
         }

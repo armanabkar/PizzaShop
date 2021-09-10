@@ -27,7 +27,7 @@ class ProfileViewController: UIViewController {
     
     @IBAction func logOutTapped(_ sender: UIButton) {
         UserDefaultsService.shared.removeUserFromUserDefaults()
-        CoreDataService.shared.resetAllRecords(in: K.coreDataEntityName) { result in
+        CoreDataService.shared.resetAllRecords(in: K.CoreData.entityName) { result in
             switch result {
                 case .success(_):
                     self.performSegue(withIdentifier: K.authSegue, sender: nil)

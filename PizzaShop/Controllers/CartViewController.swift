@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import CoreData
 
 class CartViewController: UIViewController {
     
@@ -41,29 +40,29 @@ class CartViewController: UIViewController {
                 }
             }
             let newOrder: Order = Order(name: UserDefaultsService.shared.name, phone: UserDefaultsService.shared.phone, address: UserDefaultsService.shared.address, items: orderNames, totalPrice: totalPrice)
-            DispatchQueue.main.async {
-                WebService.shared.submitOrder(order: newOrder, completion: { result in
-                    switch result {
-                        case .success( _):
-                            CoreDataService.shared.resetAllRecords(in: K.coreDataEntityName) { result in
-                                switch result {
-                                    case .success(_):
-                                        self.cartItems.removeAll()
-                                        self.tableView.reloadData()
-                                        self.navigationBar.topItem?.title = "Total: 0$"
-                                        UIAlertController.showAlert(title: K.alert.orderTitle, message: K.alert.orderMessage, from: self)
-                                        NotificationCenter.createNotification(title: "Dear \(UserDefaultsService.shared.name)", body: "Your order has been delivered. Thank you for choosing us.", date: Date().addingTimeInterval(10), from: self)
-                                    case .failure(let error):
-                                        UIAlertController.showAlert(message: error.localizedDescription, from: self)
-                                }
+            
+            WebService.shared.submitOrder(order: newOrder, completion: { [weak self] result in
+                switch result {
+                    case .success( _):
+                        CoreDataService.shared.resetAllRecords(in: K.CoreData.entityName) { result in
+                            switch result {
+                                case .success(_):
+                                    self?.cartItems.removeAll()
+                                    self?.tableView.reloadData()
+                                    self?.navigationBar.topItem?.title = "Total: 0$"
+                                    UIAlertController.showAlert(title: K.Alert.orderTitle, message: K.Alert.orderMessage, from: self!)
+                                    NotificationCenter.createNotification(title: "Dear \(UserDefaultsService.shared.name)", body: "Your order has been delivered. Thank you for choosing us.", date: Date().addingTimeInterval(10), from: self!)
+                                case .failure(let error):
+                                    UIAlertController.showAlert(message: error.localizedDescription, from: self!)
                             }
-                        case .failure(let error):
-                            UIAlertController.showAlert(message: error.localizedDescription, from: self)
-                    }
-                })
-            }
+                        }
+                    case .failure(let error):
+                        UIAlertController.showAlert(message: error.localizedDescription, from: self!)
+                }
+            })
+            
         } else {
-            UIAlertController.showAlert(message: K.alert.emptyCart, from: self)
+            UIAlertController.showAlert(message: K.Alert.emptyCart, from: self)
         }
     }
     
