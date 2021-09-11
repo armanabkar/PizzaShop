@@ -32,6 +32,8 @@
 		F0125B1D26E6AD3600C5AA8C /* Reservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125B1C26E6AD3600C5AA8C /* Reservation.swift */; };
 		F0125B2526E8A90900C5AA8C /* NotificationCenterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125B2426E8A90800C5AA8C /* NotificationCenterExtension.swift */; };
 		F0125B2A26E8B40E00C5AA8C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125B2926E8B40E00C5AA8C /* LoginViewController.swift */; };
+		F0125B4326ECA13600C5AA8C /* RegisterViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125B4226ECA13600C5AA8C /* RegisterViewControllerTests.swift */; };
+		F0125B4B26ECA4F200C5AA8C /* MenuViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125B4A26ECA4F200C5AA8C /* MenuViewControllerTests.swift */; };
 		F0349D7326D78E4400C6B154 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0349D7226D78E4400C6B154 /* AppDelegate.swift */; };
 		F0349D7526D78E4400C6B154 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0349D7426D78E4400C6B154 /* SceneDelegate.swift */; };
 		F0349D7A26D78E4400C6B154 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0349D7826D78E4400C6B154 /* Main.storyboard */; };
@@ -84,6 +86,8 @@
 		F0125B1C26E6AD3600C5AA8C /* Reservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reservation.swift; sourceTree = "<group>"; };
 		F0125B2426E8A90800C5AA8C /* NotificationCenterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenterExtension.swift; sourceTree = "<group>"; };
 		F0125B2926E8B40E00C5AA8C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F0125B4226ECA13600C5AA8C /* RegisterViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewControllerTests.swift; sourceTree = "<group>"; };
+		F0125B4A26ECA4F200C5AA8C /* MenuViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewControllerTests.swift; sourceTree = "<group>"; };
 		F0349D6F26D78E4400C6B154 /* PizzaShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PizzaShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0349D7226D78E4400C6B154 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0349D7426D78E4400C6B154 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -174,6 +178,15 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		F0125B4126ECA10D00C5AA8C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F0125B4226ECA13600C5AA8C /* RegisterViewControllerTests.swift */,
+				F0125B4A26ECA4F200C5AA8C /* MenuViewControllerTests.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		F0349D6626D78E4400C6B154 = {
 			isa = PBXGroup;
 			children = (
@@ -210,6 +223,7 @@
 		F0349D8826D78E4500C6B154 /* PizzaShopTests */ = {
 			isa = PBXGroup;
 			children = (
+				F0125B4126ECA10D00C5AA8C /* Controllers */,
 				F0125AFE26E0EE2B00C5AA8C /* Utils */,
 				F0125ACC26DDF97300C5AA8C /* Services */,
 				F0349D8926D78E4500C6B154 /* PizzaShopTests.swift */,
@@ -425,8 +439,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0125B0026E0EE6000C5AA8C /* ImageLoaderTests.swift in Sources */,
+				F0125B4B26ECA4F200C5AA8C /* MenuViewControllerTests.swift in Sources */,
 				F0125AF726E0E7B100C5AA8C /* CoreDataServiceTests.swift in Sources */,
 				F0125ACE26DDF99000C5AA8C /* WebServiceTests.swift in Sources */,
+				F0125B4326ECA13600C5AA8C /* RegisterViewControllerTests.swift in Sources */,
 				F0125AE626DE18E400C5AA8C /* UserDefaultsServiceTests.swift in Sources */,
 				F0349D8A26D78E4500C6B154 /* PizzaShopTests.swift in Sources */,
 			);

@@ -11,6 +11,7 @@ class MenuViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    var webService: API = WebService.shared // Property Injection - Can replace with stub in testing
     var items: [Food?] = []
     
     override func viewDidLoad() {
@@ -23,7 +24,7 @@ class MenuViewController: UIViewController {
     }
     
     func getAllFoods() {
-        WebService.shared.getAllFoods { [weak self] result in
+        webService.getAllFoods { [weak self] result in
             switch result {
                 case .success(let fetchedFoods):
                     if let fetchedFoods = fetchedFoods {

@@ -14,9 +14,17 @@ enum NetworkError: Error {
     case custom(String?)
 }
 
-class WebService {
+protocol API {
+    func getAllFoods(completion: @escaping (Result<[Food]?, NetworkError>) -> Void)
+    func submitOrder(order: Order, completion: @escaping (Result<Int?, NetworkError>) -> Void)
+    func submitReservation(reservation: Reservation, completion: @escaping (Result<Int?, NetworkError>) -> Void)
+}
+
+class WebService: API {
     
     static let shared = WebService()
+    
+    private init() {}
     
     func getAllFoods(completion: @escaping (Result<[Food]?, NetworkError>) -> Void) {
         guard let url = URL(string: K.URL.foodUrl) else {

@@ -12,6 +12,7 @@ class CartViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var navigationBar: UINavigationBar!
     
+    var webService: API = WebService.shared // Property Injection - Can replace with stub in testing
     var cartItems: [Cart] = []
     var totalPrice: Float {
         Float(String(format: "%.2f" ,cartItems.reduce(0) { $0 + $1.price })) ?? 0
@@ -41,7 +42,7 @@ class CartViewController: UIViewController {
             }
             let newOrder: Order = Order(name: UserDefaultsService.shared.name, phone: UserDefaultsService.shared.phone, address: UserDefaultsService.shared.address, items: orderNames, totalPrice: totalPrice)
             
-            WebService.shared.submitOrder(order: newOrder, completion: { [weak self] result in
+            webService.submitOrder(order: newOrder, completion: { [weak self] result in
                 switch result {
                     case .success( _):
                         CoreDataService.shared.resetAllRecords(in: K.CoreData.entityName) { result in
