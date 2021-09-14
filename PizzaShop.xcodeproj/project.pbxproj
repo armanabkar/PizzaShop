@@ -34,6 +34,7 @@
 		F0125B2A26E8B40E00C5AA8C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125B2926E8B40E00C5AA8C /* LoginViewController.swift */; };
 		F0125B4326ECA13600C5AA8C /* RegisterViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125B4226ECA13600C5AA8C /* RegisterViewControllerTests.swift */; };
 		F0125B4B26ECA4F200C5AA8C /* MenuViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125B4A26ECA4F200C5AA8C /* MenuViewControllerTests.swift */; };
+		F0125B5026ED149F00C5AA8C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125B4F26ED149F00C5AA8C /* User.swift */; };
 		F0349D7326D78E4400C6B154 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0349D7226D78E4400C6B154 /* AppDelegate.swift */; };
 		F0349D7526D78E4400C6B154 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0349D7426D78E4400C6B154 /* SceneDelegate.swift */; };
 		F0349D7A26D78E4400C6B154 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0349D7826D78E4400C6B154 /* Main.storyboard */; };
@@ -88,6 +89,7 @@
 		F0125B2926E8B40E00C5AA8C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F0125B4226ECA13600C5AA8C /* RegisterViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewControllerTests.swift; sourceTree = "<group>"; };
 		F0125B4A26ECA4F200C5AA8C /* MenuViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewControllerTests.swift; sourceTree = "<group>"; };
+		F0125B4F26ED149F00C5AA8C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F0349D6F26D78E4400C6B154 /* PizzaShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PizzaShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0349D7226D78E4400C6B154 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0349D7426D78E4400C6B154 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				F0125A4C26D8A93700C5AA8C /* Order.swift */,
 				F0125A8C26DB564B00C5AA8C /* CartModel.xcdatamodeld */,
 				F0125B1C26E6AD3600C5AA8C /* Reservation.swift */,
+				F0125B4F26ED149F00C5AA8C /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 				F0125A1A26D81CCF00C5AA8C /* CartViewController.swift in Sources */,
 				F0125B1826E4E7D800C5AA8C /* ReservationViewController.swift in Sources */,
 				F0125AC226DD353D00C5AA8C /* UserDefaultsService.swift in Sources */,
+				F0125B5026ED149F00C5AA8C /* User.swift in Sources */,
 				F0125A3926D82AD800C5AA8C /* ProfileViewController.swift in Sources */,
 				F0125A5726D8AB2F00C5AA8C /* OrderCell.swift in Sources */,
 				F0349D7526D78E4400C6B154 /* SceneDelegate.swift in Sources */,

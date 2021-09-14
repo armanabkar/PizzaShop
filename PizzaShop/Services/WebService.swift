@@ -18,6 +18,7 @@ protocol API {
     func getAllFoods(completion: @escaping (Result<[Food]?, NetworkError>) -> Void)
     func submitOrder(order: Order, completion: @escaping (Result<Int?, NetworkError>) -> Void)
     func submitReservation(reservation: Reservation, completion: @escaping (Result<Int?, NetworkError>) -> Void)
+    func login(phone: User, completion: @escaping (Result<User?, NetworkError>) -> Void)
 }
 
 class WebService: API {
@@ -108,4 +109,77 @@ class WebService: API {
         }
         .resume()
     }
+    
+    func login(phone: User, completion: @escaping (Result<User?, NetworkError>) -> Void) {
+        guard let url = URL(string: K.URL.login) else {
+            return completion(.failure(.badURL))
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
+        let encoder = JSONEncoder()
+        do {
+            let phoneJsonData = try encoder.encode(phone)
+            encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
+            request.httpBody = phoneJsonData
+            request.timeoutInterval = 20
+        } catch {
+            completion(.failure(.decodingError))
+        }
+        
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            guard let data = data, error == nil else {
+                return completion(.failure(.noData))
+            }
+            
+            let user = try? JSONDecoder().decode(User.self, from: data)
+            
+            DispatchQueue.main.async {
+                if let response = response as? HTTPURLResponse, response.statusCode == 200 {
+                    completion(.success(user))
+                } else {
+                    completion(.failure(.custom(K.Alert.userDoesNotExist)))
+                }
+            }
+        }
+        .resume()
+    }
+    
+    func register(user: User, completion: @escaping (Result<User?, NetworkError>) -> Void) {
+        guard let url = URL(string: K.URL.register) else {
+            return completion(.failure(.badURL))
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
+        let encoder = JSONEncoder()
+        do {
+            let userJsonData = try encoder.encode(user)
+            encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
+            request.httpBody = userJsonData
+            request.timeoutInterval = 20
+        } catch {
+            completion(.failure(.decodingError))
+        }
+        
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            guard let data = data, error == nil else {
+                return completion(.failure(.noData))
+            }
+            
+            let user = try? JSONDecoder().decode(User.self, from: data)
+            
+            DispatchQueue.main.async {
+                if let response = response as? HTTPURLResponse, response.statusCode == 200 {
+                    completion(.success(user))
+                } else {
+                    completion(.failure(.custom(K.Alert.userAlreadyExists)))
+                }
+            }
+        }
+        .resume()
+    }
+    
 }
