@@ -76,9 +76,9 @@ class WebServiceTests: XCTestCase {
     }
     
     func test_login() throws {
-        var fetchedUser = User(id: "", name: "", phone: "", address: "")
+        var fetchedUser = User(name: "", phone: "", address: "")
         let loginExpectation = expectation(description: "Login")
-        WebService.shared.login(phone: User(id: "", name: "", phone: "09363860000", address: "")) { result in
+        WebService.shared.login(phone: User(name: "", phone: "09363860000", address: "")) { result in
             switch result {
                 case .success(let user):
                     if let user = user {
@@ -96,8 +96,8 @@ class WebServiceTests: XCTestCase {
     
     func test_register() throws {
         let randomPhoneNumber = Int.random(in: 1 ... 1000)
-        let newUser = User(id: "", name: "Example Name", phone: "\(randomPhoneNumber)", address: "Example Address")
-        var fetchedUser = User(id: "", name: "", phone: "", address: "")
+        let newUser = User(name: "Example Name", phone: "\(randomPhoneNumber)", address: "Example Address")
+        var fetchedUser = User(name: "", phone: "", address: "")
         let registerExpectation = expectation(description: "Register")
         WebService.shared.register(user: newUser) { result in
             switch result {

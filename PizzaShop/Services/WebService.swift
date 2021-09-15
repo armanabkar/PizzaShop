@@ -19,6 +19,7 @@ protocol API {
     func submitOrder(order: Order, completion: @escaping (Result<Int?, NetworkError>) -> Void)
     func submitReservation(reservation: Reservation, completion: @escaping (Result<Int?, NetworkError>) -> Void)
     func login(phone: User, completion: @escaping (Result<User?, NetworkError>) -> Void)
+    func register(user: User, completion: @escaping (Result<User?, NetworkError>) -> Void)
 }
 
 class WebService: API {

@@ -14,6 +14,8 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var phoneField: UITextField!
     @IBOutlet weak var addressField: UITextField!
     
+    var webService: API = WebService.shared // Property Injection - Can replace with stub in testing
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,14 +32,27 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
            let phone = phoneField.text,
            let address = addressField.text,
            nameField.text != "" && phoneField.text != "" && addressField.text != "" {
-            UserDefaultsService.shared.saveToUserDefaults(name: name, phone: phone, address: address)
-            self.performSegue(withIdentifier: K.menuSegue, sender: nil)
+            let newUser = User(name: name, phone: phone, address: address)
+            webService.register(user: newUser) { result in
+                switch result {
+                    case .success(let user):
+                        UserDefaultsService.shared.saveToUserDefaults(name: user!.name, phone: user!.phone, address: user!.address)
+                        self.performSegue(withIdentifier: K.menuSegue, sender: nil)
+                    case .failure(let error):
+                        switch error {
+                            case .custom(K.Alert.userAlreadyExists):
+                                UIAlertController.showAlert(message: K.Alert.userAlreadyExists, from: self)
+                            default:
+                                UIAlertController.showAlert(message: error.localizedDescription, from: self)
+                        }
+                }
+            }
         }
         else {
             UIAlertController.showAlert(message: K.Alert.invalidFieldMessage, from: self)
         }
     }
-
+    
     private func animateText(text: String) {
         DispatchQueue.main.async {
             self.appTitle.text = ""

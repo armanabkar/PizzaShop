@@ -38,16 +38,6 @@
                ReferencedContainer = "container:PizzaShop.xcodeproj">
             </BuildableReference>
          </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F0349D8F26D78E4500C6B154"
-               BuildableName = "PizzaShopUITests.xctest"
-               BlueprintName = "PizzaShopUITests"
-               ReferencedContainer = "container:PizzaShop.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

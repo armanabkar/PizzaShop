@@ -19,7 +19,11 @@ class PizzaShopUITests: XCTestCase {
     override func tearDownWithError() throws {
     }
     
-    func testRegister() throws {
+    func test_Register() throws {
+        if app.tabBars["Tab Bar"].exists {
+            app.tabBars["Tab Bar"].buttons["Profile"].tap()
+            app.buttons["Log out"].tap()
+        }
         let nameField = app.textFields["Enter Your Name"]
         nameField.tap()
         nameField.typeText("Someone Special")
@@ -33,7 +37,7 @@ class PizzaShopUITests: XCTestCase {
         app.staticTexts["Register"].tap()
     }
     
-    func testOrderFood() throws {
+    func test_OrderFood() throws {
         let foodItem = app.tables.staticTexts["Hawaiian Pizza"]
         XCTAssertTrue(foodItem.waitForExistence(timeout: 10))
         sleep(1)
@@ -46,9 +50,17 @@ class PizzaShopUITests: XCTestCase {
         app.alerts["Thank You"].scrollViews.otherElements.buttons["OK"].tap()
     }
     
-    func testLogOut() throws {
+    func test_LogOut() throws {
         app.tabBars["Tab Bar"].buttons["Profile"].tap()
         app.buttons["Log out"].tap()
+        app.terminate()
+    }
+    
+    func test_Login() throws {
+        app.staticTexts["Already have an account?"].tap()
+        app.staticTexts["Login"].tap()
+        app.tabBars["Tab Bar"].buttons["Profile"].tap()
+        app.staticTexts["Log out"].tap()
         app.terminate()
     }
     

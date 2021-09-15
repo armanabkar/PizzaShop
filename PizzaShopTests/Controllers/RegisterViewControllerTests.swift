@@ -20,13 +20,32 @@ class RegisterViewControllerTests: XCTestCase {
         sut.loadViewIfNeeded()
         XCTAssertEqual(sut.appTitle?.text, "Pizza Pizza")
     }
+    
+    func test_viewDidLoad_configuresTextField() throws {
+        let sut = try makeSUT()
+        sut.loadViewIfNeeded()
+        
+        XCTAssertNotNil(sut.nameField.delegate, "nameField")
+        XCTAssertNotNil(sut.phoneField.delegate, "phoneField")
+        XCTAssertNotNil(sut.addressField.delegate, "addressField")
+    }
+
 
     private func makeSUT() throws -> RegisterViewController {
         let bundle = Bundle(for: RegisterViewController.self)
         let sb = UIStoryboard(name: "Main", bundle: bundle)
         
-        let initialVC = sb.instantiateInitialViewController()
-        return try XCTUnwrap(initialVC) as! RegisterViewController
+        let initialVC = sb.instantiateInitialViewController() as! RegisterViewController
+        initialVC.webService = WebServiceStub()
+        return try XCTUnwrap(initialVC)
     }
 
+}
+
+private class WebServiceStub: API {
+    func getAllFoods(completion: @escaping (Result<[Food]?, NetworkError>) -> Void) {}
+    func submitOrder(order: Order, completion: @escaping (Result<Int?, NetworkError>) -> Void) {}
+    func submitReservation(reservation: Reservation, completion: @escaping (Result<Int?, NetworkError>) -> Void) {}
+    func login(phone: User, completion: @escaping (Result<User?, NetworkError>) -> Void) {}
+    func register(user: User, completion: @escaping (Result<User?, NetworkError>) -> Void) {}
 }

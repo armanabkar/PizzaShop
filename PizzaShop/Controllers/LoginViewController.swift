@@ -22,7 +22,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func loginTapped(_ sender: Any) {
         if let phone = phoneField.text, phoneField.text != "" {
-            webService.login(phone: User(id: "", name: "", phone: phone, address: "")) { result in
+            webService.login(phone: User(name: "", phone: phone, address: "")) { result in
                 switch result {
                     case .success(let user):
                         UserDefaultsService.shared.saveToUserDefaults(name: user!.name, phone: user!.phone, address: user!.address)
