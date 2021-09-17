@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MessageUI
 
 class ProfileViewController: UIViewController {
     
@@ -34,7 +35,34 @@ class ProfileViewController: UIViewController {
                 case .failure(let error):
                     UIAlertController.showAlert(message: error.localizedDescription, from: self)
             }
-
+            
         }
     }
+    
+    @IBAction func emailButtonTapped(_ sender: Any) {
+        guard MFMailComposeViewController.canSendMail() else {
+            return
+        }
+        
+        let composer = MFMailComposeViewController()
+        composer.mailComposeDelegate = self
+        composer.setToRecipients(["support@pizzapizza.com"])
+        composer.setMessageBody("Hi...", isHTML: false)
+        
+        present(composer, animated: true)
+    }
+    
+    @IBAction func callButtonTapped(_ sender: Any) {
+        if let url = URL(string: "tel://8056814200"), UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url)
+        }
+    }
+}
+
+extension ProfileViewController: MFMailComposeViewControllerDelegate {
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true)
+    }
+    
 }

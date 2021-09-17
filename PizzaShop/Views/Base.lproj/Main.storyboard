@@ -121,22 +121,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="XJK-FZ-GNl">
-                                <rect key="frame" x="22" y="292" width="370" height="146.5"/>
+                                <rect key="frame" x="25" y="292" width="364" height="146.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Arman" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wyF-MF-8eq">
-                                        <rect key="frame" x="0.0" y="0.0" width="370" height="43"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="364" height="43"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="09363868196" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUF-oZ-FnK">
-                                        <rect key="frame" x="0.0" y="51" width="370" height="30"/>
+                                        <rect key="frame" x="0.0" y="51" width="364" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Isfahan, Isfahan, Hakim Nezami, 30 Hakim Nezami, 30" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T5A-4n-YoH">
-                                        <rect key="frame" x="0.0" y="89" width="370" height="57.5"/>
+                                        <rect key="frame" x="0.0" y="89" width="364" height="57.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -161,29 +161,71 @@
                                     <action selector="logOutTapped:" destination="wTQ-xn-Fqb" eventType="touchUpInside" id="F1a-7g-rYi"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact us to cancel your order or reservation or any other questions you have." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAH-VX-JEU">
-                                <rect key="frame" x="30" y="662" width="354" height="41"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" systemColor="systemGray2Color"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6Nj-5M-gNa">
+                                <rect key="frame" x="25" y="652" width="364" height="71.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*Contact us to cancel your order or reservation or any other questions you have." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAH-VX-JEU">
+                                        <rect key="frame" x="0.0" y="0.0" width="364" height="41"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" systemColor="systemGray2Color"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.0.0(1)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U7v-bR-gHR">
+                                        <rect key="frame" x="0.0" y="51" width="364" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" systemColor="systemGray2Color"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dyb-aN-v3d">
+                                <rect key="frame" x="87" y="594" width="240" height="41"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Onx-EL-Omd">
+                                        <rect key="frame" x="0.0" y="0.0" width="59" height="41"/>
+                                        <color key="backgroundColor" name="PrimaryColor"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                        <state key="normal" title="Email">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="emailButtonTapped:" destination="wTQ-xn-Fqb" eventType="touchUpInside" id="TL4-6p-C8R"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uDS-tg-qB3">
+                                        <rect key="frame" x="198" y="0.0" width="42" height="41"/>
+                                        <color key="backgroundColor" name="PrimaryColor"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                        <state key="normal" title="Call">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="callButtonTapped:" destination="wTQ-xn-Fqb" eventType="touchUpInside" id="Wcq-cH-zzm"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="g2B-gw-6jl"/>
                         <color key="backgroundColor" name="PrimaryColor"/>
                         <constraints>
-                            <constraint firstItem="dAH-VX-JEU" firstAttribute="leading" secondItem="g2B-gw-6jl" secondAttribute="leading" constant="30" id="8ZM-9S-ACb"/>
                             <constraint firstItem="C9w-mg-o3H" firstAttribute="bottom" secondItem="g2B-gw-6jl" secondAttribute="bottom" id="9ek-2S-SMh"/>
                             <constraint firstItem="C9w-mg-o3H" firstAttribute="leading" secondItem="SdO-TR-Nmj" secondAttribute="leading" id="ADv-O2-qKj"/>
+                            <constraint firstItem="g2B-gw-6jl" firstAttribute="trailing" secondItem="dyb-aN-v3d" secondAttribute="trailing" constant="87" id="Cp1-Qm-uaV"/>
+                            <constraint firstItem="dyb-aN-v3d" firstAttribute="leading" secondItem="g2B-gw-6jl" secondAttribute="leading" constant="87" id="D3c-wO-K6p"/>
                             <constraint firstItem="XJK-FZ-GNl" firstAttribute="centerX" secondItem="C9w-mg-o3H" secondAttribute="centerX" id="D7u-2T-GSR"/>
                             <constraint firstItem="ImO-vA-mC5" firstAttribute="centerX" secondItem="XJK-FZ-GNl" secondAttribute="centerX" id="Fkz-XL-1MH"/>
-                            <constraint firstAttribute="trailing" secondItem="XJK-FZ-GNl" secondAttribute="trailing" constant="22" id="Nrv-w0-L8s"/>
-                            <constraint firstItem="XJK-FZ-GNl" firstAttribute="leading" secondItem="SdO-TR-Nmj" secondAttribute="leading" constant="22" id="RGS-qp-6qr"/>
+                            <constraint firstItem="dyb-aN-v3d" firstAttribute="leading" secondItem="ImO-vA-mC5" secondAttribute="leading" id="LIg-Z1-Fsy"/>
+                            <constraint firstAttribute="trailing" secondItem="XJK-FZ-GNl" secondAttribute="trailing" constant="25" id="Nrv-w0-L8s"/>
+                            <constraint firstItem="XJK-FZ-GNl" firstAttribute="leading" secondItem="SdO-TR-Nmj" secondAttribute="leading" constant="25" id="RGS-qp-6qr"/>
+                            <constraint firstItem="6Nj-5M-gNa" firstAttribute="leading" secondItem="g2B-gw-6jl" secondAttribute="leading" constant="25" id="USc-lX-E0a"/>
                             <constraint firstItem="XJK-FZ-GNl" firstAttribute="top" secondItem="ImO-vA-mC5" secondAttribute="bottom" constant="30" id="gP0-CF-Y3o"/>
                             <constraint firstItem="ImO-vA-mC5" firstAttribute="top" secondItem="g2B-gw-6jl" secondAttribute="top" constant="40.5" id="gbg-kd-I8T"/>
-                            <constraint firstItem="C9w-mg-o3H" firstAttribute="top" secondItem="dAH-VX-JEU" secondAttribute="bottom" constant="50" id="mDE-1U-D0k"/>
+                            <constraint firstAttribute="trailing" secondItem="6Nj-5M-gNa" secondAttribute="trailing" constant="25" id="jH4-do-fGz"/>
+                            <constraint firstItem="6Nj-5M-gNa" firstAttribute="top" secondItem="dyb-aN-v3d" secondAttribute="bottom" constant="17" id="mor-WA-J6p"/>
+                            <constraint firstItem="C9w-mg-o3H" firstAttribute="top" secondItem="6Nj-5M-gNa" secondAttribute="bottom" constant="29.5" id="oe7-AW-RH5"/>
                             <constraint firstItem="ImO-vA-mC5" firstAttribute="leading" secondItem="g2B-gw-6jl" secondAttribute="leading" constant="87" id="qcN-sO-QLU"/>
                             <constraint firstItem="XJK-FZ-GNl" firstAttribute="top" secondItem="g2B-gw-6jl" secondAttribute="top" constant="248" id="sOq-8h-DDG"/>
-                            <constraint firstItem="g2B-gw-6jl" firstAttribute="trailing" secondItem="dAH-VX-JEU" secondAttribute="trailing" constant="30" id="wOk-Ni-7Kb"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="person" catalog="system" id="HfG-7f-1T1"/>
@@ -222,13 +264,13 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="☎️ 111 222 444 - 🌴 Santa Barbara, CA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3WH-AL-fSk">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="☎️ (805) 681- 4200 - 🌴 Santa Barbara, CA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3WH-AL-fSk">
                                 <rect key="frame" x="0.0" y="652" width="414" height="35"/>
                                 <color key="backgroundColor" name="PrimaryColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="OBk-Ye-rlw"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -387,7 +429,7 @@
             <objects>
                 <viewController id="dRb-JT-rfw" customClass="FoodDetailViewController" customModule="PizzaShop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dCf-au-kvO">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KYz-Es-2MR">
