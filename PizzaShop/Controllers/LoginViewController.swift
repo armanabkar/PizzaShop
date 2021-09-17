@@ -22,17 +22,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func loginTapped(_ sender: Any) {
         if let phone = phoneField.text, phoneField.text != "" {
-            webService.login(phone: User(name: "", phone: phone, address: "")) { result in
+            webService.login(phone: User(name: "", phone: phone, address: "")) { [weak self] result in
                 switch result {
                     case .success(let user):
                         UserDefaultsService.shared.saveToUserDefaults(name: user!.name, phone: user!.phone, address: user!.address)
-                        self.performSegue(withIdentifier: K.menuSegue, sender: nil)
+                        self?.performSegue(withIdentifier: K.menuSegue, sender: nil)
                     case .failure(let error):
                         switch error {
                             case .custom(K.Alert.userDoesNotExist):
-                                UIAlertController.showAlert(message: K.Alert.userDoesNotExist, from: self)
+                                UIAlertController.showAlert(message: K.Alert.userDoesNotExist, from: self!)
                             default:
-                                UIAlertController.showAlert(message: error.localizedDescription, from: self)
+                                UIAlertController.showAlert(message: error.localizedDescription, from: self!)
                         }
                 }
             }

@@ -28,12 +28,12 @@ class ReservationViewController: UIViewController {
         let index = segmentControlView.selectedSegmentIndex
         if let segmentTitle = segmentControlView.titleForSegment(at: index) {
             let newReservation = Reservation(name: UserDefaultsService.shared.name, phone: UserDefaultsService.shared.phone, tableSize: segmentTitle, time: dateFormatter.string(from: datePicker.date), request: requestField.text)
-            webService.submitReservation(reservation: newReservation, completion: { result in
+            webService.submitReservation(reservation: newReservation, completion: { [weak self] result in
                 switch result {
                     case .success( _):
-                        UIAlertController.showAlert(title: K.Alert.orderTitle, message: K.Alert.reservationMessage, from: self)
+                        UIAlertController.showAlert(title: K.Alert.orderTitle, message: K.Alert.reservationMessage, from: self!)
                     case .failure(let error):
-                        UIAlertController.showAlert(message: error.localizedDescription, from: self)
+                        UIAlertController.showAlert(message: error.localizedDescription, from: self!)
                 }
             })
         }

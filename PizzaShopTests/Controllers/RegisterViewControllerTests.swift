@@ -33,7 +33,7 @@ class RegisterViewControllerTests: XCTestCase {
 
     private func makeSUT() throws -> RegisterViewController {
         let bundle = Bundle(for: RegisterViewController.self)
-        let sb = UIStoryboard(name: "Main", bundle: bundle)
+        let sb = UIStoryboard(name: "Auth", bundle: bundle)
         
         let initialVC = sb.instantiateInitialViewController() as! RegisterViewController
         initialVC.webService = WebServiceStub()

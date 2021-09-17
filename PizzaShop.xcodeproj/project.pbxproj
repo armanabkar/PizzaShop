@@ -35,6 +35,7 @@
 		F0125B4326ECA13600C5AA8C /* RegisterViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125B4226ECA13600C5AA8C /* RegisterViewControllerTests.swift */; };
 		F0125B4B26ECA4F200C5AA8C /* MenuViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125B4A26ECA4F200C5AA8C /* MenuViewControllerTests.swift */; };
 		F0125B5026ED149F00C5AA8C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125B4F26ED149F00C5AA8C /* User.swift */; };
+		F0125B5E26F4990800C5AA8C /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0125B5C26F4990800C5AA8C /* Auth.storyboard */; };
 		F0349D7326D78E4400C6B154 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0349D7226D78E4400C6B154 /* AppDelegate.swift */; };
 		F0349D7526D78E4400C6B154 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0349D7426D78E4400C6B154 /* SceneDelegate.swift */; };
 		F0349D7A26D78E4400C6B154 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0349D7826D78E4400C6B154 /* Main.storyboard */; };
@@ -90,6 +91,7 @@
 		F0125B4226ECA13600C5AA8C /* RegisterViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewControllerTests.swift; sourceTree = "<group>"; };
 		F0125B4A26ECA4F200C5AA8C /* MenuViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewControllerTests.swift; sourceTree = "<group>"; };
 		F0125B4F26ED149F00C5AA8C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F0125B5D26F4990800C5AA8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = PizzaShop/Views/Base.lproj/Auth.storyboard; sourceTree = "<group>"; };
 		F0349D6F26D78E4400C6B154 /* PizzaShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PizzaShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0349D7226D78E4400C6B154 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0349D7426D78E4400C6B154 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 		F0349DAD26D78EA300C6B154 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F0125B5C26F4990800C5AA8C /* Auth.storyboard */,
 				F0349D7D26D78E4500C6B154 /* LaunchScreen.storyboard */,
 				F0349D7826D78E4400C6B154 /* Main.storyboard */,
 			);
@@ -384,6 +387,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0125B5E26F4990800C5AA8C /* Auth.storyboard in Resources */,
 				F0349D7F26D78E4500C6B154 /* LaunchScreen.storyboard in Resources */,
 				F0349D7C26D78E4500C6B154 /* Assets.xcassets in Resources */,
 				F0349D7A26D78E4400C6B154 /* Main.storyboard in Resources */,
@@ -476,6 +480,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		F0125B5C26F4990800C5AA8C /* Auth.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F0125B5D26F4990800C5AA8C /* Base */,
+			);
+			name = Auth.storyboard;
+			sourceTree = "<group>";
+		};
 		F0349D7826D78E4400C6B154 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

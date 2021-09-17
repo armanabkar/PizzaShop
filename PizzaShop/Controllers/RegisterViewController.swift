@@ -33,17 +33,17 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
            let address = addressField.text,
            nameField.text != "" && phoneField.text != "" && addressField.text != "" {
             let newUser = User(name: name, phone: phone, address: address)
-            webService.register(user: newUser) { result in
+            webService.register(user: newUser) { [weak self] result in
                 switch result {
                     case .success(let user):
                         UserDefaultsService.shared.saveToUserDefaults(name: user!.name, phone: user!.phone, address: user!.address)
-                        self.performSegue(withIdentifier: K.menuSegue, sender: nil)
+                        self?.performSegue(withIdentifier: K.menuSegue, sender: nil)
                     case .failure(let error):
                         switch error {
                             case .custom(K.Alert.userAlreadyExists):
-                                UIAlertController.showAlert(message: K.Alert.userAlreadyExists, from: self)
+                                UIAlertController.showAlert(message: K.Alert.userAlreadyExists, from: self!)
                             default:
-                                UIAlertController.showAlert(message: error.localizedDescription, from: self)
+                                UIAlertController.showAlert(message: error.localizedDescription, from: self!)
                         }
                 }
             }
