@@ -7,9 +7,19 @@
 
 import Foundation
 
+typealias getAllFoodsClosure = (Result<[Food]?, NetworkError>) -> Void
+typealias submitRequestClosure = (Result<Int?, NetworkError>) -> Void
+typealias getUserClosure = (Result<User?, NetworkError>) -> Void
+typealias getCartItemsClosure = (Result<[Cart], CoreDataError>) -> Void
+typealias CoreDataCRUDClosure = (Result<String, CoreDataError>) -> Void
+
 struct K {
     
     static let appName = "Pizza Pizza"
+    static let supportEmail = "support@pizzapizza.com"
+    static let supportPhone = "8056814200"
+    static let CFBundleShortVersionString = "CFBundleShortVersionString"
+    static let CFBundleVersion = "CFBundleVersion"
     static let foodCellIdentifier = "foodCell"
     static let orderCellIdentifier = "orderCell"
     static let menuSegue = "toMenuViewController"
@@ -38,7 +48,6 @@ struct K {
         static let newOrderUrl = "\(baseUrl)/api/v1/orders/add"
         static let newReservationUrl = "\(baseUrl)/api/v1/reservations/add"
         static let login = "\(baseUrl)/api/v1/users/login"
-        static let register = "\(baseUrl)/api/v1/users/register"
-    }
+        static let register = "\(baseUrl)/api/v1/users/register"    }
     
 }

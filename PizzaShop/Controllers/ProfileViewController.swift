@@ -46,15 +46,15 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func callButtonTapped(_ sender: Any) {
-        if let url = URL(string: "tel://8056814200"), UIApplication.shared.canOpenURL(url) {
+        if let url = URL(string: "tel://\(K.supportPhone)"), UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url)
         }
     }
     
     func getAppVersion() -> String {
         let dictionary = Bundle.main.infoDictionary!
-        let version = dictionary["CFBundleShortVersionString"] as! String
-        let build = dictionary["CFBundleVersion"] as! String
+        let version = dictionary[K.CFBundleShortVersionString] as! String
+        let build = dictionary[K.CFBundleVersion] as! String
         
         return "Version \(version)(\(build))"
     }
@@ -73,8 +73,8 @@ extension ProfileViewController: MFMailComposeViewControllerDelegate {
         
         let composer = MFMailComposeViewController()
         composer.mailComposeDelegate = self
-        composer.setToRecipients(["support@pizzapizza.com"])
-        composer.setMessageBody("Hi...", isHTML: false)
+        composer.setToRecipients([K.supportEmail])
+        composer.setMessageBody("", isHTML: false)
         
         present(composer, animated: true)
     }

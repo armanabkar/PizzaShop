@@ -148,9 +148,9 @@
 			children = (
 				F0125A4426D8A85500C5AA8C /* Food.swift */,
 				F0125A4C26D8A93700C5AA8C /* Order.swift */,
-				F0125A8C26DB564B00C5AA8C /* CartModel.xcdatamodeld */,
 				F0125B1C26E6AD3600C5AA8C /* Reservation.swift */,
 				F0125B4F26ED149F00C5AA8C /* User.swift */,
+				F0125A8C26DB564B00C5AA8C /* CartModel.xcdatamodeld */,
 			);
 			path = Models;
 			sourceTree = "<group>";

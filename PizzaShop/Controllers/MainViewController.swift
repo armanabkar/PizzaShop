@@ -30,7 +30,7 @@ class MainViewController: UIViewController {
             
             let a = MKPointAnnotation()
             a.coordinate = c
-            a.title = "Pizza Pizza"
+            a.title = K.appName
             self.mapView.addAnnotation(a)
             
             let restaurantLocation = CLLocationCoordinate2D(latitude: 34.402341, longitude: -119.726045)

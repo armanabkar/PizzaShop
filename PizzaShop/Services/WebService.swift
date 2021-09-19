@@ -15,11 +15,11 @@ enum NetworkError: Error {
 }
 
 protocol API {
-    func getAllFoods(completion: @escaping (Result<[Food]?, NetworkError>) -> Void)
-    func submitOrder(order: Order, completion: @escaping (Result<Int?, NetworkError>) -> Void)
-    func submitReservation(reservation: Reservation, completion: @escaping (Result<Int?, NetworkError>) -> Void)
-    func login(phone: User, completion: @escaping (Result<User?, NetworkError>) -> Void)
-    func register(user: User, completion: @escaping (Result<User?, NetworkError>) -> Void)
+    func getAllFoods(completion: @escaping getAllFoodsClosure)
+    func submitOrder(order: Order, completion: @escaping submitRequestClosure)
+    func submitReservation(reservation: Reservation, completion: @escaping submitRequestClosure)
+    func login(phone: User, completion: @escaping getUserClosure)
+    func register(user: User, completion: @escaping getUserClosure)
 }
 
 final class WebService: API {
@@ -28,7 +28,7 @@ final class WebService: API {
     static let shared = WebService()
     private init() {}
     
-    func getAllFoods(completion: @escaping (Result<[Food]?, NetworkError>) -> Void) {
+    func getAllFoods(completion: @escaping getAllFoodsClosure) {
         guard let url = URL(string: K.URL.foodUrl) else {
             return completion(.failure(.badURL))
         }
@@ -47,7 +47,7 @@ final class WebService: API {
         .resume()
     }
     
-    func submitOrder(order: Order, completion: @escaping (Result<Int?, NetworkError>) -> Void) {
+    func submitOrder(order: Order, completion: @escaping submitRequestClosure) {
         guard let url = URL(string: K.URL.newOrderUrl) else {
             return completion(.failure(.badURL))
         }
@@ -79,7 +79,7 @@ final class WebService: API {
         .resume()
     }
     
-    func submitReservation(reservation: Reservation, completion: @escaping (Result<Int?, NetworkError>) -> Void) {
+    func submitReservation(reservation: Reservation, completion: @escaping submitRequestClosure) {
         guard let url = URL(string: K.URL.newReservationUrl) else {
             return completion(.failure(.badURL))
         }
@@ -111,7 +111,7 @@ final class WebService: API {
         .resume()
     }
     
-    func login(phone: User, completion: @escaping (Result<User?, NetworkError>) -> Void) {
+    func login(phone: User, completion: @escaping getUserClosure) {
         guard let url = URL(string: K.URL.login) else {
             return completion(.failure(.badURL))
         }
@@ -147,7 +147,7 @@ final class WebService: API {
         .resume()
     }
     
-    func register(user: User, completion: @escaping (Result<User?, NetworkError>) -> Void) {
+    func register(user: User, completion: @escaping getUserClosure) {
         guard let url = URL(string: K.URL.register) else {
             return completion(.failure(.badURL))
         }

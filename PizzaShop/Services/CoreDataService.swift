@@ -21,7 +21,7 @@ final class CoreDataService {
     
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    func resetAllRecords(in entity : String, completion: @escaping (Result<String, CoreDataError>) -> Void) {
+    func resetAllRecords(in entity : String, completion: @escaping CoreDataCRUDClosure) {
         let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)
         do {
@@ -33,7 +33,7 @@ final class CoreDataService {
         }
     }
     
-    func addToCart(foodName: String, foodPrice: String, completion: @escaping (Result<String, CoreDataError>) -> Void) {
+    func addToCart(foodName: String, foodPrice: String, completion: @escaping CoreDataCRUDClosure) {
         let newCart = Cart(context: self.context)
         newCart.name = foodName
         newCart.price = Float(foodPrice) ?? 0
@@ -45,7 +45,7 @@ final class CoreDataService {
         }
     }
     
-    func saveCartItems(completion: @escaping (Result<String, CoreDataError>) -> Void) {
+    func saveCartItems(completion: @escaping CoreDataCRUDClosure) {
         do {
             try context.save()
             completion(.success("Saved successfully"))
@@ -54,7 +54,7 @@ final class CoreDataService {
         }
     }
     
-    func loadCartItems(completion: @escaping (Result<[Cart], CoreDataError>) -> Void) {
+    func loadCartItems(completion: @escaping getCartItemsClosure) {
         let request : NSFetchRequest<Cart> = Cart.fetchRequest()
         
         do{
