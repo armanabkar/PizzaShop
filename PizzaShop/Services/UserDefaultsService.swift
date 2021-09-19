@@ -7,9 +7,10 @@
 
 import UIKit
 
-class UserDefaultsService {
+final class UserDefaultsService {
     
     static let shared = UserDefaultsService()
+    private init() {}
     
     var name: String {
         UserDefaults.standard.string(forKey: "name") ?? ""

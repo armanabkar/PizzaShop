@@ -22,10 +22,10 @@ protocol API {
     func register(user: User, completion: @escaping (Result<User?, NetworkError>) -> Void)
 }
 
-class WebService: API {
+final class WebService: API {
     
+    // Singleton
     static let shared = WebService()
-    
     private init() {}
     
     func getAllFoods(completion: @escaping (Result<[Food]?, NetworkError>) -> Void) {

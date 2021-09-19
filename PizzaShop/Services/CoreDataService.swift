@@ -14,9 +14,10 @@ enum CoreDataError: Error {
     case custom(String?)
 }
 
-class CoreDataService {
+final class CoreDataService {
     
     static let shared = CoreDataService()
+    private init() {}
     
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
