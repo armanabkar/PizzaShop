@@ -13,6 +13,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var appVersionLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,7 @@ class ProfileViewController: UIViewController {
         nameLabel.text = UserDefaultsService.shared.name
         phoneLabel.text = UserDefaultsService.shared.phone
         addressLabel.text = UserDefaultsService.shared.address
+        appVersionLabel.text = getAppVersion()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -40,6 +42,31 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func emailButtonTapped(_ sender: Any) {
+        showMailComposer()
+    }
+    
+    @IBAction func callButtonTapped(_ sender: Any) {
+        if let url = URL(string: "tel://8056814200"), UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url)
+        }
+    }
+    
+    func getAppVersion() -> String {
+        let dictionary = Bundle.main.infoDictionary!
+        let version = dictionary["CFBundleShortVersionString"] as! String
+        let build = dictionary["CFBundleVersion"] as! String
+        
+        return "Version \(version)(\(build))"
+    }
+}
+
+extension ProfileViewController: MFMailComposeViewControllerDelegate {
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true)
+    }
+    
+    func showMailComposer() {
         guard MFMailComposeViewController.canSendMail() else {
             return
         }
@@ -50,19 +77,6 @@ class ProfileViewController: UIViewController {
         composer.setMessageBody("Hi...", isHTML: false)
         
         present(composer, animated: true)
-    }
-    
-    @IBAction func callButtonTapped(_ sender: Any) {
-        if let url = URL(string: "tel://8056814200"), UIApplication.shared.canOpenURL(url) {
-            UIApplication.shared.open(url)
-        }
-    }
-}
-
-extension ProfileViewController: MFMailComposeViewControllerDelegate {
-    
-    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-        controller.dismiss(animated: true)
     }
     
 }

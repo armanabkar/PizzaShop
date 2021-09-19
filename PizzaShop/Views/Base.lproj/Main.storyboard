@@ -170,7 +170,7 @@
                                         <color key="textColor" systemColor="systemGray2Color"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.0.0(1)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U7v-bR-gHR">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version 1.0.0(1)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U7v-bR-gHR">
                                         <rect key="frame" x="0.0" y="51" width="364" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" systemColor="systemGray2Color"/>
@@ -231,6 +231,7 @@
                     <tabBarItem key="tabBarItem" title="Profile" image="person" catalog="system" id="HfG-7f-1T1"/>
                     <connections>
                         <outlet property="addressLabel" destination="T5A-4n-YoH" id="FYX-4K-mRh"/>
+                        <outlet property="appVersionLabel" destination="U7v-bR-gHR" id="tRb-V4-3kT"/>
                         <outlet property="nameLabel" destination="wyF-MF-8eq" id="ys2-5Q-OtV"/>
                         <outlet property="phoneLabel" destination="fUF-oZ-FnK" id="eK3-Lj-eOp"/>
                         <segue destination="Hmd-Ha-mat" kind="presentation" identifier="toAuthViewController" modalPresentationStyle="fullScreen" id="zbM-vo-TKv"/>
@@ -429,7 +430,7 @@
             <objects>
                 <viewController id="dRb-JT-rfw" customClass="FoodDetailViewController" customModule="PizzaShop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dCf-au-kvO">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KYz-Es-2MR">
