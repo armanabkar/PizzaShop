@@ -69,10 +69,8 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
         if let indexPath = tableView.indexPathForSelectedRow {
             
             if let item = items[indexPath.row] {
-                destinationVC.foodName = item.name
-                destinationVC.foodPrice = String(item.price)
-                destinationVC.foodIngredients = item.ingredients
-                destinationVC.foodImage = "\(K.URL.baseUrl)/\(item.image)"
+                let food = Food(name: item.name, type: nil, price: item.price, ingredients: item.ingredients, image: "\(K.URL.baseUrl)/\(item.image)")
+                destinationVC.food = food
             }
         }
     }
