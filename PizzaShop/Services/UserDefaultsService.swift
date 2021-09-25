@@ -22,10 +22,10 @@ final class UserDefaultsService {
         UserDefaults.standard.string(forKey: "address") ?? ""
     }
     
-    func saveToUserDefaults(name: String, phone: String, address: String) {
-        UserDefaults.standard.set(name, forKey: "name")
-        UserDefaults.standard.set(phone, forKey: "phone")
-        UserDefaults.standard.set(address, forKey: "address")
+    func saveToUserDefaults(user: User) {
+        UserDefaults.standard.set(user.name, forKey: "name")
+        UserDefaults.standard.set(user.phone, forKey: "phone")
+        UserDefaults.standard.set(user.address, forKey: "address")
     }
     
     func removeUserFromUserDefaults() {

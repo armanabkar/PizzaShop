@@ -61,7 +61,6 @@ class CartViewController: UIViewController {
                         UIAlertController.showAlert(message: error.localizedDescription, from: self!)
                 }
             })
-            
         } else {
             UIAlertController.showAlert(message: K.Alert.emptyCart, from: self)
         }

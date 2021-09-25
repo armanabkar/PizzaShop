@@ -12,18 +12,19 @@ class UserDefaultsServiceTests: XCTestCase {
     
     override func setUpWithError() throws {
     }
-
+    
     override func tearDownWithError() throws {
         UserDefaultsService.shared.removeUserFromUserDefaults()
     }
-
+    
     func testSaveToUserDefaults() throws {
-        UserDefaultsService.shared.saveToUserDefaults(name: "Example Name", phone: "123456789", address: "example address")
+        let newUser = User(name: "Example Name", phone: "123456789", address: "example address")
+        UserDefaultsService.shared.saveToUserDefaults(user: newUser)
         XCTAssertEqual(UserDefaultsService.shared.name, "Example Name")
         XCTAssertEqual(UserDefaultsService.shared.phone, "123456789")
         XCTAssertEqual(UserDefaultsService.shared.address, "example address")
     }
-
+    
     func testRemoveUserFromUserDefaults() {
         UserDefaultsService.shared.removeUserFromUserDefaults()
         XCTAssertEqual(UserDefaultsService.shared.name, "")

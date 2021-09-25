@@ -33,8 +33,6 @@ class FoodDetailViewController: UIViewController {
         if self.foodIngredients == nil {
             self.foodIngredientsLabel.isHidden = true
         }
-        
-        
     }
     
     @IBAction func addToCartTapped(_ sender: Any) {
