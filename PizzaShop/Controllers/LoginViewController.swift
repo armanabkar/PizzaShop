@@ -12,7 +12,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var appTitle: UILabel!
     @IBOutlet weak var phoneField: UITextField!
     
-    var webService: API = WebService.shared // Property Injection - Can replace with stub in testing
+    var webService: API = WebService.shared 
     
     override func viewDidLoad() {
         super.viewDidLoad()

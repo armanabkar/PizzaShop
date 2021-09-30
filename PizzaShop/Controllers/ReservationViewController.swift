@@ -14,7 +14,7 @@ class ReservationViewController: UIViewController {
     @IBOutlet weak var segmentControlView: UISegmentedControl!
     @IBOutlet weak var requestField: UITextField!
     
-    var webService: API = WebService.shared // Property Injection - Can replace with stub in testing
+    var webService: API = WebService.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()

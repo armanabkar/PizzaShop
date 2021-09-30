@@ -24,7 +24,6 @@ protocol API {
 
 final class WebService: API {
     
-    // Singleton
     static let shared = WebService()
     private init() {}
     

@@ -24,21 +24,9 @@ class ProfileViewController: UIViewController {
         appVersionLabel.text = getAppVersion()
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
     
     @IBAction func logOutTapped(_ sender: UIButton) {
-        UserDefaultsService.shared.removeUserFromUserDefaults()
-        CoreDataService.shared.resetAllRecords(in: K.CoreData.entityName) { result in
-            switch result {
-                case .success(_):
-                    self.performSegue(withIdentifier: K.authSegue, sender: nil)
-                case .failure(let error):
-                    UIAlertController.showAlert(message: error.localizedDescription, from: self)
-            }
-            
-        }
+        removeAndResetUserData()
     }
     
     @IBAction func emailButtonTapped(_ sender: Any) {
@@ -48,6 +36,23 @@ class ProfileViewController: UIViewController {
     @IBAction func callButtonTapped(_ sender: Any) {
         if let url = URL(string: "tel://\(K.supportPhone)"), UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url)
+        }
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+    func removeAndResetUserData() {
+        UserDefaultsService.shared.removeUserFromUserDefaults()
+        CoreDataService.shared.resetAllRecords(in: K.CoreData.entityName) { result in
+            switch result {
+                case .success(_):
+                    self.performSegue(withIdentifier: K.authSegue, sender: nil)
+                case .failure(let error):
+                    UIAlertController.showAlert(message: error.localizedDescription, from: self)
+            }
+            
         }
     }
     
