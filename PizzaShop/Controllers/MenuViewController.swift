@@ -11,7 +11,7 @@ class MenuViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var webService: API = WebService.shared // Property Injection - Can replace with stub in testing
+    var webService: API = WebService.shared // Property Injection - Can be replaced with stub in testing
     var items: [Food?] = []
     
     override func viewDidLoad() {

@@ -9,7 +9,7 @@ import UIKit
 
 class ImageLoader {
     
-    var cache = NSCache<AnyObject, AnyObject>()
+    private var cache = NSCache<AnyObject, AnyObject>()
     
     class var sharedInstance : ImageLoader {
         struct Static {
@@ -18,7 +18,8 @@ class ImageLoader {
         return Static.instance
     }
     
-    func imageForUrl(urlString: String, completionHandler:@escaping (_ image: UIImage?, _ url: String) -> ()) {
+    /// Fetch the image asynchronous
+    func imageForUrl(urlString: String, completionHandler: @escaping (_ image: UIImage?, _ url: String) -> ()) {
         let data: NSData? = self.cache.object(forKey: urlString as AnyObject) as? NSData
         
         if let imageData = data {

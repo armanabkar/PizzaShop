@@ -7,12 +7,12 @@
 
 import UIKit
 
-class LoginViewController: UIViewController, UITextFieldDelegate {
+class LoginViewController: UIViewController {
     
     @IBOutlet weak var appTitle: UILabel!
     @IBOutlet weak var phoneField: UITextField!
     
-    var webService: API = WebService.shared 
+    var webService: API = WebService.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +20,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.phoneField.delegate = self
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     @IBAction func loginTapped(_ sender: Any) {
+        loginUser()
+    }
+    
+    func loginUser() {
         guard let phone = phoneField.text,
               phone != "" else {
             UIAlertController.showAlert(message: K.Alert.invalidFieldMessage, from: self)
@@ -43,12 +51,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
 }

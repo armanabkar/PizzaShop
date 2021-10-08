@@ -27,6 +27,7 @@ final class WebService: API {
     static let shared = WebService()
     private init() {}
     
+    /// Fetch all foods from the server
     func getAllFoods(completion: @escaping getAllFoodsClosure) {
         guard let url = URL(string: K.URL.foodUrl) else {
             return completion(.failure(.badURL))
@@ -46,6 +47,7 @@ final class WebService: API {
         .resume()
     }
     
+    /// Send the order to the server
     func submitOrder(order: Order, completion: @escaping submitRequestClosure) {
         guard let url = URL(string: K.URL.newOrderUrl) else {
             return completion(.failure(.badURL))
@@ -78,6 +80,7 @@ final class WebService: API {
         .resume()
     }
     
+    /// Send the reservation to the server
     func submitReservation(reservation: Reservation, completion: @escaping submitRequestClosure) {
         guard let url = URL(string: K.URL.newReservationUrl) else {
             return completion(.failure(.badURL))
@@ -110,6 +113,7 @@ final class WebService: API {
         .resume()
     }
     
+    /// Send login request with the phone number to the server
     func login(phone: User, completion: @escaping getUserClosure) {
         guard let url = URL(string: K.URL.login) else {
             return completion(.failure(.badURL))
@@ -146,6 +150,7 @@ final class WebService: API {
         .resume()
     }
     
+    /// Send register request with a name, phone, and address to the server
     func register(user: User, completion: @escaping getUserClosure) {
         guard let url = URL(string: K.URL.register) else {
             return completion(.failure(.badURL))

@@ -20,19 +20,8 @@ final class CoreDataService {
     private init() {}
     
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    
-    func resetAllRecords(in entity : String, completion: @escaping CoreDataCRUDClosure) {
-        let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
-        let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)
-        do {
-            try context.execute(deleteRequest)
-            try context.save()
-            completion(.success("All records deleted"))
-        } catch {
-            completion(.failure(.savingError))
-        }
-    }
-    
+        
+    /// Add the item to the cart
     func addToCart(foodName: String, foodPrice: String, completion: @escaping CoreDataCRUDClosure) {
         let newCart = Cart(context: self.context)
         newCart.name = foodName
@@ -45,6 +34,7 @@ final class CoreDataService {
         }
     }
     
+    /// Save the cart items
     func saveCartItems(completion: @escaping CoreDataCRUDClosure) {
         do {
             try context.save()
@@ -54,6 +44,7 @@ final class CoreDataService {
         }
     }
     
+    /// Fetch the cart items from Core Data
     func loadCartItems(completion: @escaping getCartItemsClosure) {
         let request : NSFetchRequest<Cart> = Cart.fetchRequest()
         
@@ -65,8 +56,22 @@ final class CoreDataService {
         }
     }
     
+    /// Delete an item from Core Data
     func deleteCartItem(item: Cart) {
         context.delete(item)
     }
 
+    /// Remove all items from Core Data
+    func resetAllRecords(in entity : String, completion: @escaping CoreDataCRUDClosure) {
+        let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)
+        do {
+            try context.execute(deleteRequest)
+            try context.save()
+            completion(.success("All records deleted"))
+        } catch {
+            completion(.failure(.savingError))
+        }
+    }
+    
 }

@@ -12,7 +12,7 @@ class CartViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var navigationBar: UINavigationBar!
     
-    var webService: API = WebService.shared // Property Injection - Can replace with stub in testing
+    var webService: API = WebService.shared
     var cartItems: [Cart] = []
     var totalPrice: Float {
         Float(String(format: "%.2f" ,cartItems.reduce(0) { $0 + $1.price })) ?? 0
