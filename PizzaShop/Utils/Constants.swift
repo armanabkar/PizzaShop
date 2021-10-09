@@ -35,6 +35,7 @@ struct K {
         static let cartTitle = "Cart"
         static let orderTitle = "Thank You"
         static let orderMessage = "Your order has been received. We will deliver it to you as soon as possible."
+        static let notificationMessage = "Your order has been delivered. Thank you for choosing us."
         static let reservationMessage = "Your reservation has been made. We will wait you!"
         static let invalidFieldMessage = "Please enter a valid name, phone and address."
         static let userDoesNotExist = "User Does not exist."
