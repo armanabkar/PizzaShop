@@ -15,7 +15,7 @@ class CartViewController: UIViewController {
     var webService: API = WebService.shared
     var cartItems: [Cart] = []
     var totalPrice: Float {
-        Float(String(format: "%.2f" ,cartItems.reduce(0) { $0 + $1.price })) ?? 0
+        round(cartItems.reduce(0) { $0 + $1.price } * 1000) / 1000
     }
     
     override func viewDidLoad() {
