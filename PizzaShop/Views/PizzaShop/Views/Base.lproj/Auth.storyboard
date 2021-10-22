@@ -142,7 +142,7 @@
         <!--Login View Controller-->
         <scene sceneID="liD-Pk-OIe">
             <objects>
-                <viewController id="ScL-sm-giF" customClass="LoginViewController" customModule="PizzaShop" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="ScL-sm-giF" customClass="LoginViewController" customModule="PizzaShop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1vt-Tf-6lz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -239,7 +239,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="s6F-5q-Lnm"/>
+        <segue reference="0de-wV-Sul"/>
     </inferredMetricsTieBreakers>
     <resources>
         <namedColor name="PrimaryColor">

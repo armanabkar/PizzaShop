@@ -10,7 +10,7 @@ import XCTest
 
 class RegisterViewControllerTests: XCTestCase {
 
-    func testCanInit() throws {
+    func test_CanInit() throws {
         _ = try makeSUT()
     }
     
@@ -29,6 +29,23 @@ class RegisterViewControllerTests: XCTestCase {
         XCTAssertNotNil(sut.phoneField.delegate, "phoneField")
         XCTAssertNotNil(sut.addressField.delegate, "addressField")
     }
+    
+    func test_animateText() throws {
+        let sut = try makeSUT()
+        sut.loadViewIfNeeded()
+        sut.animateText()
+        
+        XCTAssertEqual(sut.appTitle.text, K.appName)
+    }
+    
+    func test_registerUser() throws {
+        let sut = try makeSUT()
+        sut.loadViewIfNeeded()
+        sut.registerUser()
+        XCTAssertNotNil(UserDefaultsService.shared.name)
+        XCTAssertNotNil(UserDefaultsService.shared.phone)
+        XCTAssertNotNil(UserDefaultsService.shared.address)
+    }
 
 
     private func makeSUT() throws -> RegisterViewController {
@@ -40,12 +57,4 @@ class RegisterViewControllerTests: XCTestCase {
         return try XCTUnwrap(initialVC)
     }
 
-}
-
-private class WebServiceStub: API {
-    func getAllFoods(completion: @escaping (Result<[Food]?, NetworkError>) -> Void) {}
-    func submitOrder(order: Order, completion: @escaping (Result<Int?, NetworkError>) -> Void) {}
-    func submitReservation(reservation: Reservation, completion: @escaping (Result<Int?, NetworkError>) -> Void) {}
-    func login(phone: User, completion: @escaping (Result<User?, NetworkError>) -> Void) {}
-    func register(user: User, completion: @escaping (Result<User?, NetworkError>) -> Void) {}
 }

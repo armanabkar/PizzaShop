@@ -19,7 +19,7 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        animateText(text: K.appName)
+        animateText()
         
         self.nameField.delegate = self
         self.phoneField.delegate = self
@@ -34,11 +34,11 @@ class RegisterViewController: UIViewController {
         registerUser()
     }
     
-    func animateText(text: String) {
+    func animateText() {
         DispatchQueue.main.async {
             self.appTitle.text = ""
             var charIndex = 0.0
-            let titleText = text
+            let titleText = K.appName
             for letter in titleText {
                 Timer.scheduledTimer(withTimeInterval: 0.1 * charIndex, repeats: false) { (timer) in
                     self.appTitle.text?.append(letter)
