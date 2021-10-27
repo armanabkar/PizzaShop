@@ -39,6 +39,8 @@
 		F0125C0027103CBA00C5AA8C /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0125BFE27103CB900C5AA8C /* Menu.storyboard */; };
 		F0125C092722C5CB00C5AA8C /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125C082722C5CB00C5AA8C /* LoginViewControllerTests.swift */; };
 		F0125C0F2722C65400C5AA8C /* WebServiceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125C0E2722C65400C5AA8C /* WebServiceStub.swift */; };
+		F0125C172722D53800C5AA8C /* MainViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125C162722D53700C5AA8C /* MainViewControllerTests.swift */; };
+		F0125C1C2722D9FC00C5AA8C /* ProfileViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125C1B2722D9FC00C5AA8C /* ProfileViewControllerTests.swift */; };
 		F0349D7326D78E4400C6B154 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0349D7226D78E4400C6B154 /* AppDelegate.swift */; };
 		F0349D7526D78E4400C6B154 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0349D7426D78E4400C6B154 /* SceneDelegate.swift */; };
 		F0349D7A26D78E4400C6B154 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0349D7826D78E4400C6B154 /* Main.storyboard */; };
@@ -98,6 +100,8 @@
 		F0125BFF27103CB900C5AA8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = PizzaShop/Views/Base.lproj/Menu.storyboard; sourceTree = "<group>"; };
 		F0125C082722C5CB00C5AA8C /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
 		F0125C0E2722C65400C5AA8C /* WebServiceStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceStub.swift; sourceTree = "<group>"; };
+		F0125C162722D53700C5AA8C /* MainViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerTests.swift; sourceTree = "<group>"; };
+		F0125C1B2722D9FC00C5AA8C /* ProfileViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewControllerTests.swift; sourceTree = "<group>"; };
 		F0349D6F26D78E4400C6B154 /* PizzaShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PizzaShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0349D7226D78E4400C6B154 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0349D7426D78E4400C6B154 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -195,6 +199,8 @@
 				F0125B4226ECA13600C5AA8C /* RegisterViewControllerTests.swift */,
 				F0125B4A26ECA4F200C5AA8C /* MenuViewControllerTests.swift */,
 				F0125C082722C5CB00C5AA8C /* LoginViewControllerTests.swift */,
+				F0125C162722D53700C5AA8C /* MainViewControllerTests.swift */,
+				F0125C1B2722D9FC00C5AA8C /* ProfileViewControllerTests.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -466,6 +472,7 @@
 			files = (
 				F0125B0026E0EE6000C5AA8C /* ImageLoaderTests.swift in Sources */,
 				F0125B4B26ECA4F200C5AA8C /* MenuViewControllerTests.swift in Sources */,
+				F0125C1C2722D9FC00C5AA8C /* ProfileViewControllerTests.swift in Sources */,
 				F0125AF726E0E7B100C5AA8C /* CoreDataServiceTests.swift in Sources */,
 				F0125ACE26DDF99000C5AA8C /* WebServiceTests.swift in Sources */,
 				F0125C092722C5CB00C5AA8C /* LoginViewControllerTests.swift in Sources */,
@@ -473,6 +480,7 @@
 				F0125B4326ECA13600C5AA8C /* RegisterViewControllerTests.swift in Sources */,
 				F0125AE626DE18E400C5AA8C /* UserDefaultsServiceTests.swift in Sources */,
 				F0349D8A26D78E4500C6B154 /* PizzaShopTests.swift in Sources */,
+				F0125C172722D53800C5AA8C /* MainViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -660,6 +668,7 @@
 				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = QMW26WR72K;
 				INFOPLIST_FILE = "PizzaShop/Support Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -681,6 +690,7 @@
 				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = QMW26WR72K;
 				INFOPLIST_FILE = "PizzaShop/Support Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

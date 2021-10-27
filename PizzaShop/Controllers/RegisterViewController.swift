@@ -35,16 +35,14 @@ class RegisterViewController: UIViewController {
     }
     
     func animateText() {
-        DispatchQueue.main.async {
-            self.appTitle.text = ""
-            var charIndex = 0.0
-            let titleText = K.appName
-            for letter in titleText {
-                Timer.scheduledTimer(withTimeInterval: 0.1 * charIndex, repeats: false) { (timer) in
-                    self.appTitle.text?.append(letter)
-                }
-                charIndex += 1
+        self.appTitle.text = ""
+        var charIndex = 0.0
+        let titleText = K.appName
+        for letter in titleText {
+            Timer.scheduledTimer(withTimeInterval: 0.1 * charIndex, repeats: false) { (timer) in
+                self.appTitle.text?.append(letter)
             }
+            charIndex += 1
         }
     }
     
