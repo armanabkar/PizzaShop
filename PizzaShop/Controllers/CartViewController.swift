@@ -66,11 +66,9 @@ class CartViewController: UIViewController {
                                 self?.cartItems.removeAll()
                                 self?.tableView.reloadData()
                                 self?.navigationBar.topItem?.title = "Total: 0$"
-                                UIAlertController.showAlert(title: K.Alert.orderTitle, message: K.Alert.orderMessage, from: self!)
-                                NotificationCenter.createNotification(title: "Dear \(UserDefaultsService.shared.name)",
-                                                                      body: K.Alert.notificationMessage,
-                                                                      date: Date().addingTimeInterval(10),
-                                                                      from: self!)
+                                UIAlertController.showAlert(title: K.Alert.orderTitle,
+                                                            message: K.Alert.orderMessage,
+                                                            from: self!)
                             case .failure(let error):
                                 UIAlertController.showAlert(message: error.localizedDescription,
                                                             from: self!)
