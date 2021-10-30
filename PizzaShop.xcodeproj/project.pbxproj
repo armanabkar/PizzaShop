@@ -47,6 +47,7 @@
 		F0349D7F26D78E4500C6B154 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0349D7D26D78E4500C6B154 /* LaunchScreen.storyboard */; };
 		F0349D8A26D78E4500C6B154 /* PizzaShopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0349D8926D78E4500C6B154 /* PizzaShopTests.swift */; };
 		F0349D9526D78E4500C6B154 /* PizzaShopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0349D9426D78E4500C6B154 /* PizzaShopUITests.swift */; };
+		F0741F31272D856B0073F60D /* FoodDetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0741F30272D856B0073F60D /* FoodDetailViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +114,7 @@
 		F0349D9026D78E4500C6B154 /* PizzaShopUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PizzaShopUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0349D9426D78E4500C6B154 /* PizzaShopUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaShopUITests.swift; sourceTree = "<group>"; };
 		F0349D9626D78E4500C6B154 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0741F30272D856B0073F60D /* FoodDetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +200,7 @@
 				F0125C082722C5CB00C5AA8C /* LoginViewControllerTests.swift */,
 				F0125C162722D53700C5AA8C /* MainViewControllerTests.swift */,
 				F0125C1B2722D9FC00C5AA8C /* ProfileViewControllerTests.swift */,
+				F0741F30272D856B0073F60D /* FoodDetailViewControllerTests.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -469,6 +472,7 @@
 				F0125B0026E0EE6000C5AA8C /* ImageLoaderTests.swift in Sources */,
 				F0125B4B26ECA4F200C5AA8C /* MenuViewControllerTests.swift in Sources */,
 				F0125C1C2722D9FC00C5AA8C /* ProfileViewControllerTests.swift in Sources */,
+				F0741F31272D856B0073F60D /* FoodDetailViewControllerTests.swift in Sources */,
 				F0125AF726E0E7B100C5AA8C /* CoreDataServiceTests.swift in Sources */,
 				F0125ACE26DDF99000C5AA8C /* WebServiceTests.swift in Sources */,
 				F0125C092722C5CB00C5AA8C /* LoginViewControllerTests.swift in Sources */,
@@ -707,7 +711,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QMW26WR72K;
 				INFOPLIST_FILE = PizzaShopTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -729,7 +733,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QMW26WR72K;
 				INFOPLIST_FILE = PizzaShopTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

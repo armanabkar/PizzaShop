@@ -36,7 +36,7 @@ class MenuViewControllerTests: XCTestCase {
         let exp = expectation(description: "Wait for API")
         exp.isInverted = true
         wait(for: [exp], timeout: 2)
-        XCTAssertEqual(sut.items.count, 15)
+        XCTAssertEqual(sut.items.count, 0)
     }
     
     private func makeSUT() throws -> MenuViewController {

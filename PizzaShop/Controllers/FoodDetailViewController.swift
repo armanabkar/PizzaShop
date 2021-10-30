@@ -23,6 +23,10 @@ class FoodDetailViewController: UIViewController {
     }
     
     @IBAction func addToCartTapped(_ sender: Any) {
+        addToCart()
+    }
+    
+    func addToCart() {
         guard let foodName = food?.name,
               let foodPrice = food?.price else { return }
         
