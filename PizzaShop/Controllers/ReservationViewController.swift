@@ -23,6 +23,10 @@ class ReservationViewController: UIViewController {
     }
     
     @IBAction func submitReservationTapped(_ sender: Any) {
+        submitReservation()
+    }
+    
+    func submitReservation() {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd hh:mm"
         let index = segmentControlView.selectedSegmentIndex

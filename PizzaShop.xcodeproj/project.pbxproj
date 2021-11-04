@@ -48,6 +48,8 @@
 		F0349D8A26D78E4500C6B154 /* PizzaShopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0349D8926D78E4500C6B154 /* PizzaShopTests.swift */; };
 		F0349D9526D78E4500C6B154 /* PizzaShopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0349D9426D78E4500C6B154 /* PizzaShopUITests.swift */; };
 		F0741F31272D856B0073F60D /* FoodDetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0741F30272D856B0073F60D /* FoodDetailViewControllerTests.swift */; };
+		F0741F332730517D0073F60D /* CartViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0741F322730517D0073F60D /* CartViewControllerTests.swift */; };
+		F0741F35273279D90073F60D /* ReservationViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0741F34273279D90073F60D /* ReservationViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +117,8 @@
 		F0349D9426D78E4500C6B154 /* PizzaShopUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaShopUITests.swift; sourceTree = "<group>"; };
 		F0349D9626D78E4500C6B154 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0741F30272D856B0073F60D /* FoodDetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailViewControllerTests.swift; sourceTree = "<group>"; };
+		F0741F322730517D0073F60D /* CartViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewControllerTests.swift; sourceTree = "<group>"; };
+		F0741F34273279D90073F60D /* ReservationViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +205,8 @@
 				F0125C162722D53700C5AA8C /* MainViewControllerTests.swift */,
 				F0125C1B2722D9FC00C5AA8C /* ProfileViewControllerTests.swift */,
 				F0741F30272D856B0073F60D /* FoodDetailViewControllerTests.swift */,
+				F0741F322730517D0073F60D /* CartViewControllerTests.swift */,
+				F0741F34273279D90073F60D /* ReservationViewControllerTests.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -472,6 +478,7 @@
 				F0125B0026E0EE6000C5AA8C /* ImageLoaderTests.swift in Sources */,
 				F0125B4B26ECA4F200C5AA8C /* MenuViewControllerTests.swift in Sources */,
 				F0125C1C2722D9FC00C5AA8C /* ProfileViewControllerTests.swift in Sources */,
+				F0741F332730517D0073F60D /* CartViewControllerTests.swift in Sources */,
 				F0741F31272D856B0073F60D /* FoodDetailViewControllerTests.swift in Sources */,
 				F0125AF726E0E7B100C5AA8C /* CoreDataServiceTests.swift in Sources */,
 				F0125ACE26DDF99000C5AA8C /* WebServiceTests.swift in Sources */,
@@ -479,6 +486,7 @@
 				F0125C0F2722C65400C5AA8C /* WebServiceStub.swift in Sources */,
 				F0125B4326ECA13600C5AA8C /* RegisterViewControllerTests.swift in Sources */,
 				F0125AE626DE18E400C5AA8C /* UserDefaultsServiceTests.swift in Sources */,
+				F0741F35273279D90073F60D /* ReservationViewControllerTests.swift in Sources */,
 				F0349D8A26D78E4500C6B154 /* PizzaShopTests.swift in Sources */,
 				F0125C172722D53800C5AA8C /* MainViewControllerTests.swift in Sources */,
 			);
