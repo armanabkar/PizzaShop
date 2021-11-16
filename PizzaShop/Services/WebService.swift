@@ -15,6 +15,7 @@ enum NetworkError: Error {
 }
 
 protocol API {
+    func start() async throws
     func getAllFoods(completion: @escaping getAllFoodsClosure)
     func submitOrder(order: Order, completion: @escaping submitRequestClosure)
     func submitReservation(reservation: Reservation, completion: @escaping submitRequestClosure)
@@ -26,6 +27,15 @@ final class WebService: API {
     
     static let shared = WebService()
     private init() {}
+    
+    /// Start the remote server because it shut downs
+    func start() async throws {
+        guard let url = URL(string: "\(K.URL.baseUrl)/start") else { fatalError("Missing URL") }
+        let urlRequest = URLRequest(url: url)
+        let (_, response) = try await URLSession.shared.data(for: urlRequest)
+        
+        guard (response as? HTTPURLResponse)?.statusCode == 200 else { fatalError("Error while fetching data") }
+    }
     
     /// Fetch all foods from the server
     func getAllFoods(completion: @escaping getAllFoodsClosure) {
