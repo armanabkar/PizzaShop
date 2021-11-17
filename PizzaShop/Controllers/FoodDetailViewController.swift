@@ -22,7 +22,7 @@ class FoodDetailViewController: UIViewController {
         configureUIElements()
     }
     
-    @IBAction func addToCartTapped(_ sender: Any) {
+    @IBAction func addToCartTapped(_ sender: UIButton) {
         addToCart()
     }
     
