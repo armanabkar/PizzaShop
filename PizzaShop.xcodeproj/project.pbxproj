@@ -50,6 +50,8 @@
 		F0741F31272D856B0073F60D /* FoodDetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0741F30272D856B0073F60D /* FoodDetailViewControllerTests.swift */; };
 		F0741F332730517D0073F60D /* CartViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0741F322730517D0073F60D /* CartViewControllerTests.swift */; };
 		F0741F35273279D90073F60D /* ReservationViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0741F34273279D90073F60D /* ReservationViewControllerTests.swift */; };
+		F0FE14B427661E0400BDE5C2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FE14B327661E0400BDE5C2 /* HomeView.swift */; };
+		F0FE14B727662A7800BDE5C2 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FE14B627662A7800BDE5C2 /* UIViewControllerExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +121,8 @@
 		F0741F30272D856B0073F60D /* FoodDetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailViewControllerTests.swift; sourceTree = "<group>"; };
 		F0741F322730517D0073F60D /* CartViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewControllerTests.swift; sourceTree = "<group>"; };
 		F0741F34273279D90073F60D /* ReservationViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewControllerTests.swift; sourceTree = "<group>"; };
+		F0FE14B327661E0400BDE5C2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		F0FE14B627662A7800BDE5C2 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,6 +246,7 @@
 		F0349D7126D78E4400C6B154 /* PizzaShop */ = {
 			isa = PBXGroup;
 			children = (
+				F0FE14B527662A6300BDE5C2 /* Extensions */,
 				F0125A6326DA5F3400C5AA8C /* Services */,
 				F0125A4326D8A84400C5AA8C /* Models */,
 				F0125A2926D81F6F00C5AA8C /* Utils */,
@@ -309,8 +314,17 @@
 				F0349D7D26D78E4500C6B154 /* LaunchScreen.storyboard */,
 				F0349D7826D78E4400C6B154 /* Main.storyboard */,
 				F0125BFE27103CB900C5AA8C /* Menu.storyboard */,
+				F0FE14B327661E0400BDE5C2 /* HomeView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		F0FE14B527662A6300BDE5C2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F0FE14B627662A7800BDE5C2 /* UIViewControllerExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -447,6 +461,7 @@
 			files = (
 				F0125A0F26D81CA300C5AA8C /* RegisterViewController.swift in Sources */,
 				F0125A2226D81CDD00C5AA8C /* FoodDetailViewController.swift in Sources */,
+				F0FE14B727662A7800BDE5C2 /* UIViewControllerExtension.swift in Sources */,
 				F0125A6D26DAABE800C5AA8C /* ImageLoader.swift in Sources */,
 				F0125B2A26E8B40E00C5AA8C /* LoginViewController.swift in Sources */,
 				F0125A6526DA5F4400C5AA8C /* WebService.swift in Sources */,
@@ -466,6 +481,7 @@
 				F0125AC226DD353D00C5AA8C /* UserDefaultsService.swift in Sources */,
 				F0125B5026ED149F00C5AA8C /* User.swift in Sources */,
 				F0125A3926D82AD800C5AA8C /* ProfileViewController.swift in Sources */,
+				F0FE14B427661E0400BDE5C2 /* HomeView.swift in Sources */,
 				F0125A5726D8AB2F00C5AA8C /* OrderCell.swift in Sources */,
 				F0349D7526D78E4400C6B154 /* SceneDelegate.swift in Sources */,
 			);

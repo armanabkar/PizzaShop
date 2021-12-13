@@ -148,7 +148,7 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6Nj-5M-gNa">
-                                <rect key="frame" x="25" y="618" width="364" height="71.5"/>
+                                <rect key="frame" x="25" y="618.5" width="364" height="71.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*Contact us to cancel your order or reservation or any other questions you have." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAH-VX-JEU">
                                         <rect key="frame" x="0.0" y="0.0" width="364" height="41"/>
@@ -165,7 +165,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dyb-aN-v3d">
-                                <rect key="frame" x="87" y="562" width="240" height="41"/>
+                                <rect key="frame" x="87" y="562.5" width="240" height="41"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Onx-EL-Omd">
                                         <rect key="frame" x="0.0" y="0.0" width="59" height="41"/>
@@ -246,89 +246,10 @@
                     <view key="view" contentMode="scaleToFill" id="wG2-zK-R5j">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pizza" translatesAutoresizingMaskIntoConstraints="NO" id="e4p-CE-zar">
-                                <rect key="frame" x="0.0" y="338" width="414" height="349"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="store" translatesAutoresizingMaskIntoConstraints="NO" id="pxr-ya-Iod">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="282"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🍕 Pizza Pizza 🍕" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZX-gP-uWM">
-                                <rect key="frame" x="0.0" y="280" width="414" height="63"/>
-                                <color key="backgroundColor" name="PrimaryColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="63" id="vKf-KJ-MYD"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="34"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="☎️ (805) 681- 4200 - 🌴 Santa Barbara, CA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3WH-AL-fSk">
-                                <rect key="frame" x="0.0" y="652" width="414" height="35"/>
-                                <color key="backgroundColor" name="PrimaryColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="OBk-Ye-rlw"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="OI2-aq-eQg">
-                                <rect key="frame" x="0.0" y="687" width="414" height="126"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="126" id="3Kw-5u-l5X"/>
-                                </constraints>
-                            </mapView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.80000000000000004" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pkp-Gq-aoP">
-                                <rect key="frame" x="20" y="383" width="374" height="229"/>
-                                <color key="backgroundColor" name="PrimaryColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="229" id="tm8-bE-DOg"/>
-                                </constraints>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <color key="backgroundColor" name="PrimaryColor"/>
-                                </variation>
-                            </textView>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="YhN-Tz-9Ua"/>
                         <color key="backgroundColor" name="PrimaryColor"/>
-                        <constraints>
-                            <constraint firstItem="3WH-AL-fSk" firstAttribute="trailing" secondItem="OI2-aq-eQg" secondAttribute="trailing" id="1ZH-6Z-hnE"/>
-                            <constraint firstItem="Pkp-Gq-aoP" firstAttribute="leading" secondItem="YhN-Tz-9Ua" secondAttribute="leading" constant="20" id="5O5-Sl-vgA"/>
-                            <constraint firstItem="OI2-aq-eQg" firstAttribute="leading" secondItem="YhN-Tz-9Ua" secondAttribute="leading" id="5oT-v8-Sph"/>
-                            <constraint firstItem="Pkp-Gq-aoP" firstAttribute="top" secondItem="pxr-ya-Iod" secondAttribute="bottom" constant="101" id="7Kp-W0-S1Y"/>
-                            <constraint firstItem="YhN-Tz-9Ua" firstAttribute="bottom" secondItem="e4p-CE-zar" secondAttribute="bottom" constant="126" id="Fsg-YN-cfK"/>
-                            <constraint firstItem="pxr-ya-Iod" firstAttribute="leading" secondItem="WZX-gP-uWM" secondAttribute="leading" id="HxW-iV-fKt"/>
-                            <constraint firstItem="Pkp-Gq-aoP" firstAttribute="top" secondItem="WZX-gP-uWM" secondAttribute="bottom" constant="40" id="Kek-rf-Znw"/>
-                            <constraint firstItem="OI2-aq-eQg" firstAttribute="trailing" secondItem="YhN-Tz-9Ua" secondAttribute="trailing" id="Nf3-EA-I2E"/>
-                            <constraint firstItem="OI2-aq-eQg" firstAttribute="top" secondItem="Pkp-Gq-aoP" secondAttribute="bottom" constant="75" id="PxP-n4-X3b"/>
-                            <constraint firstItem="OI2-aq-eQg" firstAttribute="bottom" secondItem="YhN-Tz-9Ua" secondAttribute="bottom" id="QSh-R5-geE"/>
-                            <constraint firstItem="pxr-ya-Iod" firstAttribute="top" secondItem="wG2-zK-R5j" secondAttribute="top" id="SDv-rG-f9n"/>
-                            <constraint firstItem="pxr-ya-Iod" firstAttribute="trailing" secondItem="WZX-gP-uWM" secondAttribute="trailing" id="V2m-gl-FNV"/>
-                            <constraint firstItem="e4p-CE-zar" firstAttribute="top" secondItem="pxr-ya-Iod" secondAttribute="bottom" constant="56" id="WOK-UM-8fc"/>
-                            <constraint firstItem="YhN-Tz-9Ua" firstAttribute="bottom" secondItem="3WH-AL-fSk" secondAttribute="bottom" constant="126" id="YrQ-Uh-QjN"/>
-                            <constraint firstItem="pxr-ya-Iod" firstAttribute="leading" secondItem="YhN-Tz-9Ua" secondAttribute="leading" id="aP7-hF-aAY"/>
-                            <constraint firstItem="OI2-aq-eQg" firstAttribute="trailing" secondItem="YhN-Tz-9Ua" secondAttribute="trailing" id="dpk-iB-xuj"/>
-                            <constraint firstItem="3WH-AL-fSk" firstAttribute="leading" secondItem="OI2-aq-eQg" secondAttribute="leading" id="eYe-tD-5eF"/>
-                            <constraint firstItem="Pkp-Gq-aoP" firstAttribute="leading" secondItem="e4p-CE-zar" secondAttribute="trailing" constant="-394" id="hA9-eu-wpz"/>
-                            <constraint firstItem="pxr-ya-Iod" firstAttribute="trailing" secondItem="YhN-Tz-9Ua" secondAttribute="trailing" id="hve-t0-LWI"/>
-                            <constraint firstItem="OI2-aq-eQg" firstAttribute="leading" secondItem="YhN-Tz-9Ua" secondAttribute="leading" id="knZ-20-qn8"/>
-                            <constraint firstItem="YhN-Tz-9Ua" firstAttribute="trailing" secondItem="Pkp-Gq-aoP" secondAttribute="trailing" constant="20" id="o1g-01-HQZ"/>
-                            <constraint firstItem="WZX-gP-uWM" firstAttribute="top" relation="lessThanOrEqual" secondItem="YhN-Tz-9Ua" secondAttribute="top" constant="236" id="pDU-t2-Y91"/>
-                            <constraint firstItem="YhN-Tz-9Ua" firstAttribute="trailing" secondItem="Pkp-Gq-aoP" secondAttribute="trailing" constant="20" id="v3p-bL-Boz"/>
-                            <constraint firstItem="e4p-CE-zar" firstAttribute="leading" secondItem="OI2-aq-eQg" secondAttribute="leading" id="ySB-wy-nHf"/>
-                            <constraint firstItem="Pkp-Gq-aoP" firstAttribute="leading" secondItem="wG2-zK-R5j" secondAttribute="leadingMargin" id="yxm-1X-ZFV"/>
-                            <constraint firstItem="OI2-aq-eQg" firstAttribute="bottom" secondItem="YhN-Tz-9Ua" secondAttribute="bottom" id="z4M-WK-fDe"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Main" image="star" catalog="system" id="pfX-fv-5yQ"/>
-                    <connections>
-                        <outlet property="mapView" destination="OI2-aq-eQg" id="s7g-l9-bAm"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vfg-h5-rJ2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -535,9 +456,7 @@
         <image name="cart" catalog="system" width="128" height="102"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>
-        <image name="pizza" width="960" height="960"/>
         <image name="star" catalog="system" width="128" height="116"/>
-        <image name="store" width="1620" height="1080"/>
         <namedColor name="PrimaryColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

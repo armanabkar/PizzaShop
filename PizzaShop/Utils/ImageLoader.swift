@@ -7,11 +7,11 @@
 
 import UIKit
 
-class ImageLoader {
+final class ImageLoader {
     
     private var cache = NSCache<AnyObject, AnyObject>()
     
-    class var sharedInstance : ImageLoader {
+    final class var sharedInstance : ImageLoader {
         struct Static {
             static let instance : ImageLoader = ImageLoader()
         }
