@@ -8,7 +8,6 @@
 import UIKit
 import SwiftUI
 
-// Source: https://www.avanderlee.com/swiftui/integrating-swiftui-with-uikit/
 extension UIViewController {
     
     /// Add a SwiftUI `View` as a child of the input `UIView`.
@@ -24,7 +23,7 @@ extension UIViewController {
         /// Add the SwiftUI view to the view controller view hierarchy.
         view.addSubview(hostingController.view)
         
-        /// Setup the contraints to update the SwiftUI view boundaries.
+        /// Setup the constraints to update the SwiftUI view boundaries.
         hostingController.view.translatesAutoresizingMaskIntoConstraints = false
         let constraints = [
             hostingController.view.topAnchor.constraint(equalTo: view.topAnchor),
@@ -38,4 +37,23 @@ extension UIViewController {
         /// Notify the hosting controller that it has been moved to the current view controller.
         hostingController.didMove(toParent: self)
     }
+    // Source: https://www.avanderlee.com/swiftui/integrating-swiftui-with-uikit/
+    
+    private struct Preview: UIViewControllerRepresentable {
+        // this variable is used for injecting the current view controller
+        let viewController: UIViewController
+        
+        func makeUIViewController(context: Context) -> UIViewController {
+            return viewController
+        }
+        
+        func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
+        }
+    }
+    
+    func toPreview() -> some View {
+        // inject self (the current view controller) for the preview
+        Preview(viewController: self)
+    }
+    
 }

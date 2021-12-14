@@ -155,7 +155,6 @@
 			children = (
 				F0125A2A26D81F8D00C5AA8C /* Constants.swift */,
 				F0125A6C26DAABE800C5AA8C /* ImageLoader.swift */,
-				F0125A9C26DC1B6900C5AA8C /* UIAlertControllerExtension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -322,6 +321,7 @@
 		F0FE14B527662A6300BDE5C2 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				F0125A9C26DC1B6900C5AA8C /* UIAlertControllerExtension.swift */,
 				F0FE14B627662A7800BDE5C2 /* UIViewControllerExtension.swift */,
 			);
 			path = Extensions;

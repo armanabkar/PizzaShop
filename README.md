@@ -10,10 +10,11 @@
 - [x] Menu screen with details for each item
 - [x] Cart screen (using Core Data)
 - [x] Reservation screen
-- [x] Profile Page UI from code (no storyboard)
+- [x] Profile Page UI from code (no storyboard) with preview (canvas)
 - [x] Async image loader
-- [x] Alerts
+- [x] UI Alerts
 - [x] Unit/Integration Tests
+- [x] iOS 15 with Async/Await network requests
 - [ ] Stripe
 - [ ] Offline Support
 - [ ] Push Notifications
