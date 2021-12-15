@@ -52,6 +52,7 @@
 		F0741F35273279D90073F60D /* ReservationViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0741F34273279D90073F60D /* ReservationViewControllerTests.swift */; };
 		F0FE14B427661E0400BDE5C2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FE14B327661E0400BDE5C2 /* HomeView.swift */; };
 		F0FE14B727662A7800BDE5C2 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FE14B627662A7800BDE5C2 /* UIViewControllerExtension.swift */; };
+		F0FE14BA2769CEEA00BDE5C2 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FE14B92769CEEA00BDE5C2 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +124,7 @@
 		F0741F34273279D90073F60D /* ReservationViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewControllerTests.swift; sourceTree = "<group>"; };
 		F0FE14B327661E0400BDE5C2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F0FE14B627662A7800BDE5C2 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		F0FE14B92769CEEA00BDE5C2 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,6 +247,7 @@
 		F0349D7126D78E4400C6B154 /* PizzaShop */ = {
 			isa = PBXGroup;
 			children = (
+				F0FE14B82769CEDB00BDE5C2 /* View Models */,
 				F0FE14B527662A6300BDE5C2 /* Extensions */,
 				F0125A6326DA5F3400C5AA8C /* Services */,
 				F0125A4326D8A84400C5AA8C /* Models */,
@@ -325,6 +328,14 @@
 				F0FE14B627662A7800BDE5C2 /* UIViewControllerExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F0FE14B82769CEDB00BDE5C2 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				F0FE14B92769CEEA00BDE5C2 /* HomeViewModel.swift */,
+			);
+			path = "View Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -480,6 +491,7 @@
 				F0125B1826E4E7D800C5AA8C /* ReservationViewController.swift in Sources */,
 				F0125AC226DD353D00C5AA8C /* UserDefaultsService.swift in Sources */,
 				F0125B5026ED149F00C5AA8C /* User.swift in Sources */,
+				F0FE14BA2769CEEA00BDE5C2 /* HomeViewModel.swift in Sources */,
 				F0125A3926D82AD800C5AA8C /* ProfileViewController.swift in Sources */,
 				F0FE14B427661E0400BDE5C2 /* HomeView.swift in Sources */,
 				F0125A5726D8AB2F00C5AA8C /* OrderCell.swift in Sources */,

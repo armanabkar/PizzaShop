@@ -10,52 +10,48 @@ import MapKit
 
 struct HomeView: View {
     
-    let places = [
-        Place(name: "Pizza Pizza", latitude: 34.402341, longitude: -119.726045)
-    ]
-    @State private var region = MKCoordinateRegion(
-        center: CLLocationCoordinate2D(latitude: 34.402341, longitude: -119.726045),
-        span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
-    )
+    @StateObject private var homeViewModel = HomeViewModel()
     
     var body: some View {
         ZStack {
             Color.black.ignoresSafeArea()
             ScrollView {
-                Image("store")
+                Image(K.Images.storeImage)
                     .resizable()
                     .scaledToFill()
                 
                 VStack(spacing: 15) {
-                    Text("Pizza Pizza !")
-                        .font(.system(size: 42, weight: .heavy, design: .rounded))
+                    Text(K.appName)
+                        .font(.system(size: 40, weight: .heavy, design: .rounded))
                         .foregroundColor(.black)
                         .padding(.horizontal)
                         .background()
                         .clipShape(RoundedRectangle(cornerRadius: 8))
-                    Text("Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, tempor incididunt ut magna aliqua. ut labore et dolore magna aliqua.")
+                    
+                    Text(K.description1)
                         .foregroundColor(.white.opacity(0.85))
                         .multilineTextAlignment(.center)
                         .font(.title2)
-                    Text("sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. tempor incididunt ut labore et dolore magna magna et dolrore!")
+                    Text(K.description2)
                         .foregroundColor(.white.opacity(0.85))
                         .multilineTextAlignment(.center)
                         .font(.title2)
-                    Text("☎️ (805) 681- 4200")
+                    
+                    Spacer()
+                    Text("☎️ \(K.supportPhone)")
                         .foregroundColor(.white)
-                        .font(.title2)
+                        .font(.title3)
+                    
+                    Map(coordinateRegion: $homeViewModel.region,
+                        showsUserLocation: false,
+                        annotationItems: homeViewModel.places) {
+                        MapMarker(coordinate: $0.coordinate)
+                    }
+                        .frame(height: 100)
+                        .clipShape(RoundedRectangle(cornerRadius: 8))
                 }
                 .padding(.horizontal)
                 .padding(.vertical, 20)
-                
-                Map(coordinateRegion: $region,
-                    showsUserLocation: false,
-                    annotationItems: places) { place in
-                    MapMarker(coordinate: place.coordinate)
-                }
-                    .frame(height: 100)
-                    .clipShape(RoundedRectangle(cornerRadius: 8))
-                    .padding(.horizontal)
             }
             .ignoresSafeArea()
         }
@@ -65,15 +61,5 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
-    }
-}
-
-struct Place: Identifiable {
-    let id = UUID()
-    let name: String
-    let latitude: Double
-    let longitude: Double
-    var coordinate: CLLocationCoordinate2D {
-        CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
     }
 }
