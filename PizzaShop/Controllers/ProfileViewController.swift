@@ -9,32 +9,29 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     
+    let viewModel = ProfileViewModel()
     let profileImage: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(systemName: "person.circle")
         image.tintColor = .white
-        image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
     let nameLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
         label.font = UIFont.systemFont(ofSize: 36, weight: .bold)
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     var phoneLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
         label.font = UIFont.systemFont(ofSize: 26, weight: .medium)
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     var addressLabel: UILabel = {
         let label = UILabel()
         label.textColor = .systemGray3
         label.font = UIFont.systemFont(ofSize: 26)
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.numberOfLines = 0
         return label
@@ -43,7 +40,6 @@ class ProfileViewController: UIViewController {
         let label = UILabel()
         label.textColor = .systemGray3
         label.font = UIFont.systemFont(ofSize: 22)
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     var logOutButton: UIButton = {
@@ -56,7 +52,6 @@ class ProfileViewController: UIViewController {
         button.configuration?.attributedTitle = buttonTitle
         button.tintColor = .white
         button.setTitleColor(.black, for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(logOutTapped(_ :)), for: .touchUpInside)
         return button
     }()
@@ -69,7 +64,34 @@ class ProfileViewController: UIViewController {
         configureConstraints()
     }
     
+    @objc func logOutTapped(_ sender: UIButton) {
+        viewModel.removeAndResetUserData(from: self)
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+    func setUpLabels() {
+        view.addSubview(profileImage)
+        view.addSubview(nameLabel)
+        view.addSubview(phoneLabel)
+        view.addSubview(addressLabel)
+        view.addSubview(appVersionLabel)
+        view.addSubview(logOutButton)
+        nameLabel.text = UserDefaultsService.shared.name
+        phoneLabel.text = UserDefaultsService.shared.phone
+        addressLabel.text = UserDefaultsService.shared.address
+        appVersionLabel.text = viewModel.getAppVersion()
+    }
+    
     func configureConstraints() {
+        profileImage.translatesAutoresizingMaskIntoConstraints = false
+        nameLabel.translatesAutoresizingMaskIntoConstraints = false
+        phoneLabel.translatesAutoresizingMaskIntoConstraints = false
+        addressLabel.translatesAutoresizingMaskIntoConstraints = false
+        appVersionLabel.translatesAutoresizingMaskIntoConstraints = false
+        logOutButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             profileImage.centerXAnchor.constraint(equalTo: view.layoutMarginsGuide.centerXAnchor),
             profileImage.widthAnchor.constraint(equalToConstant: 180),
@@ -89,49 +111,7 @@ class ProfileViewController: UIViewController {
             logOutButton.centerXAnchor.constraint(equalTo: view.layoutMarginsGuide.centerXAnchor)
         ])
     }
-
-    @objc func logOutTapped(_ sender: UIButton) {
-        removeAndResetUserData()
-    }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-    
-    func removeAndResetUserData() {
-        UserDefaultsService.shared.removeUserFromUserDefaults()
-        CoreDataService.shared.resetAllRecords(in: K.CoreData.entityName) { result in
-            switch result {
-                case .success(_):
-                    self.performSegue(withIdentifier: K.authSegue, sender: nil)
-                case .failure(let error):
-                    UIAlertController.showAlert(message: error.localizedDescription, from: self)
-            }
-            
-        }
-    }
-    
-    func getAppVersion() -> String {
-        let dictionary = Bundle.main.infoDictionary!
-        let version = dictionary[K.CFBundleShortVersionString] as! String
-        let build = dictionary[K.CFBundleVersion] as! String
-        
-        return "Version \(version)(\(build))"
-    }
-    
-    func setUpLabels() {
-        view.addSubview(profileImage)
-        view.addSubview(nameLabel)
-        view.addSubview(phoneLabel)
-        view.addSubview(addressLabel)
-        view.addSubview(appVersionLabel)
-        view.addSubview(logOutButton)
-        nameLabel.text = UserDefaultsService.shared.name
-        phoneLabel.text = UserDefaultsService.shared.phone
-        addressLabel.text = UserDefaultsService.shared.address
-        appVersionLabel.text = getAppVersion()
-    }
-
 }
 
 #if DEBUG

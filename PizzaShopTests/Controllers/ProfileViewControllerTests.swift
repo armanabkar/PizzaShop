@@ -34,25 +34,6 @@ class ProfileViewControllerTests: XCTestCase {
         XCTAssertEqual(sut.appVersionLabel.text, getAppVersion())
     }
 
-    func test_removeAndResetUserData() throws {
-        let sut = try makeSUT()
-        sut.loadViewIfNeeded()
-        sut.removeAndResetUserData()
-
-        XCTAssertEqual(UserDefaultsService.shared.name, "")
-        XCTAssertEqual(UserDefaultsService.shared.phone, "")
-        XCTAssertEqual(UserDefaultsService.shared.address, "")
-    }
-
-    func test_getAppVersion() throws {
-        let sut = try makeSUT()
-        sut.loadViewIfNeeded()
-
-        let appVersion = sut.getAppVersion()
-
-        XCTAssertEqual(appVersion, getAppVersion())
-    }
-
     private func getAppVersion() -> String {
         let dictionary = Bundle.main.infoDictionary!
         let version = dictionary[K.CFBundleShortVersionString] as! String

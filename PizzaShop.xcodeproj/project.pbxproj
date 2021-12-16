@@ -53,6 +53,7 @@
 		F0FE14B427661E0400BDE5C2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FE14B327661E0400BDE5C2 /* HomeView.swift */; };
 		F0FE14B727662A7800BDE5C2 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FE14B627662A7800BDE5C2 /* UIViewControllerExtension.swift */; };
 		F0FE14BA2769CEEA00BDE5C2 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FE14B92769CEEA00BDE5C2 /* HomeViewModel.swift */; };
+		F0FE14BC2769D57500BDE5C2 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FE14BB2769D57500BDE5C2 /* ProfileViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +126,7 @@
 		F0FE14B327661E0400BDE5C2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F0FE14B627662A7800BDE5C2 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		F0FE14B92769CEEA00BDE5C2 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		F0FE14BB2769D57500BDE5C2 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -334,6 +336,7 @@
 			isa = PBXGroup;
 			children = (
 				F0FE14B92769CEEA00BDE5C2 /* HomeViewModel.swift */,
+				F0FE14BB2769D57500BDE5C2 /* ProfileViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -473,6 +476,7 @@
 				F0125A0F26D81CA300C5AA8C /* RegisterViewController.swift in Sources */,
 				F0125A2226D81CDD00C5AA8C /* FoodDetailViewController.swift in Sources */,
 				F0FE14B727662A7800BDE5C2 /* UIViewControllerExtension.swift in Sources */,
+				F0FE14BC2769D57500BDE5C2 /* ProfileViewModel.swift in Sources */,
 				F0125A6D26DAABE800C5AA8C /* ImageLoader.swift in Sources */,
 				F0125B2A26E8B40E00C5AA8C /* LoginViewController.swift in Sources */,
 				F0125A6526DA5F4400C5AA8C /* WebService.swift in Sources */,
@@ -709,7 +713,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1.3;
+				MARKETING_VERSION = 3.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = co.armanabkar.PizzaShop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -731,7 +735,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1.3;
+				MARKETING_VERSION = 3.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = co.armanabkar.PizzaShop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
