@@ -10,25 +10,25 @@ import UIKit
 class ProfileViewController: UIViewController {
     
     let viewModel = ProfileViewModel()
-    let profileImage: UIImageView = {
+    @UseAutoLayout var profileImage: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(systemName: "person.circle")
         image.tintColor = .white
         return image
     }()
-    let nameLabel: UILabel = {
+    @UseAutoLayout var nameLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
         label.font = UIFont.systemFont(ofSize: 36, weight: .bold)
         return label
     }()
-    var phoneLabel: UILabel = {
+    @UseAutoLayout var phoneLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
         label.font = UIFont.systemFont(ofSize: 26, weight: .medium)
         return label
     }()
-    var addressLabel: UILabel = {
+    @UseAutoLayout var addressLabel: UILabel = {
         let label = UILabel()
         label.textColor = .systemGray3
         label.font = UIFont.systemFont(ofSize: 26)
@@ -36,13 +36,13 @@ class ProfileViewController: UIViewController {
         label.numberOfLines = 0
         return label
     }()
-    var appVersionLabel: UILabel = {
+    @UseAutoLayout var appVersionLabel: UILabel = {
         let label = UILabel()
         label.textColor = .systemGray3
         label.font = UIFont.systemFont(ofSize: 22)
         return label
     }()
-    var logOutButton: UIButton = {
+    @UseAutoLayout var logOutButton: UIButton = {
         let button = UIButton()
         let buttonTitle = AttributedString("Log Out", attributes: AttributeContainer([
             .font: UIFont.systemFont(ofSize: 28, weight: .medium),
@@ -86,12 +86,6 @@ class ProfileViewController: UIViewController {
     }
     
     func configureConstraints() {
-        profileImage.translatesAutoresizingMaskIntoConstraints = false
-        nameLabel.translatesAutoresizingMaskIntoConstraints = false
-        phoneLabel.translatesAutoresizingMaskIntoConstraints = false
-        addressLabel.translatesAutoresizingMaskIntoConstraints = false
-        appVersionLabel.translatesAutoresizingMaskIntoConstraints = false
-        logOutButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             profileImage.centerXAnchor.constraint(equalTo: view.layoutMarginsGuide.centerXAnchor),
             profileImage.widthAnchor.constraint(equalToConstant: 180),
