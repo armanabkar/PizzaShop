@@ -19,7 +19,8 @@ class MenuViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
-        
+        tableView.register(UINib.init(nibName: K.foodCellIdentifier, bundle: nil),
+                           forCellReuseIdentifier: K.foodCellIdentifier)
         getAllFoods()
     }
     

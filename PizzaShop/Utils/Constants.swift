@@ -24,7 +24,7 @@ struct K {
     static let supportPhone = "(805) 681- 4200"
     static let CFBundleShortVersionString = "CFBundleShortVersionString"
     static let CFBundleVersion = "CFBundleVersion"
-    static let foodCellIdentifier = "foodCell"
+    static let foodCellIdentifier = "ItemCell"
     static let orderCellIdentifier = "orderCell"
     static let menuSegue = "toMenuViewController"
     static let authSegue = "toAuthViewController"
