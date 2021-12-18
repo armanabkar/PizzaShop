@@ -12,8 +12,8 @@ final class ProfileViewModel: ObservableObject {
     
     func getAppVersion() -> String {
         let dictionary = Bundle.main.infoDictionary!
-        let version = dictionary[K.CFBundleShortVersionString] as! String
-        let build = dictionary[K.CFBundleVersion] as! String
+        let version = dictionary[K.Identifiers.CFBundleShortVersionString] as! String
+        let build = dictionary[K.Identifiers.CFBundleVersion] as! String
         
         return "Version \(version)(\(build))"
     }
@@ -23,7 +23,7 @@ final class ProfileViewModel: ObservableObject {
         CoreDataService.shared.resetAllRecords(in: K.CoreData.entityName) { result in
             switch result {
                 case .success(_):
-                    vc.performSegue(withIdentifier: K.authSegue, sender: nil)
+                    vc.performSegue(withIdentifier: K.Identifiers.authSegue, sender: nil)
                 case .failure(let error):
                     UIAlertController.showAlert(message: error.localizedDescription, from: vc)
             }

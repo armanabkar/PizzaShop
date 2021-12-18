@@ -35,7 +35,7 @@ class RegisterViewControllerTests: XCTestCase {
         sut.loadViewIfNeeded()
         sut.animateText()
         
-        XCTAssertEqual(sut.appTitle.text, K.appName)
+        XCTAssertEqual(sut.appTitle.text, K.Information.appName)
     }
     
     func test_registerUser() throws {

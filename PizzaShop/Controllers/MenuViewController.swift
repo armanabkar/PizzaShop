@@ -19,8 +19,8 @@ class MenuViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UINib.init(nibName: K.foodCellIdentifier, bundle: nil),
-                           forCellReuseIdentifier: K.foodCellIdentifier)
+        tableView.register(UINib.init(nibName: K.Identifiers.MenuCellNibName, bundle: nil),
+                           forCellReuseIdentifier: K.Identifiers.menuCellIdentifier)
         getAllFoods()
     }
     
@@ -48,7 +48,7 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: K.foodCellIdentifier, for: indexPath) as! MenuCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.Identifiers.menuCellIdentifier, for: indexPath) as! MenuCell
         if let food = self.items[indexPath.row] {
             cell.foodNameLabel.text = food.name
             cell.foodPriceLabel.text = String(food.price)
@@ -62,7 +62,7 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: K.detailSegue, sender: self)
+        performSegue(withIdentifier: K.Identifiers.detailSegue, sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

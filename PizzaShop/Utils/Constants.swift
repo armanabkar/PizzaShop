@@ -15,20 +15,25 @@ typealias CoreDataCRUDClosure = (Result<String, CoreDataError>) -> Void
 
 struct K {
     
-    static let appName = "Pizza Pizza"
-    static let locationLatitude = 34.402341
-    static let locationLongitude = -119.726045
-    static let description1 = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, tempor incididunt ut magna aliqua. ut labore et dolore magna aliqua."
-    static let description2 = "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. tempor incididunt magna magna et dolrore!"
-    static let supportEmail = "support@pizzapizza.com"
-    static let supportPhone = "(805) 681- 4200"
-    static let CFBundleShortVersionString = "CFBundleShortVersionString"
-    static let CFBundleVersion = "CFBundleVersion"
-    static let foodCellIdentifier = "ItemCell"
-    static let orderCellIdentifier = "orderCell"
-    static let menuSegue = "toMenuViewController"
-    static let authSegue = "toAuthViewController"
-    static let detailSegue = "toFoodDetailViewController"
+    struct Information {
+        static let appName = "Pizza Pizza"
+        static let locationLatitude = 34.402341
+        static let locationLongitude = -119.726045
+        static let description1 = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, tempor incididunt ut magna aliqua. ut labore et dolore magna aliqua."
+        static let description2 = "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. tempor incididunt magna magna et dolrore!"
+        static let supportPhone = "(805) 681- 4200"
+    }
+    
+    struct Identifiers {
+        static let CFBundleShortVersionString = "CFBundleShortVersionString"
+        static let CFBundleVersion = "CFBundleVersion"
+        static let MenuCellNibName = "MenuCell"
+        static let menuCellIdentifier = "ItemCell"
+        static let orderCellIdentifier = "orderCell"
+        static let menuSegue = "toMenuViewController"
+        static let authSegue = "toAuthViewController"
+        static let detailSegue = "toFoodDetailViewController"
+    }
     
     struct CoreData {
         static let entityName = "Cart"

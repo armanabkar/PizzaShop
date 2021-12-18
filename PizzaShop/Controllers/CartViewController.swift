@@ -116,7 +116,7 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: K.orderCellIdentifier, for: indexPath) as! OrderCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.Identifiers.orderCellIdentifier, for: indexPath) as! OrderCell
         cell.orderNameLabel.text = cartItems[indexPath.row].name
         cell.orderPriceLabel.text = "\(String(cartItems[indexPath.row].price))$"
         return cell

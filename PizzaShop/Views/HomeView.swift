@@ -21,24 +21,24 @@ struct HomeView: View {
                     .scaledToFill()
                 
                 VStack(spacing: 15) {
-                    Text(K.appName)
+                    Text(K.Information.appName)
                         .font(.system(size: 40, weight: .heavy, design: .rounded))
                         .foregroundColor(.black)
                         .padding(.horizontal)
                         .background()
                         .clipShape(RoundedRectangle(cornerRadius: 8))
                     
-                    Text(K.description1)
+                    Text(K.Information.description1)
                         .foregroundColor(.white.opacity(0.85))
                         .multilineTextAlignment(.center)
                         .font(.title2)
-                    Text(K.description2)
+                    Text(K.Information.description2)
                         .foregroundColor(.white.opacity(0.85))
                         .multilineTextAlignment(.center)
                         .font(.title2)
                     
                     Spacer()
-                    Text("☎️ \(K.supportPhone)")
+                    Text("☎️ \(K.Information.supportPhone)")
                         .foregroundColor(.white)
                         .font(.title3)
                     

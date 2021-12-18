@@ -11,13 +11,13 @@ import MapKit
 final class HomeViewModel: ObservableObject {
     
     let places = [
-        Place(name: K.appName,
-              latitude: K.locationLatitude,
-              longitude: K.locationLongitude)
+        Place(name: K.Information.appName,
+              latitude: K.Information.locationLatitude,
+              longitude: K.Information.locationLongitude)
     ]
     @Published var region = MKCoordinateRegion(
-        center: CLLocationCoordinate2D(latitude: K.locationLatitude,
-                                       longitude: K.locationLongitude),
+        center: CLLocationCoordinate2D(latitude: K.Information.locationLatitude,
+                                       longitude: K.Information.locationLongitude),
         span: MKCoordinateSpan(latitudeDelta: 0.1,
                                longitudeDelta: 0.1)
     )

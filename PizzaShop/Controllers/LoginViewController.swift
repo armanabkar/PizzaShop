@@ -39,7 +39,7 @@ class LoginViewController: UIViewController {
             switch result {
                 case .success(let user):
                     UserDefaultsService.shared.saveToUserDefaults(user: user!)
-                    self?.performSegue(withIdentifier: K.menuSegue, sender: nil)
+                    self?.performSegue(withIdentifier: K.Identifiers.menuSegue, sender: nil)
                 case .failure(let error):
                     switch error {
                         case .custom(K.Alert.userDoesNotExist):

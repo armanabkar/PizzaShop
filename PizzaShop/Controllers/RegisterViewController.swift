@@ -37,7 +37,7 @@ class RegisterViewController: UIViewController {
     func animateText() {
         self.appTitle.text = ""
         var charIndex = 0.0
-        let titleText = K.appName
+        let titleText = K.Information.appName
         for letter in titleText {
             Timer.scheduledTimer(withTimeInterval: 0.1 * charIndex, repeats: false) { (timer) in
                 self.appTitle.text?.append(letter)
@@ -60,7 +60,7 @@ class RegisterViewController: UIViewController {
             switch result {
                 case .success( _):
                     UserDefaultsService.shared.saveToUserDefaults(user: newUser)
-                    self?.performSegue(withIdentifier: K.menuSegue, sender: nil)
+                    self?.performSegue(withIdentifier: K.Identifiers.menuSegue, sender: nil)
                 case .failure(let error):
                     switch error {
                         case .custom(K.Alert.userAlreadyExists):

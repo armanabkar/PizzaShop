@@ -47,7 +47,7 @@
 		F0349D7F26D78E4500C6B154 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0349D7D26D78E4500C6B154 /* LaunchScreen.storyboard */; };
 		F0349D8A26D78E4500C6B154 /* PizzaShopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0349D8926D78E4500C6B154 /* PizzaShopTests.swift */; };
 		F0349D9526D78E4500C6B154 /* PizzaShopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0349D9426D78E4500C6B154 /* PizzaShopUITests.swift */; };
-		F06742E5276C665100488A5C /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F06742E4276C665100488A5C /* ItemCell.xib */; };
+		F06742E5276C665100488A5C /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F06742E4276C665100488A5C /* MenuCell.xib */; };
 		F0741F31272D856B0073F60D /* FoodDetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0741F30272D856B0073F60D /* FoodDetailViewControllerTests.swift */; };
 		F0741F332730517D0073F60D /* CartViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0741F322730517D0073F60D /* CartViewControllerTests.swift */; };
 		F0741F35273279D90073F60D /* ReservationViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0741F34273279D90073F60D /* ReservationViewControllerTests.swift */; };
@@ -122,7 +122,7 @@
 		F0349D9026D78E4500C6B154 /* PizzaShopUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PizzaShopUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0349D9426D78E4500C6B154 /* PizzaShopUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaShopUITests.swift; sourceTree = "<group>"; };
 		F0349D9626D78E4500C6B154 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F06742E4276C665100488A5C /* ItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
+		F06742E4276C665100488A5C /* MenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
 		F0741F30272D856B0073F60D /* FoodDetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailViewControllerTests.swift; sourceTree = "<group>"; };
 		F0741F322730517D0073F60D /* CartViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewControllerTests.swift; sourceTree = "<group>"; };
 		F0741F34273279D90073F60D /* ReservationViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewControllerTests.swift; sourceTree = "<group>"; };
@@ -324,7 +324,7 @@
 				F0349D7826D78E4400C6B154 /* Main.storyboard */,
 				F0125BFE27103CB900C5AA8C /* Menu.storyboard */,
 				F0FE14B327661E0400BDE5C2 /* HomeView.swift */,
-				F06742E4276C665100488A5C /* ItemCell.xib */,
+				F06742E4276C665100488A5C /* MenuCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -451,7 +451,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0125C0027103CBA00C5AA8C /* Menu.storyboard in Resources */,
-				F06742E5276C665100488A5C /* ItemCell.xib in Resources */,
+				F06742E5276C665100488A5C /* MenuCell.xib in Resources */,
 				F0125B5E26F4990800C5AA8C /* Auth.storyboard in Resources */,
 				F0349D7F26D78E4500C6B154 /* LaunchScreen.storyboard in Resources */,
 				F0349D7C26D78E4500C6B154 /* Assets.xcassets in Resources */,

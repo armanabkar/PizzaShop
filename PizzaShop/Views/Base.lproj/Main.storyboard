@@ -22,38 +22,44 @@
                                 <color key="backgroundColor" name="PrimaryColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="orderCell" id="2lz-LT-c9H" customClass="OrderCell" customModule="PizzaShop" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="38"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2lz-LT-c9H" id="74R-iE-SGM">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="38"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2uv-jW-T0K">
-                                                    <rect key="frame" x="20" y="8" width="374" height="27.5"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2uv-jW-T0K">
+                                                    <rect key="frame" x="10" y="5" width="394" height="28"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bacon Pizza Pizza" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GdI-vY-3A6">
-                                                            <rect key="frame" x="0.0" y="0.0" width="282" height="27.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="191.5" height="28"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="115.99$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxb-XH-IfH">
-                                                            <rect key="frame" x="282" y="0.0" width="92" height="27.5"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="92" placeholder="YES" id="t8Q-5r-Czu"/>
-                                                            </constraints>
+                                                            <rect key="frame" x="306" y="0.0" width="88" height="28"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="GdI-vY-3A6" firstAttribute="top" secondItem="2uv-jW-T0K" secondAttribute="top" id="2Zl-cx-dU7"/>
+                                                        <constraint firstItem="GdI-vY-3A6" firstAttribute="leading" secondItem="2uv-jW-T0K" secondAttribute="leading" id="GZf-2N-lNr"/>
+                                                        <constraint firstAttribute="bottom" secondItem="GdI-vY-3A6" secondAttribute="bottom" id="aqo-fU-lTW"/>
+                                                        <constraint firstAttribute="trailing" secondItem="hxb-XH-IfH" secondAttribute="trailing" id="g9f-yX-n7f"/>
+                                                        <constraint firstAttribute="bottom" secondItem="hxb-XH-IfH" secondAttribute="bottom" id="vLt-ek-c12"/>
+                                                        <constraint firstItem="hxb-XH-IfH" firstAttribute="top" secondItem="2uv-jW-T0K" secondAttribute="top" id="xuS-ol-s1z"/>
+                                                    </constraints>
                                                 </stackView>
                                             </subviews>
                                             <color key="backgroundColor" name="PrimaryColor"/>
                                             <constraints>
-                                                <constraint firstItem="2uv-jW-T0K" firstAttribute="leading" secondItem="74R-iE-SGM" secondAttribute="leading" constant="20" id="5rs-tN-Qeb"/>
-                                                <constraint firstItem="2uv-jW-T0K" firstAttribute="centerY" secondItem="74R-iE-SGM" secondAttribute="centerY" id="Ojw-lM-k2j"/>
-                                                <constraint firstAttribute="trailing" secondItem="2uv-jW-T0K" secondAttribute="trailing" constant="20" id="iCc-Fh-o1J"/>
+                                                <constraint firstAttribute="bottom" secondItem="2uv-jW-T0K" secondAttribute="bottom" constant="5" id="P9h-qD-ZRv"/>
+                                                <constraint firstAttribute="trailing" secondItem="2uv-jW-T0K" secondAttribute="trailing" constant="10" id="QeQ-cQ-T2p"/>
+                                                <constraint firstItem="2uv-jW-T0K" firstAttribute="leading" secondItem="74R-iE-SGM" secondAttribute="leading" constant="10" id="jeD-Kw-rOx"/>
+                                                <constraint firstItem="2uv-jW-T0K" firstAttribute="top" secondItem="74R-iE-SGM" secondAttribute="top" constant="5" id="xaZ-Mo-JAh"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -110,7 +116,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u3P-pc-lht" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1451" y="31"/>
+            <point key="canvasLocation" x="1450.7246376811595" y="30.803571428571427"/>
         </scene>
         <!--Profile-->
         <scene sceneID="QtQ-3I-mSF">
