@@ -30,7 +30,7 @@ class LoginViewController: UIViewController {
     
     func loginUser() {
         guard let phone = phoneField.text,
-              phone != "" else {
+              !phone.isEmpty else {
             UIAlertController.showAlert(message: K.Alert.invalidFieldMessage, from: self)
             return
         }

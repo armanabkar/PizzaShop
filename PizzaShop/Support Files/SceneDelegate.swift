@@ -15,7 +15,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         Task.init {
             try? await WebService.shared.start()
         }
-        if UserDefaultsService.shared.name != "" && UserDefaultsService.shared.phone != "" && UserDefaultsService.shared.address != "" {
+        if !UserDefaultsService.shared.name.isEmpty &&
+            !UserDefaultsService.shared.phone.isEmpty &&
+            !UserDefaultsService.shared.address.isEmpty {
             let board = UIStoryboard(name: "Main", bundle: nil)
             let tabBar = board.instantiateViewController(identifier: "tabBar") as! UITabBarController
             window?.rootViewController = tabBar
@@ -38,7 +40,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func sceneDidEnterBackground(_ scene: UIScene) {
     }
-    
     
 }
 

@@ -47,8 +47,10 @@ struct K {
         static let notificationMessage = "Your order has been delivered. Thank you for choosing us."
         static let reservationMessage = "Your reservation has been made. We will wait you!"
         static let invalidFieldMessage = "Please enter a valid name, phone and address."
-        static let userDoesNotExist = "User Does not exist."
+        static let userDoesNotExist = "User does not exist."
         static let userAlreadyExists = "User already exists. Try login with the number."
+        static let decodingError = "Error while decoding. Please try again."
+        static let missingURL = "Url is missing"
         static let emptyCart = "The cart is empty. Please add some items."
     }
     

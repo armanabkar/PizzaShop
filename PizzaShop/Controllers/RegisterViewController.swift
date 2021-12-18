@@ -50,7 +50,7 @@ class RegisterViewController: UIViewController {
         guard let name = nameField.text,
               let phone = phoneField.text,
               let address = addressField.text,
-              name != "" && phone != "", address != "" else {
+              !name.isEmpty && !phone.isEmpty && !address.isEmpty else {
             UIAlertController.showAlert(message: K.Alert.invalidFieldMessage, from: self)
             return
         }
