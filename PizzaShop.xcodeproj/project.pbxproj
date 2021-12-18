@@ -48,6 +48,7 @@
 		F0349D8A26D78E4500C6B154 /* PizzaShopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0349D8926D78E4500C6B154 /* PizzaShopTests.swift */; };
 		F0349D9526D78E4500C6B154 /* PizzaShopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0349D9426D78E4500C6B154 /* PizzaShopUITests.swift */; };
 		F06742E5276C665100488A5C /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F06742E4276C665100488A5C /* MenuCell.xib */; };
+		F06742EB276E792A00488A5C /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06742EA276E792A00488A5C /* MenuViewModel.swift */; };
 		F0741F31272D856B0073F60D /* FoodDetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0741F30272D856B0073F60D /* FoodDetailViewControllerTests.swift */; };
 		F0741F332730517D0073F60D /* CartViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0741F322730517D0073F60D /* CartViewControllerTests.swift */; };
 		F0741F35273279D90073F60D /* ReservationViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0741F34273279D90073F60D /* ReservationViewControllerTests.swift */; };
@@ -123,6 +124,7 @@
 		F0349D9426D78E4500C6B154 /* PizzaShopUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaShopUITests.swift; sourceTree = "<group>"; };
 		F0349D9626D78E4500C6B154 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F06742E4276C665100488A5C /* MenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
+		F06742EA276E792A00488A5C /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
 		F0741F30272D856B0073F60D /* FoodDetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailViewControllerTests.swift; sourceTree = "<group>"; };
 		F0741F322730517D0073F60D /* CartViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewControllerTests.swift; sourceTree = "<group>"; };
 		F0741F34273279D90073F60D /* ReservationViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewControllerTests.swift; sourceTree = "<group>"; };
@@ -343,6 +345,7 @@
 			children = (
 				F0FE14B92769CEEA00BDE5C2 /* HomeViewModel.swift */,
 				F0FE14BB2769D57500BDE5C2 /* ProfileViewModel.swift */,
+				F06742EA276E792A00488A5C /* MenuViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -501,6 +504,7 @@
 				F0FE14BE276B9B0D00BDE5C2 /* UseAutoLayout.swift in Sources */,
 				F0125A1A26D81CCF00C5AA8C /* CartViewController.swift in Sources */,
 				F0125B1826E4E7D800C5AA8C /* ReservationViewController.swift in Sources */,
+				F06742EB276E792A00488A5C /* MenuViewModel.swift in Sources */,
 				F0125AC226DD353D00C5AA8C /* UserDefaultsService.swift in Sources */,
 				F0125B5026ED149F00C5AA8C /* User.swift in Sources */,
 				F0FE14BA2769CEEA00BDE5C2 /* HomeViewModel.swift in Sources */,

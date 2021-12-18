@@ -6,13 +6,12 @@
 //
 
 import UIKit
+import Combine
 
 class MenuViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    
-    var webService: API = WebService.shared
-    var items: [Food?] = []
+    private var viewModel = MenuViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,22 +20,9 @@ class MenuViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(UINib.init(nibName: K.Identifiers.MenuCellNibName, bundle: nil),
                            forCellReuseIdentifier: K.Identifiers.menuCellIdentifier)
-        getAllFoods()
-    }
-    
-    func getAllFoods() {
-        webService.getAllFoods { [weak self] result in
-            switch result {
-                case .success(let fetchedFoods):
-                    if let fetchedFoods = fetchedFoods {
-                        self?.items.append(contentsOf: fetchedFoods)
-                        self?.tableView.reloadData()
-                    }
-                case .failure(let error):
-                    UIAlertController.showAlert(message: error.localizedDescription, from: self!)
-            }
+        viewModel.getAllFoods(from: self) {
+            self.tableView.reloadData()
         }
-        
     }
     
 }
@@ -44,12 +30,12 @@ class MenuViewController: UIViewController {
 extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        return viewModel.items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.Identifiers.menuCellIdentifier, for: indexPath) as! MenuCell
-        if let food = self.items[indexPath.row] {
+        if let food = viewModel.items[indexPath.row] {
             cell.foodNameLabel.text = food.name
             cell.foodPriceLabel.text = String(food.price)
             ImageLoader.sharedInstance.imageForUrl(urlString: "\(K.URL.baseUrl)/\(food.image)") { (image, url) in
@@ -68,8 +54,7 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationVC = segue.destination as! FoodDetailViewController
         if let indexPath = tableView.indexPathForSelectedRow {
-            
-            if let item = items[indexPath.row] {
+            if let item = viewModel.items[indexPath.row] {
                 let food = Food(name: item.name, type: nil, price: item.price, ingredients: item.ingredients, image: "\(K.URL.baseUrl)/\(item.image)")
                 destinationVC.food = food
             }
