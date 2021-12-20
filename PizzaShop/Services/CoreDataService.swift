@@ -8,6 +8,9 @@
 import UIKit
 import CoreData
 
+typealias getCartItemsClosure = (Result<[Cart], CoreDataError>) -> Void
+typealias CoreDataCRUDClosure = (Result<String, CoreDataError>) -> Void
+
 enum CoreDataError: Error {
     case savingError
     case loadingError

@@ -15,30 +15,37 @@ enum NetworkError: Error {
 }
 
 protocol API {
-    func start() async throws
+    func start() async throws -> Int
     func getAllFoods() async throws -> [Food]
-    func submitOrder(order: Order, completion: @escaping submitRequestClosure)
-    func submitReservation(reservation: Reservation, completion: @escaping submitRequestClosure)
+    func submitOrder(order: Order) async throws -> Int
+    func submitReservation(reservation: Reservation) async throws -> Int
     func login(phone: User, completion: @escaping getUserClosure)
     func register(user: User, completion: @escaping getUserClosure)
 }
 
+typealias getUserClosure = (Result<User?, NetworkError>) -> Void
+
 final class WebService: API {
     
-    static let shared = WebService()
     private init() {}
+    static let shared = WebService()
+    private let postMethod = "POST"
+    private let contentType = "Application/json"
+    private let HTTPHeaderField = "Content-Type"
     
     /// Start the remote server because it shut downs
-    func start() async throws {
+    func start() async throws -> Int {
         guard let url = URL(string: K.URL.startUrl) else { throw NetworkError.badURL }
         let urlRequest = URLRequest(url: url)
-        let _ = try await URLSession.shared.data(for: urlRequest)
+        let (_, response) = try await URLSession.shared.data(for: urlRequest)
+        guard let response = response as? HTTPURLResponse, response.statusCode == 200 else { throw NetworkError.noData }
+        return response.statusCode
     }
     
     /// Fetch all foods from the server
     func getAllFoods() async throws -> [Food] {
         guard let url = URL(string: K.URL.foodUrl) else { throw NetworkError.badURL }
-
+        
         let request = URLRequest(url: url)
         let (data, response) = try await URLSession.shared.data(for: request)
         guard (response as? HTTPURLResponse)?.statusCode == 200 else { throw NetworkError.noData }
@@ -48,14 +55,12 @@ final class WebService: API {
     }
     
     /// Send the order to the server
-    func submitOrder(order: Order, completion: @escaping submitRequestClosure) {
-        guard let url = URL(string: K.URL.newOrderUrl) else {
-            return completion(.failure(.badURL))
-        }
+    func submitOrder(order: Order) async throws -> Int {
+        guard let url = URL(string: K.URL.newOrderUrl) else { throw NetworkError.badURL }
         
         var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = postMethod
+        request.setValue(contentType, forHTTPHeaderField: HTTPHeaderField)
         let encoder = JSONEncoder()
         do {
             let orderJsonData = try encoder.encode(order)
@@ -63,54 +68,34 @@ final class WebService: API {
             request.httpBody = orderJsonData
             request.timeoutInterval = 20
         } catch {
-            completion(.failure(.decodingError))
+            throw NetworkError.decodingError
         }
         
-        URLSession.shared.dataTask(with: request) { (data, response, error) in
-            guard let _ = data, error == nil else {
-                return completion(.failure(.noData))
-            }
-            
-            if let response = response as? HTTPURLResponse {
-                DispatchQueue.main.async {
-                    completion(.success(response.statusCode))
-                }
-            }
-        }
-        .resume()
+        let (_, response) = try await URLSession.shared.data(for: request)
+        guard let response = response as? HTTPURLResponse, response.statusCode == 200 else { throw NetworkError.noData }
+        return response.statusCode
     }
     
     /// Send the reservation to the server
-    func submitReservation(reservation: Reservation, completion: @escaping submitRequestClosure) {
-        guard let url = URL(string: K.URL.newReservationUrl) else {
-            return completion(.failure(.badURL))
-        }
+    func submitReservation(reservation: Reservation) async throws -> Int {
+        guard let url = URL(string: K.URL.newReservationUrl) else { throw NetworkError.badURL }
         
         var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = postMethod
+        request.setValue(contentType, forHTTPHeaderField: HTTPHeaderField)
         let encoder = JSONEncoder()
         do {
-            let reservationJsonData = try encoder.encode(reservation)
+            let orderJsonData = try encoder.encode(reservation)
             encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
-            request.httpBody = reservationJsonData
+            request.httpBody = orderJsonData
             request.timeoutInterval = 20
         } catch {
-            completion(.failure(.decodingError))
+            throw NetworkError.decodingError
         }
         
-        URLSession.shared.dataTask(with: request) { (data, response, error) in
-            guard let _ = data, error == nil else {
-                return completion(.failure(.noData))
-            }
-            
-            if let response = response as? HTTPURLResponse {
-                DispatchQueue.main.async {
-                    completion(.success(response.statusCode))
-                }
-            }
-        }
-        .resume()
+        let (_, response) = try await URLSession.shared.data(for: request)
+        guard let response = response as? HTTPURLResponse, response.statusCode == 200 else { throw NetworkError.noData }
+        return response.statusCode
     }
     
     /// Send login request with the phone number to the server
@@ -120,8 +105,8 @@ final class WebService: API {
         }
         
         var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = postMethod
+        request.setValue(contentType, forHTTPHeaderField: HTTPHeaderField)
         let encoder = JSONEncoder()
         do {
             let phoneJsonData = try encoder.encode(phone)
@@ -157,8 +142,8 @@ final class WebService: API {
         }
         
         var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = postMethod
+        request.setValue(contentType, forHTTPHeaderField: HTTPHeaderField)
         let encoder = JSONEncoder()
         do {
             let userJsonData = try encoder.encode(user)

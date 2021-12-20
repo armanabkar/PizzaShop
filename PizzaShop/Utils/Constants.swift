@@ -7,11 +7,6 @@
 
 import Foundation
 
-typealias submitRequestClosure = (Result<Int?, NetworkError>) -> Void
-typealias getUserClosure = (Result<User?, NetworkError>) -> Void
-typealias getCartItemsClosure = (Result<[Cart], CoreDataError>) -> Void
-typealias CoreDataCRUDClosure = (Result<String, CoreDataError>) -> Void
-
 struct K {
     
     struct Information {

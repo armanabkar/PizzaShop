@@ -56,29 +56,30 @@ class CartViewController: UIViewController {
                                     address: UserDefaultsService.shared.address,
                                     items: orderNames,
                                     totalPrice: totalPrice)
-        
-        webService.submitOrder(order: newOrder, completion: { [weak self] result in
-            switch result {
-                case .success( _):
+        Task.init {
+            do {
+                let responseCode = try await webService.submitOrder(order: newOrder)
+                if responseCode == 200 {
                     CoreDataService.shared.resetAllRecords(in: K.CoreData.entityName) { result in
                         switch result {
                             case .success(_):
-                                self?.cartItems.removeAll()
-                                self?.tableView.reloadData()
-                                self?.navigationBar.topItem?.title = "Total: 0$"
+                                self.cartItems.removeAll()
+                                self.tableView.reloadData()
+                                self.navigationBar.topItem?.title = "Total: 0$"
                                 UIAlertController.showAlert(title: K.Alert.orderTitle,
                                                             message: K.Alert.orderMessage,
-                                                            from: self!)
+                                                            from: self)
                             case .failure(let error):
                                 UIAlertController.showAlert(message: error.localizedDescription,
-                                                            from: self!)
+                                                            from: self)
                         }
                     }
-                case .failure(let error):
-                    UIAlertController.showAlert(message: error.localizedDescription,
-                                                from: self!)
+                }
+            } catch let error {
+                UIAlertController.showAlert(message: error.localizedDescription,
+                                            from: self)
             }
-        })
+        }
     }
     
     func saveCartItems() {

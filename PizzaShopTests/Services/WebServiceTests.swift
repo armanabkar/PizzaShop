@@ -16,48 +16,25 @@ class WebServiceTests: XCTestCase {
     override func tearDownWithError() throws {
     }
     
+    func test_start() async throws {
+        let responseCode = try await WebService.shared.start()
+        XCTAssertEqual(responseCode, 200)
+    }
+    
     func test_getAllFoods() async throws {
         let foods: [Food] = try await WebService.shared.getAllFoods()
         XCTAssertEqual(foods[0].name, "BBQ Chicken Pizza")
     }
     
-    func test_submitOrder() throws {
-        var responseCode: Int = 0
+    func test_submitOrder() async throws {
         let newOrder = Order(name: "Example Name", phone: "09301231122", address: "example address", items: ["example 1"], totalPrice: 10.99)
-        let orderExpectation = expectation(description: "Send order to server")
-        WebService.shared.submitOrder(order: newOrder, completion: { result in
-            switch result {
-                case .success(let statusCode):
-                    if let statusCode = statusCode {
-                        responseCode = statusCode
-                        orderExpectation.fulfill()
-                    }
-                case .failure(let error):
-                    print(error.localizedDescription)
-                    orderExpectation.fulfill()
-            }
-        })
-        wait(for: [orderExpectation], timeout: 10)
+        let responseCode = try await WebService.shared.submitOrder(order: newOrder)
         XCTAssertEqual(responseCode, 200)
     }
     
-    func test_submitReservation() throws {
-        var responseCode: Int = 0
+    func test_submitReservation() async throws {
         let newReservation = Reservation(name: "Example Name", phone: "123456789", tableSize: "Medium", time: "2021-09-07 12:52", request: "Example Request")
-        let reservationExpectation = expectation(description: "Send reservation to server")
-        WebService.shared.submitReservation(reservation: newReservation, completion: { result in
-            switch result {
-                case .success(let statusCode):
-                    if let statusCode = statusCode {
-                        responseCode = statusCode
-                        reservationExpectation.fulfill()
-                    }
-                case .failure(let error):
-                    print(error.localizedDescription)
-                    reservationExpectation.fulfill()
-            }
-        })
-        wait(for: [reservationExpectation], timeout: 10)
+        let responseCode = try await WebService.shared.submitReservation(reservation: newReservation)
         XCTAssertEqual(responseCode, 200)
     }
     
