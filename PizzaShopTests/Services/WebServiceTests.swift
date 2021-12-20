@@ -16,22 +16,8 @@ class WebServiceTests: XCTestCase {
     override func tearDownWithError() throws {
     }
     
-    func test_getAllFoods() throws {
-        var foods: [Food] = []
-        let foodsExpectation = expectation(description: "Fetch all foods from server")
-        WebService.shared.getAllFoods { result in
-            switch result {
-                case .success(let fetchedFoods):
-                    if let fetchedFoods = fetchedFoods {
-                        foods.append(contentsOf: fetchedFoods)
-                        foodsExpectation.fulfill()
-                    }
-                case .failure(let error):
-                    print(error.localizedDescription)
-                    foodsExpectation.fulfill()
-            }
-        }
-        wait(for: [foodsExpectation], timeout: 10)
+    func test_getAllFoods() async throws {
+        let foods: [Food] = try await WebService.shared.getAllFoods()
         XCTAssertEqual(foods[0].name, "BBQ Chicken Pizza")
     }
     

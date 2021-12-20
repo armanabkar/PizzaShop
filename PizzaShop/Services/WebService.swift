@@ -16,7 +16,7 @@ enum NetworkError: Error {
 
 protocol API {
     func start() async throws
-    func getAllFoods(completion: @escaping getAllFoodsClosure)
+    func getAllFoods() async throws -> [Food]
     func submitOrder(order: Order, completion: @escaping submitRequestClosure)
     func submitReservation(reservation: Reservation, completion: @escaping submitRequestClosure)
     func login(phone: User, completion: @escaping getUserClosure)
@@ -30,31 +30,21 @@ final class WebService: API {
     
     /// Start the remote server because it shut downs
     func start() async throws {
-        guard let url = URL(string: "\(K.URL.baseUrl)/start") else { fatalError("Missing URL") }
+        guard let url = URL(string: K.URL.startUrl) else { throw NetworkError.badURL }
         let urlRequest = URLRequest(url: url)
-        let (_, response) = try await URLSession.shared.data(for: urlRequest)
-        
-        guard (response as? HTTPURLResponse)?.statusCode == 200 else { fatalError("Error while fetching data") }
+        let _ = try await URLSession.shared.data(for: urlRequest)
     }
     
     /// Fetch all foods from the server
-    func getAllFoods(completion: @escaping getAllFoodsClosure) {
-        guard let url = URL(string: K.URL.foodUrl) else {
-            return completion(.failure(.badURL))
-        }
+    func getAllFoods() async throws -> [Food] {
+        guard let url = URL(string: K.URL.foodUrl) else { throw NetworkError.badURL }
+
+        let request = URLRequest(url: url)
+        let (data, response) = try await URLSession.shared.data(for: request)
+        guard (response as? HTTPURLResponse)?.statusCode == 200 else { throw NetworkError.noData }
+        let decodedFoods = try JSONDecoder().decode([Food].self, from: data)
         
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            guard let data = data, error == nil else {
-                return completion(.failure(.noData))
-            }
-            
-            let foods = try? JSONDecoder().decode([Food].self, from: data)
-            
-            DispatchQueue.main.async {
-                completion(.success(foods))
-            }
-        }
-        .resume()
+        return decodedFoods
     }
     
     /// Send the order to the server

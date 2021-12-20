@@ -13,16 +13,13 @@ final class MenuViewModel {
     var webService: API = WebService.shared
     var items: [Food?] = []
     
-    func getAllFoods(from vc: UIViewController, completion: @escaping () -> Void) {
-        webService.getAllFoods { [weak self] result in
-            switch result {
-                case .success(let fetchedFoods):
-                    if let fetchedFoods = fetchedFoods {
-                        self?.items.append(contentsOf: fetchedFoods)
-                        completion()
-                    }
-                case .failure(let error):
-                    UIAlertController.showAlert(message: error.localizedDescription, from: vc)
+    func getFoods(from vc: UIViewController, completion: @escaping () -> Void) {
+        Task.init {
+            do {
+                items = try await webService.getAllFoods()
+                completion()
+            } catch {
+                await UIAlertController.showAlert(message: K.Alert.fetchingError, from: vc)
             }
         }
     }

@@ -29,22 +29,11 @@ class MenuViewControllerTests: XCTestCase {
         XCTAssertEqual(sut.tableView.numberOfRows(inSection: 0), 0)
     }
     
-    func test_viewDidLoad_getAllFoods() throws {
-        let sut = try makeSUT()
-        sut.loadViewIfNeeded()
-        
-        let exp = expectation(description: "Wait for API")
-        exp.isInverted = true
-        wait(for: [exp], timeout: 2)
-        XCTAssertEqual(sut.items.count, 0)
-    }
-    
     private func makeSUT() throws -> MenuViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc: MenuViewController = storyboard.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
         XCTAssertNotNil(vc)
         XCTAssertNotNil(vc.view)
-        vc.webService = WebServiceStub()
         return vc
     }
 

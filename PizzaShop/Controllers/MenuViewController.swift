@@ -20,8 +20,8 @@ class MenuViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(UINib.init(nibName: K.Identifiers.MenuCellNibName, bundle: nil),
                            forCellReuseIdentifier: K.Identifiers.menuCellIdentifier)
-        viewModel.getAllFoods(from: self) {
-            self.tableView.reloadData()
+        viewModel.getFoods(from: self) {
+            DispatchQueue.main.async { self.tableView.reloadData() }
         }
     }
     
