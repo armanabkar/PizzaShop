@@ -51,23 +51,18 @@ class RegisterViewController: UIViewController {
               let phone = phoneField.text,
               let address = addressField.text,
               !name.isEmpty && !phone.isEmpty && !address.isEmpty else {
-            UIAlertController.showAlert(message: K.Alert.invalidFieldMessage, from: self)
-            return
-        }
+                  UIAlertController.showAlert(message: K.Alert.invalidFieldMessage, from: self)
+                  return
+              }
         
         let newUser = User(name: name, phone: phone, address: address)
-        webService.register(user: newUser) { [weak self] result in
-            switch result {
-                case .success( _):
-                    UserDefaultsService.shared.saveToUserDefaults(user: newUser)
-                    self?.performSegue(withIdentifier: K.Identifiers.menuSegue, sender: nil)
-                case .failure(let error):
-                    switch error {
-                        case .custom(K.Alert.userAlreadyExists):
-                            UIAlertController.showAlert(message: K.Alert.userAlreadyExists, from: self!)
-                        default:
-                            UIAlertController.showAlert(message: error.localizedDescription, from: self!)
-                    }
+        Task.init {
+            do {
+                let user = try await webService.register(user: newUser)
+                UserDefaultsService.shared.saveToUserDefaults(user: user)
+                self.performSegue(withIdentifier: K.Identifiers.menuSegue, sender: nil)
+            } catch {
+                UIAlertController.showAlert(message: K.Alert.userAlreadyExists, from: self)
             }
         }
     }

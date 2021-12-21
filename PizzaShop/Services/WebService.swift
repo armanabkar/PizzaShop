@@ -19,11 +19,9 @@ protocol API {
     func getAllFoods() async throws -> [Food]
     func submitOrder(order: Order) async throws -> Int
     func submitReservation(reservation: Reservation) async throws -> Int
-    func login(phone: User, completion: @escaping getUserClosure)
-    func register(user: User, completion: @escaping getUserClosure)
+    func login(user: User) async throws -> User
+    func register(user: User) async throws -> User
 }
-
-typealias getUserClosure = (Result<User?, NetworkError>) -> Void
 
 final class WebService: API {
     
@@ -45,12 +43,10 @@ final class WebService: API {
     /// Fetch all foods from the server
     func getAllFoods() async throws -> [Food] {
         guard let url = URL(string: K.URL.foodUrl) else { throw NetworkError.badURL }
-        
         let request = URLRequest(url: url)
         let (data, response) = try await URLSession.shared.data(for: request)
         guard (response as? HTTPURLResponse)?.statusCode == 200 else { throw NetworkError.noData }
         let decodedFoods = try JSONDecoder().decode([Food].self, from: data)
-        
         return decodedFoods
     }
     
@@ -99,47 +95,31 @@ final class WebService: API {
     }
     
     /// Send login request with the phone number to the server
-    func login(phone: User, completion: @escaping getUserClosure) {
-        guard let url = URL(string: K.URL.login) else {
-            return completion(.failure(.badURL))
-        }
+    func login(user: User) async throws -> User {
+        guard let url = URL(string: K.URL.login) else { throw NetworkError.badURL }
         
         var request = URLRequest(url: url)
         request.httpMethod = postMethod
         request.setValue(contentType, forHTTPHeaderField: HTTPHeaderField)
         let encoder = JSONEncoder()
         do {
-            let phoneJsonData = try encoder.encode(phone)
+            let phoneJsonData = try encoder.encode(user)
             encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
             request.httpBody = phoneJsonData
             request.timeoutInterval = 20
         } catch {
-            completion(.failure(.decodingError))
+            throw NetworkError.decodingError
         }
         
-        URLSession.shared.dataTask(with: request) { (data, response, error) in
-            guard let data = data, error == nil else {
-                return completion(.failure(.noData))
-            }
-            
-            let user = try? JSONDecoder().decode(User.self, from: data)
-            
-            DispatchQueue.main.async {
-                if let response = response as? HTTPURLResponse, response.statusCode == 200 {
-                    completion(.success(user))
-                } else {
-                    completion(.failure(.custom(K.Alert.userDoesNotExist)))
-                }
-            }
-        }
-        .resume()
+        let (data, response) = try await URLSession.shared.data(for: request)
+        guard (response as? HTTPURLResponse)?.statusCode == 200 else { throw NetworkError.custom(K.Alert.userDoesNotExist) }
+        let decodedUser = try JSONDecoder().decode(User.self, from: data)
+        return decodedUser
     }
     
     /// Send register request with a name, phone, and address to the server
-    func register(user: User, completion: @escaping getUserClosure) {
-        guard let url = URL(string: K.URL.register) else {
-            return completion(.failure(.badURL))
-        }
+    func register(user: User) async throws -> User {
+        guard let url = URL(string: K.URL.register) else { throw NetworkError.badURL }
         
         var request = URLRequest(url: url)
         request.httpMethod = postMethod
@@ -151,25 +131,13 @@ final class WebService: API {
             request.httpBody = userJsonData
             request.timeoutInterval = 20
         } catch {
-            completion(.failure(.decodingError))
+            throw NetworkError.decodingError
         }
         
-        URLSession.shared.dataTask(with: request) { (data, response, error) in
-            guard let data = data, error == nil else {
-                return completion(.failure(.noData))
-            }
-            
-            let user = try? JSONDecoder().decode(User.self, from: data)
-            
-            DispatchQueue.main.async {
-                if let response = response as? HTTPURLResponse, response.statusCode == 200 {
-                    completion(.success(user))
-                } else {
-                    completion(.failure(.custom(K.Alert.userAlreadyExists)))
-                }
-            }
-        }
-        .resume()
+        let (data, response) = try await URLSession.shared.data(for: request)
+        guard (response as? HTTPURLResponse)?.statusCode == 200 else { throw NetworkError.custom(K.Alert.userAlreadyExists) }
+        let decodedUser = try JSONDecoder().decode(User.self, from: data)
+        return decodedUser
     }
     
 }

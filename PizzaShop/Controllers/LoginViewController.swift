@@ -31,22 +31,17 @@ class LoginViewController: UIViewController {
     func loginUser() {
         guard let phone = phoneField.text,
               !phone.isEmpty else {
-            UIAlertController.showAlert(message: K.Alert.invalidFieldMessage, from: self)
-            return
-        }
+                  UIAlertController.showAlert(message: K.Alert.invalidFieldMessage, from: self)
+                  return
+              }
         
-        webService.login(phone: User(name: "", phone: phone, address: "")) { [weak self] result in
-            switch result {
-                case .success(let user):
-                    UserDefaultsService.shared.saveToUserDefaults(user: user!)
-                    self?.performSegue(withIdentifier: K.Identifiers.menuSegue, sender: nil)
-                case .failure(let error):
-                    switch error {
-                        case .custom(K.Alert.userDoesNotExist):
-                            UIAlertController.showAlert(message: K.Alert.userDoesNotExist, from: self!)
-                        default:
-                            UIAlertController.showAlert(message: error.localizedDescription, from: self!)
-                    }
+        Task.init {
+            do {
+                let user = try await webService.login(user: User(name: "", phone: phone, address: ""))
+                UserDefaultsService.shared.saveToUserDefaults(user: user)
+                self.performSegue(withIdentifier: K.Identifiers.menuSegue, sender: nil)
+            } catch {
+                UIAlertController.showAlert(message: K.Alert.userDoesNotExist, from: self)
             }
         }
     }

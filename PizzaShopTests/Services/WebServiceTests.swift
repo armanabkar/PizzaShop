@@ -38,44 +38,16 @@ class WebServiceTests: XCTestCase {
         XCTAssertEqual(responseCode, 200)
     }
     
-    func test_login() throws {
-        var fetchedUser = User(name: "", phone: "", address: "")
-        let loginExpectation = expectation(description: "Login")
-        WebService.shared.login(phone: User(name: "", phone: "09363860000", address: "")) { result in
-            switch result {
-                case .success(let user):
-                    if let user = user {
-                        fetchedUser = user
-                        loginExpectation.fulfill()
-                    }
-                case .failure(let error):
-                    print(error.localizedDescription)
-                    loginExpectation.fulfill()
-            }
-        }
-        wait(for: [loginExpectation], timeout: 10)
+    func test_login() async throws {
+        let user = User(name: "", phone: "09363860000", address: "")
+        let fetchedUser = try await WebService.shared.login(user: user)
         XCTAssertEqual(fetchedUser.name, "Arman Abkar")
     }
     
-    func test_register() throws {
+    func test_register() async throws {
         let randomPhoneNumber = Int.random(in: 1 ... 1000)
         let newUser = User(name: "Example Name", phone: "\(randomPhoneNumber)", address: "Example Address")
-        var fetchedUser = User(name: "", phone: "", address: "")
-        let registerExpectation = expectation(description: "Register")
-        WebService.shared.register(user: newUser) { result in
-            switch result {
-                case .success(let user):
-                    if let user = user {
-                        fetchedUser = user
-                        registerExpectation.fulfill()
-                    }
-                case .failure(let error):
-                    print(error.localizedDescription)
-                    registerExpectation.fulfill()
-            }
-        }
-        
-        wait(for: [registerExpectation], timeout: 10)
+        let fetchedUser = try await WebService.shared.register(user: newUser)
         XCTAssertEqual(fetchedUser.name, newUser.name)
     }
     
