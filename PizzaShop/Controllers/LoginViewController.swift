@@ -38,7 +38,7 @@ class LoginViewController: UIViewController {
         Task.init {
             do {
                 let user = try await webService.login(user: User(name: "", phone: phone, address: ""))
-                UserDefaultsService.shared.saveToUserDefaults(user: user)
+                UserDefaultsService.shared.saveUser(user: user)
                 self.performSegue(withIdentifier: K.Identifiers.menuSegue, sender: nil)
             } catch {
                 UIAlertController.showAlert(message: K.Alert.userDoesNotExist, from: self)

@@ -13,11 +13,11 @@ class ProfileViewControllerTests: XCTestCase {
     let testUser = User(name: "test_name", phone: "123456789", address: "test_address")
 
     override func setUpWithError() throws {
-        UserDefaultsService.shared.saveToUserDefaults(user: testUser)
+        UserDefaultsService.shared.saveUser(user: testUser)
     }
 
     override func tearDownWithError() throws {
-        UserDefaultsService.shared.removeUserFromUserDefaults()
+        UserDefaultsService.shared.removeUser()
     }
 
     func test_CanInit() throws {

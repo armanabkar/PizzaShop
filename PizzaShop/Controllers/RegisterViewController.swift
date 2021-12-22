@@ -59,7 +59,7 @@ class RegisterViewController: UIViewController {
         Task.init {
             do {
                 let user = try await webService.register(user: newUser)
-                UserDefaultsService.shared.saveToUserDefaults(user: user)
+                UserDefaultsService.shared.saveUser(user: user)
                 self.performSegue(withIdentifier: K.Identifiers.menuSegue, sender: nil)
             } catch {
                 UIAlertController.showAlert(message: K.Alert.userAlreadyExists, from: self)

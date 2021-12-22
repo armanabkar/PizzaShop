@@ -19,7 +19,7 @@ final class ProfileViewModel: ObservableObject {
     }
     
     func removeAndResetUserData(from vc: UIViewController) {
-        UserDefaultsService.shared.removeUserFromUserDefaults()
+        UserDefaultsService.shared.removeUser()
         CoreDataService.shared.resetAllRecords(in: K.CoreData.entityName) { result in
             switch result {
                 case .success(_):

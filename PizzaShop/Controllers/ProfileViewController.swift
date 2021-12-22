@@ -52,7 +52,8 @@ class ProfileViewController: UIViewController {
         button.configuration?.attributedTitle = buttonTitle
         button.tintColor = .white
         button.setTitleColor(.black, for: .normal)
-        button.addTarget(self, action: #selector(logOutTapped(_ :)), for: .touchUpInside)
+        button.addTarget(self, action: #selector(logOutTapped(_ :)),
+                         for: .touchUpInside)
         return button
     }()
     
@@ -73,12 +74,12 @@ class ProfileViewController: UIViewController {
     }
     
     func setUpLabels() {
-        view.addSubview(profileImage)
-        view.addSubview(nameLabel)
-        view.addSubview(phoneLabel)
-        view.addSubview(addressLabel)
-        view.addSubview(appVersionLabel)
-        view.addSubview(logOutButton)
+        view.addSubviews([profileImage,
+                          nameLabel,
+                          phoneLabel,
+                          addressLabel,
+                          appVersionLabel,
+                          logOutButton])
         nameLabel.text = UserDefaultsService.shared.name
         phoneLabel.text = UserDefaultsService.shared.phone
         addressLabel.text = UserDefaultsService.shared.address

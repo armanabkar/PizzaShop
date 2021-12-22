@@ -9,31 +9,32 @@ import UIKit
 
 final class UserDefaultsService {
     
-    static let shared = UserDefaultsService()
     private init() {}
+    static let shared = UserDefaultsService()
+    private let UD = UserDefaults.standard
     
     var name: String {
-        UserDefaults.standard.string(forKey: "name") ?? ""
+        UD.string(forKey: "name") ?? ""
     }
     var phone: String {
-        UserDefaults.standard.string(forKey: "phone") ?? ""
+        UD.string(forKey: "phone") ?? ""
     }
     var address: String {
-        UserDefaults.standard.string(forKey: "address") ?? ""
+        UD.string(forKey: "address") ?? ""
     }
     
     /// Save the user's information to the User Defaults
-    func saveToUserDefaults(user: User) {
-        UserDefaults.standard.set(user.name, forKey: "name")
-        UserDefaults.standard.set(user.phone, forKey: "phone")
-        UserDefaults.standard.set(user.address, forKey: "address")
+    func saveUser(user: User) {
+        UD.set(user.name, forKey: "name")
+        UD.set(user.phone, forKey: "phone")
+        UD.set(user.address, forKey: "address")
     }
     
     /// Remove the user's information from the User Defaults
-    func removeUserFromUserDefaults() {
-        UserDefaults.standard.removeObject(forKey: "name")
-        UserDefaults.standard.removeObject(forKey: "phone")
-        UserDefaults.standard.removeObject(forKey: "address")
+    func removeUser() {
+        UD.removeObject(forKey: "name")
+        UD.removeObject(forKey: "phone")
+        UD.removeObject(forKey: "address")
     }
     
 }
