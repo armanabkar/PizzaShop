@@ -19,12 +19,12 @@ class ProfileViewController: UIViewController {
     @UseAutoLayout var nameLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
-        label.font = UIFont.systemFont(ofSize: 36, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: 38, weight: .bold)
         return label
     }()
     @UseAutoLayout var phoneLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .white
+        label.textColor = .systemGray6
         label.font = UIFont.systemFont(ofSize: 26, weight: .medium)
         return label
     }()
@@ -45,7 +45,7 @@ class ProfileViewController: UIViewController {
     @UseAutoLayout var logOutButton: UIButton = {
         let button = UIButton()
         let buttonTitle = AttributedString("Log Out", attributes: AttributeContainer([
-            .font: UIFont.systemFont(ofSize: 28, weight: .medium),
+            .font: UIFont.systemFont(ofSize: 26, weight: .semibold),
             .foregroundColor: UIColor.black,
         ]))
         button.configuration = .filled()
@@ -57,12 +57,17 @@ class ProfileViewController: UIViewController {
         return button
     }()
     
+    override func loadView() {
+        super.loadView()
+        
+        configureViews()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .black
         setUpLabels()
-        configureConstraints()
+        view.backgroundColor = .black
     }
     
     @objc func logOutTapped(_ sender: UIButton) {
@@ -74,19 +79,23 @@ class ProfileViewController: UIViewController {
     }
     
     func setUpLabels() {
+        //        nameLabel.text = UserDefaultsService.shared.name
+        //        phoneLabel.text = UserDefaultsService.shared.phone
+        //        addressLabel.text = UserDefaultsService.shared.address
+        //        appVersionLabel.text = viewModel.getAppVersion()
+        nameLabel.text = "Arman Abkar"
+        phoneLabel.text = "123456789"
+        addressLabel.text = "Some where in the earth, 123456789 nothing more"
+        appVersionLabel.text = viewModel.getAppVersion()
+    }
+    
+    func configureViews() {
         view.addSubviews([profileImage,
                           nameLabel,
                           phoneLabel,
                           addressLabel,
                           appVersionLabel,
                           logOutButton])
-        nameLabel.text = UserDefaultsService.shared.name
-        phoneLabel.text = UserDefaultsService.shared.phone
-        addressLabel.text = UserDefaultsService.shared.address
-        appVersionLabel.text = viewModel.getAppVersion()
-    }
-    
-    func configureConstraints() {
         NSLayoutConstraint.activate([
             profileImage.centerXAnchor.constraint(equalTo: view.layoutMarginsGuide.centerXAnchor),
             profileImage.widthAnchor.constraint(equalToConstant: 180),
@@ -96,12 +105,12 @@ class ProfileViewController: UIViewController {
             nameLabel.centerXAnchor.constraint(equalTo: view.layoutMarginsGuide.centerXAnchor),
             phoneLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 20),
             phoneLabel.centerXAnchor.constraint(equalTo: view.layoutMarginsGuide.centerXAnchor),
-            addressLabel.topAnchor.constraint(equalTo: phoneLabel.bottomAnchor, constant: 10),
+            addressLabel.topAnchor.constraint(equalTo: phoneLabel.bottomAnchor, constant: 5),
             addressLabel.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.centerXAnchor),
             addressLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             addressLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             appVersionLabel.centerXAnchor.constraint(equalTo: view.layoutMarginsGuide.centerXAnchor),
-            appVersionLabel.topAnchor.constraint(equalTo: addressLabel.bottomAnchor, constant: 50),
+            appVersionLabel.topAnchor.constraint(equalTo: addressLabel.bottomAnchor, constant: 60),
             logOutButton.topAnchor.constraint(equalTo: appVersionLabel.bottomAnchor, constant: 20),
             logOutButton.centerXAnchor.constraint(equalTo: view.layoutMarginsGuide.centerXAnchor)
         ])
