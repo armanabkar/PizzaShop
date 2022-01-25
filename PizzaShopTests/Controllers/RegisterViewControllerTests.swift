@@ -18,7 +18,7 @@ class RegisterViewControllerTests: XCTestCase {
         let sut = try makeSUT()
         
         sut.loadViewIfNeeded()
-        XCTAssertEqual(sut.appTitle?.text, "Pizza Pizza")
+        XCTAssertEqual(sut.appTitle?.text, K.Information.appName)
     }
     
     func test_viewDidLoad_configuresTextField() throws {

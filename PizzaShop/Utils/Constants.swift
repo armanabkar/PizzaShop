@@ -10,7 +10,7 @@ import Foundation
 struct K {
     
     struct Information {
-        static let appName = "Pizza Pizza"
+        static let appName = "Pizza Shop"
         static let locationLatitude = 34.402341
         static let locationLongitude = -119.726045
         static let description1 = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, tempor incididunt ut magna aliqua. ut labore et dolore magna aliqua."
@@ -39,7 +39,7 @@ struct K {
         static let orderTitle = "Thank You"
         static let orderMessage = "Your order has been received. We will deliver it to you as soon as possible."
         static let notificationMessage = "Your order has been delivered. Thank you for choosing us."
-        static let reservationMessage = "Your reservation has been made. We will wait for you in PIZZA PIZZA!"
+        static let reservationMessage = "Your reservation has been made. We will wait for you in \(K.Information.appName)"
         static let invalidFieldMessage = "Please enter a valid name, phone, and address."
         static let userDoesNotExist = "User does not exist. Please register."
         static let userAlreadyExists = "User already exists. Try login or register with another number."
