@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Food: Decodable {
+struct Food: Codable {
     let name: String
     let type: String?
     let price: Float

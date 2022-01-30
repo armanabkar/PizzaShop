@@ -79,13 +79,9 @@ class ProfileViewController: UIViewController {
     }
     
     func setUpLabels() {
-        //        nameLabel.text = UserDefaultsService.shared.name
-        //        phoneLabel.text = UserDefaultsService.shared.phone
-        //        addressLabel.text = UserDefaultsService.shared.address
-        //        appVersionLabel.text = viewModel.getAppVersion()
-        nameLabel.text = "Arman Abkar"
-        phoneLabel.text = "123456789"
-        addressLabel.text = "Some where in the earth, 123456789 nothing more"
+        nameLabel.text = UserDefaultsService.shared.name
+        phoneLabel.text = UserDefaultsService.shared.phone
+        addressLabel.text = UserDefaultsService.shared.address
         appVersionLabel.text = viewModel.getAppVersion()
     }
     
@@ -100,19 +96,19 @@ class ProfileViewController: UIViewController {
             profileImage.centerXAnchor.constraint(equalTo: view.layoutMarginsGuide.centerXAnchor),
             profileImage.widthAnchor.constraint(equalToConstant: 180),
             profileImage.heightAnchor.constraint(equalToConstant: 180),
-            profileImage.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor, constant: 20),
-            nameLabel.topAnchor.constraint(equalTo: profileImage.bottomAnchor, constant: 20),
+            profileImage.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor, constant: 35),
+            nameLabel.topAnchor.constraint(equalTo: profileImage.bottomAnchor, constant: 25),
             nameLabel.centerXAnchor.constraint(equalTo: view.layoutMarginsGuide.centerXAnchor),
-            phoneLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 20),
+            phoneLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 25),
             phoneLabel.centerXAnchor.constraint(equalTo: view.layoutMarginsGuide.centerXAnchor),
             addressLabel.topAnchor.constraint(equalTo: phoneLabel.bottomAnchor, constant: 5),
             addressLabel.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.centerXAnchor),
-            addressLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            addressLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            addressLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
+            addressLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25),
             appVersionLabel.centerXAnchor.constraint(equalTo: view.layoutMarginsGuide.centerXAnchor),
-            appVersionLabel.topAnchor.constraint(equalTo: addressLabel.bottomAnchor, constant: 60),
-            logOutButton.topAnchor.constraint(equalTo: appVersionLabel.bottomAnchor, constant: 20),
-            logOutButton.centerXAnchor.constraint(equalTo: view.layoutMarginsGuide.centerXAnchor)
+            appVersionLabel.bottomAnchor.constraint(equalTo: logOutButton.topAnchor, constant: -25),
+            logOutButton.centerXAnchor.constraint(equalTo: view.layoutMarginsGuide.centerXAnchor),
+            logOutButton.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor, constant: -35)
         ])
     }
     

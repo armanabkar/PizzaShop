@@ -42,11 +42,15 @@ final class WebService: API {
     
     /// Fetch all foods from the server
     func getAllFoods() async throws -> [Food] {
+        if let foods = UserDefaultsService.shared.foods, !foods.isEmpty { return foods }
+        
         guard let url = URL(string: K.URL.foodUrl) else { throw NetworkError.badURL }
         let request = URLRequest(url: url)
         let (data, response) = try await URLSession.shared.data(for: request)
         guard (response as? HTTPURLResponse)?.statusCode == 200 else { throw NetworkError.noData }
         let decodedFoods = try JSONDecoder().decode([Food].self, from: data)
+        UserDefaultsService.shared.saveFoodsToCache(foods: decodedFoods)
+        
         return decodedFoods
     }
     

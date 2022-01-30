@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Req-rj-6Id">
-                                <rect key="frame" x="0.0" y="140" width="414" height="613"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
                                 <color key="backgroundColor" name="PrimaryColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="orderCell" id="2lz-LT-c9H" customClass="OrderCell" customModule="PizzaShop" customModuleProvider="target">
@@ -73,39 +73,27 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
-                                    <navigationItem title="Total: 0$" id="IBN-FV-GHS"/>
+                                    <navigationItem title="Total: 0$" id="IBN-FV-GHS">
+                                        <barButtonItem key="rightBarButtonItem" title="Submit" style="done" id="IOr-as-RJo">
+                                            <connections>
+                                                <action selector="submitOrderTapped:" destination="DcY-MV-QjU" id="knE-gh-ifl"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DYB-O6-FXq">
-                                <rect key="frame" x="0.0" y="753" width="414" height="60"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="Xce-nm-D0N"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
-                                <state key="normal" title="Submit Order">
-                                    <color key="titleColor" name="PrimaryColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="submitOrderTapped:" destination="DcY-MV-QjU" eventType="touchUpInside" id="G7I-VC-n8f"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IYu-1H-61n"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="DYB-O6-FXq" firstAttribute="top" secondItem="Req-rj-6Id" secondAttribute="bottom" id="26f-1N-t31"/>
                             <constraint firstItem="hkg-kl-xhs" firstAttribute="top" secondItem="IYu-1H-61n" secondAttribute="top" id="42U-UD-QiP"/>
                             <constraint firstItem="Req-rj-6Id" firstAttribute="leading" secondItem="IYu-1H-61n" secondAttribute="leading" id="4ZW-ml-RHL"/>
                             <constraint firstItem="hkg-kl-xhs" firstAttribute="leading" secondItem="IYu-1H-61n" secondAttribute="leading" id="A9q-c2-0Pm"/>
                             <constraint firstItem="hkg-kl-xhs" firstAttribute="trailing" secondItem="IYu-1H-61n" secondAttribute="trailing" id="CWS-13-0kL"/>
                             <constraint firstItem="Req-rj-6Id" firstAttribute="trailing" secondItem="IYu-1H-61n" secondAttribute="trailing" id="GUB-2g-I0u"/>
-                            <constraint firstItem="DYB-O6-FXq" firstAttribute="trailing" secondItem="IYu-1H-61n" secondAttribute="trailing" id="c9W-Il-ToL"/>
-                            <constraint firstItem="DYB-O6-FXq" firstAttribute="leading" secondItem="IYu-1H-61n" secondAttribute="leading" id="dzz-Vu-GZe"/>
                             <constraint firstItem="Req-rj-6Id" firstAttribute="top" secondItem="hkg-kl-xhs" secondAttribute="bottom" id="jXv-Ua-vnb"/>
-                            <constraint firstItem="DYB-O6-FXq" firstAttribute="top" secondItem="Req-rj-6Id" secondAttribute="bottom" id="ot5-q2-ltr"/>
+                            <constraint firstItem="IYu-1H-61n" firstAttribute="bottom" secondItem="Req-rj-6Id" secondAttribute="bottom" id="qW6-up-zQz"/>
                             <constraint firstItem="Req-rj-6Id" firstAttribute="top" secondItem="hkg-kl-xhs" secondAttribute="bottom" id="tcV-pa-7GM"/>
-                            <constraint firstItem="DYB-O6-FXq" firstAttribute="bottom" secondItem="IYu-1H-61n" secondAttribute="bottom" id="trx-XW-0v8"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Cart" image="cart" catalog="system" id="9vE-Ap-0pv"/>
@@ -188,23 +176,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u1C-uA-l7E">
                                 <rect key="frame" x="0.0" y="140" width="414" height="673"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="95g-e3-EBS">
-                                        <rect key="frame" x="0.0" y="613" width="414" height="60"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="61o-Ct-TFW"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="414" id="C9H-T5-epQ"/>
-                                            <constraint firstAttribute="height" constant="60" id="Leg-dB-bWY"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
-                                        <state key="normal" title="Submit Reservation">
-                                            <color key="titleColor" name="PrimaryColor"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="logOutTapped:" destination="wTQ-xn-Fqb" eventType="touchUpInside" id="9GL-84-WRv"/>
-                                            <action selector="submitReservationTapped:" destination="eb8-Gt-aLN" eventType="touchUpInside" id="Xgg-gv-6BA"/>
-                                        </connections>
-                                    </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Yup-b4-pVv">
                                         <rect key="frame" x="40" y="156" width="334" height="255.5"/>
                                         <subviews>
@@ -278,19 +249,29 @@
                                             <constraint firstItem="gaA-0f-3YD" firstAttribute="leading" secondItem="Yup-b4-pVv" secondAttribute="leading" constant="7" id="pnf-Il-Suf"/>
                                         </constraints>
                                     </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="76C-5w-mJK">
+                                        <rect key="frame" x="159.5" y="441.5" width="95.5" height="40.5"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Submit">
+                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="22"/>
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="submitReservationTapped:" destination="eb8-Gt-aLN" eventType="touchUpInside" id="VGX-Em-24E"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" name="PrimaryColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="Yup-b4-pVv" secondAttribute="trailing" constant="40" id="GaE-nF-aDj"/>
-                                    <constraint firstAttribute="bottom" secondItem="95g-e3-EBS" secondAttribute="bottom" id="K75-uS-i3X"/>
-                                    <constraint firstItem="95g-e3-EBS" firstAttribute="leading" secondItem="u1C-uA-l7E" secondAttribute="leading" id="LXq-XP-fMd"/>
-                                    <constraint firstAttribute="trailing" secondItem="95g-e3-EBS" secondAttribute="trailing" id="NIe-Kz-pla"/>
+                                    <constraint firstItem="76C-5w-mJK" firstAttribute="top" secondItem="Yup-b4-pVv" secondAttribute="bottom" constant="30" id="ItZ-Z2-EoI"/>
                                     <constraint firstItem="Yup-b4-pVv" firstAttribute="centerX" secondItem="u1C-uA-l7E" secondAttribute="centerX" id="RUc-mD-T1t"/>
+                                    <constraint firstItem="76C-5w-mJK" firstAttribute="centerX" secondItem="u1C-uA-l7E" secondAttribute="centerX" id="ZDQ-xE-jwH"/>
                                     <constraint firstItem="Yup-b4-pVv" firstAttribute="leading" secondItem="u1C-uA-l7E" secondAttribute="leading" constant="40" id="eTu-eS-4h7"/>
-                                    <constraint firstItem="95g-e3-EBS" firstAttribute="leading" secondItem="u1C-uA-l7E" secondAttribute="leading" id="o3s-9O-34Z"/>
-                                    <constraint firstAttribute="trailing" secondItem="95g-e3-EBS" secondAttribute="trailing" id="oKe-3m-mp3"/>
                                     <constraint firstItem="Yup-b4-pVv" firstAttribute="centerY" secondItem="u1C-uA-l7E" secondAttribute="centerY" constant="-52.75" id="s9u-2W-noY"/>
-                                    <constraint firstAttribute="bottom" secondItem="95g-e3-EBS" secondAttribute="bottom" id="tgc-lU-cIv"/>
                                 </constraints>
                             </view>
                             <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jd2-zA-2W4">
