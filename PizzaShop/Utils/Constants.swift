@@ -15,7 +15,9 @@ struct K {
         static let locationLongitude = -119.726045
         static let description1 = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, tempor incididunt ut magna aliqua. ut labore et dolore magna aliqua."
         static let description2 = "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. tempor incididunt magna magna et dolrore!"
+        static let description3 = "Cant' wait to see you!"
         static let supportPhone = "(805) 681- 4200"
+        static let address = "26 W Mission St , Santa Barbara, CA"
     }
     
     struct Identifiers {

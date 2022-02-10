@@ -15,12 +15,26 @@ final class HomeViewModel: ObservableObject {
               latitude: K.Information.locationLatitude,
               longitude: K.Information.locationLongitude)
     ]
+    var images: [String] = []
     @Published var region = MKCoordinateRegion(
         center: CLLocationCoordinate2D(latitude: K.Information.locationLatitude,
                                        longitude: K.Information.locationLongitude),
         span: MKCoordinateSpan(latitudeDelta: 0.1,
                                longitudeDelta: 0.1)
     )
+    
+    init() {
+        Task.init {
+            let foods = try await WebService.shared.getAllFoods()
+            foods
+                .filter({ food in
+                    food.type == "pizza"
+                })
+                .forEach { food in
+                images.append("\(K.URL.baseUrl)/\(food.image)")
+            }
+        }
+    }
     
 }
 
