@@ -52,8 +52,6 @@ class ProfileViewController: UIViewController {
         button.configuration?.attributedTitle = buttonTitle
         button.tintColor = .white
         button.setTitleColor(.black, for: .normal)
-        button.addTarget(self, action: #selector(logOutTapped(_ :)),
-                         for: .touchUpInside)
         return button
     }()
     
@@ -83,6 +81,9 @@ class ProfileViewController: UIViewController {
         phoneLabel.text = UserDefaultsService.shared.phone
         addressLabel.text = UserDefaultsService.shared.address
         appVersionLabel.text = viewModel.getAppVersion()
+        logOutButton.addTarget(self,
+                         action: #selector(logOutTapped(_ :)),
+                         for: .touchUpInside)
     }
     
     func configureViews() {

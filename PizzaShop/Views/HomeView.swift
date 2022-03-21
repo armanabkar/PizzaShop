@@ -39,7 +39,7 @@ struct HomeView: View {
                     
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack {
-                            ForEach(0..<homeViewModel.images.count) { i in
+                            ForEach(0..<homeViewModel.images.count, id:\.self) { i in
                                 AsyncImage(url: URL(string: "\(homeViewModel.images[i])")) { image in
                                     image
                                         .resizable()
