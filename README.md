@@ -26,3 +26,7 @@ Food Ordering iOS application. Built with UIKit, SwiftUI, MapKit, CoreData, MVVM
 - [ ] Stripe
 - [ ] Push Notifications
 - [ ] UI Tests
+
+### Contributing
+
+We appreciate your help!
