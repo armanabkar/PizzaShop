@@ -40,6 +40,7 @@
 		F0125C0F2722C65400C5AA8C /* WebServiceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125C0E2722C65400C5AA8C /* WebServiceStub.swift */; };
 		F0125C172722D53800C5AA8C /* MainViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125C162722D53700C5AA8C /* MainViewControllerTests.swift */; };
 		F0125C1C2722D9FC00C5AA8C /* ProfileViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125C1B2722D9FC00C5AA8C /* ProfileViewControllerTests.swift */; };
+		F02B9D642896947C001552EF /* SFSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02B9D632896947C001552EF /* SFSymbols.swift */; };
 		F0349D7326D78E4400C6B154 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0349D7226D78E4400C6B154 /* AppDelegate.swift */; };
 		F0349D7526D78E4400C6B154 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0349D7426D78E4400C6B154 /* SceneDelegate.swift */; };
 		F0349D7A26D78E4400C6B154 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0349D7826D78E4400C6B154 /* Main.storyboard */; };
@@ -110,6 +111,7 @@
 		F0125C0E2722C65400C5AA8C /* WebServiceStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceStub.swift; sourceTree = "<group>"; };
 		F0125C162722D53700C5AA8C /* MainViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerTests.swift; sourceTree = "<group>"; };
 		F0125C1B2722D9FC00C5AA8C /* ProfileViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewControllerTests.swift; sourceTree = "<group>"; };
+		F02B9D632896947C001552EF /* SFSymbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbols.swift; sourceTree = "<group>"; };
 		F0349D6F26D78E4400C6B154 /* PizzaShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PizzaShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0349D7226D78E4400C6B154 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0349D7426D78E4400C6B154 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				F0125A2A26D81F8D00C5AA8C /* Constants.swift */,
 				F0FE14BD276B9B0D00BDE5C2 /* UseAutoLayout.swift */,
 				F0125A6C26DAABE800C5AA8C /* ImageLoader.swift */,
+				F02B9D632896947C001552EF /* SFSymbols.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -485,6 +488,7 @@
 			files = (
 				F0125A0F26D81CA300C5AA8C /* RegisterViewController.swift in Sources */,
 				F0125A2226D81CDD00C5AA8C /* FoodDetailViewController.swift in Sources */,
+				F02B9D642896947C001552EF /* SFSymbols.swift in Sources */,
 				F0FE14B727662A7800BDE5C2 /* UIViewControllerExtension.swift in Sources */,
 				F0FE14BC2769D57500BDE5C2 /* ProfileViewModel.swift in Sources */,
 				F0125A6D26DAABE800C5AA8C /* ImageLoader.swift in Sources */,

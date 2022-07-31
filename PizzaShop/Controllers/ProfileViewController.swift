@@ -12,7 +12,7 @@ class ProfileViewController: UIViewController {
     let viewModel = ProfileViewModel()
     @UseAutoLayout var profileImage: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(systemName: "person.circle")
+        image.image = SFSymbols.avatar
         image.tintColor = .white
         return image
     }()
