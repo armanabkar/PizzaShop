@@ -23,6 +23,7 @@ protocol API {
     func register(user: User) async throws -> User
 }
 
+@available(iOS 13, *)
 final class WebService: API {
     
     private init() {}
