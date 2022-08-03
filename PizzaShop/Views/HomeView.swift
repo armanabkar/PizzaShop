@@ -75,6 +75,8 @@ struct HomeView: View {
                         .foregroundColor(.white)
                         .font(.title2)
                         .fontWeight(.semibold)
+                    
+                    Spacer(minLength: 30)
                 }
                 .padding(.horizontal)
                 .padding(.vertical, 20)

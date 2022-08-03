@@ -40,6 +40,8 @@
 		F0125C0F2722C65400C5AA8C /* WebServiceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125C0E2722C65400C5AA8C /* WebServiceStub.swift */; };
 		F0125C172722D53800C5AA8C /* MainViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125C162722D53700C5AA8C /* MainViewControllerTests.swift */; };
 		F0125C1C2722D9FC00C5AA8C /* ProfileViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125C1B2722D9FC00C5AA8C /* ProfileViewControllerTests.swift */; };
+		F01A697A2899AB3400B7AC60 /* ARPizzaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01A69792899AB3400B7AC60 /* ARPizzaViewController.swift */; };
+		F01A697D2899B22700B7AC60 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = F01A697C2899B22700B7AC60 /* art.scnassets */; };
 		F02B9D642896947C001552EF /* SFSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02B9D632896947C001552EF /* SFSymbols.swift */; };
 		F0349D7326D78E4400C6B154 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0349D7226D78E4400C6B154 /* AppDelegate.swift */; };
 		F0349D7526D78E4400C6B154 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0349D7426D78E4400C6B154 /* SceneDelegate.swift */; };
@@ -111,6 +113,8 @@
 		F0125C0E2722C65400C5AA8C /* WebServiceStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceStub.swift; sourceTree = "<group>"; };
 		F0125C162722D53700C5AA8C /* MainViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerTests.swift; sourceTree = "<group>"; };
 		F0125C1B2722D9FC00C5AA8C /* ProfileViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewControllerTests.swift; sourceTree = "<group>"; };
+		F01A69792899AB3400B7AC60 /* ARPizzaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARPizzaViewController.swift; sourceTree = "<group>"; };
+		F01A697C2899B22700B7AC60 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		F02B9D632896947C001552EF /* SFSymbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbols.swift; sourceTree = "<group>"; };
 		F0349D6F26D78E4400C6B154 /* PizzaShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PizzaShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0349D7226D78E4400C6B154 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -300,6 +304,7 @@
 				F0349D7226D78E4400C6B154 /* AppDelegate.swift */,
 				F0349D7426D78E4400C6B154 /* SceneDelegate.swift */,
 				F0349D7B26D78E4500C6B154 /* Assets.xcassets */,
+				F01A697C2899B22700B7AC60 /* art.scnassets */,
 			);
 			path = "Support Files";
 			sourceTree = "<group>";
@@ -317,6 +322,7 @@
 				F0125B1226E4E38900C5AA8C /* MainViewController.swift */,
 				F0125B1726E4E7D800C5AA8C /* ReservationViewController.swift */,
 				F0125B2926E8B40E00C5AA8C /* LoginViewController.swift */,
+				F01A69792899AB3400B7AC60 /* ARPizzaViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -459,6 +465,7 @@
 				F0125C0027103CBA00C5AA8C /* Menu.storyboard in Resources */,
 				F06742E5276C665100488A5C /* MenuCell.xib in Resources */,
 				F0125B5E26F4990800C5AA8C /* Auth.storyboard in Resources */,
+				F01A697D2899B22700B7AC60 /* art.scnassets in Resources */,
 				F0349D7F26D78E4500C6B154 /* LaunchScreen.storyboard in Resources */,
 				F0349D7C26D78E4500C6B154 /* Assets.xcassets in Resources */,
 				F0349D7A26D78E4400C6B154 /* Main.storyboard in Resources */,
@@ -504,6 +511,7 @@
 				F0125A2B26D81F8D00C5AA8C /* Constants.swift in Sources */,
 				F0125A4526D8A85500C5AA8C /* Food.swift in Sources */,
 				F0125AA726DC20E200C5AA8C /* CoreDataService.swift in Sources */,
+				F01A697A2899AB3400B7AC60 /* ARPizzaViewController.swift in Sources */,
 				F0125A9D26DC1B6900C5AA8C /* UIAlertControllerExtension.swift in Sources */,
 				F0FE14BE276B9B0D00BDE5C2 /* UseAutoLayout.swift in Sources */,
 				F0125A1A26D81CCF00C5AA8C /* CartViewController.swift in Sources */,

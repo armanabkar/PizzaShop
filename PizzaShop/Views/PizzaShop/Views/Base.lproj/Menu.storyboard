@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -49,7 +49,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vSs-yh-MiD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1451" y="-668"/>
+            <point key="canvasLocation" x="2360.8695652173915" y="-668.30357142857144"/>
         </scene>
         <!--Food Detail View Controller-->
         <scene sceneID="wHj-1K-qpp">
@@ -60,14 +60,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KYz-Es-2MR">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="310.5"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="310.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="310.5" id="BqH-eZ-DRV"/>
                                     <constraint firstAttribute="width" constant="414" id="sw6-Cr-LYD"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pizza Bacon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VlZ-Rd-Ebv">
-                                <rect key="frame" x="0.0" y="310.5" width="414" height="60"/>
+                                <rect key="frame" x="0.0" y="354.5" width="414" height="60"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="PyO-Ef-nd0"/>
@@ -77,7 +77,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="SA3-o8-CvS">
-                                <rect key="frame" x="30" y="400.5" width="354" height="117"/>
+                                <rect key="frame" x="30" y="444.5" width="354" height="117"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L3N-Rt-IMV">
                                         <rect key="frame" x="0.0" y="0.0" width="354" height="61"/>
@@ -94,8 +94,28 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kuE-i3-ApZ">
+                                <rect key="frame" x="169" y="581.5" width="76.5" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" image="square.stack.3d.forward.dottedline" catalog="system" subtitle="">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content=" AR">
+                                            <attributes>
+                                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <font key="NSFont" size="18" name="SFPro-Medium"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="txg-R5-dYd" kind="showDetail" identifier="toARPizzaViewController" id="C0U-Fd-eea"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N9O-95-aka">
-                                <rect key="frame" x="115.5" y="547.5" width="183.5" height="50"/>
+                                <rect key="frame" x="115" y="636.5" width="184" height="50"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Add to Cart">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="30"/>
@@ -115,12 +135,14 @@
                             <constraint firstItem="SA3-o8-CvS" firstAttribute="top" secondItem="VlZ-Rd-Ebv" secondAttribute="bottom" constant="30" id="FVF-i8-000"/>
                             <constraint firstItem="VlZ-Rd-Ebv" firstAttribute="leading" secondItem="QFc-rA-Fhc" secondAttribute="leading" id="JLg-FT-9dX"/>
                             <constraint firstItem="SA3-o8-CvS" firstAttribute="leading" secondItem="QFc-rA-Fhc" secondAttribute="leading" constant="30" id="KJ2-eo-yb1"/>
+                            <constraint firstItem="kuE-i3-ApZ" firstAttribute="top" secondItem="SA3-o8-CvS" secondAttribute="bottom" constant="20" id="L7H-JI-F2X"/>
+                            <constraint firstItem="kuE-i3-ApZ" firstAttribute="centerX" secondItem="dCf-au-kvO" secondAttribute="centerX" id="Pja-W9-wXH"/>
                             <constraint firstItem="VlZ-Rd-Ebv" firstAttribute="top" secondItem="KYz-Es-2MR" secondAttribute="bottom" id="REN-Va-LaL"/>
                             <constraint firstItem="VlZ-Rd-Ebv" firstAttribute="trailing" secondItem="QFc-rA-Fhc" secondAttribute="trailing" id="SVt-QH-Wqo"/>
                             <constraint firstAttribute="trailing" secondItem="SA3-o8-CvS" secondAttribute="trailing" constant="30" id="aY8-1p-MOA"/>
                             <constraint firstItem="KYz-Es-2MR" firstAttribute="trailing" secondItem="QFc-rA-Fhc" secondAttribute="trailing" id="eur-O5-Sqp"/>
                             <constraint firstItem="KYz-Es-2MR" firstAttribute="leading" secondItem="QFc-rA-Fhc" secondAttribute="leading" id="gET-Bw-fwi"/>
-                            <constraint firstItem="N9O-95-aka" firstAttribute="top" secondItem="SA3-o8-CvS" secondAttribute="bottom" constant="30" id="tEV-X6-KtC"/>
+                            <constraint firstItem="N9O-95-aka" firstAttribute="top" secondItem="kuE-i3-ApZ" secondAttribute="bottom" constant="20" id="vID-Yl-rbQ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="cdd-tA-s2Q"/>
@@ -133,11 +155,54 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vBm-sQ-ZKr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2328.985507246377" y="-668.30357142857144"/>
+            <point key="canvasLocation" x="3239.130434782609" y="-668.30357142857144"/>
+        </scene>
+        <!--Pizza View Controller-->
+        <scene sceneID="ZwD-lx-6ZF">
+            <objects>
+                <viewController id="txg-R5-dYd" customClass="ARPizzaViewController" customModule="PizzaShop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Rl2-Hy-TXf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bAm-tJ-UQ8">
+                                <rect key="frame" x="0.0" y="44" width="414" height="798"/>
+                            </arscnView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap on a surface to see the pizza!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zhg-3a-kiY">
+                                <rect key="frame" x="83" y="392.5" width="248" height="57.5"/>
+                                <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Nn4-fg-dBr"/>
+                        <color key="backgroundColor" name="PrimaryColor"/>
+                        <constraints>
+                            <constraint firstItem="Nn4-fg-dBr" firstAttribute="trailing" secondItem="bAm-tJ-UQ8" secondAttribute="trailing" id="1sI-SY-Kzw"/>
+                            <constraint firstItem="Zhg-3a-kiY" firstAttribute="centerY" secondItem="Rl2-Hy-TXf" secondAttribute="centerY" id="9mr-hc-SFg"/>
+                            <constraint firstItem="Nn4-fg-dBr" firstAttribute="bottom" secondItem="bAm-tJ-UQ8" secondAttribute="bottom" id="Kv6-41-BFd"/>
+                            <constraint firstItem="bAm-tJ-UQ8" firstAttribute="top" secondItem="Nn4-fg-dBr" secondAttribute="top" id="Nhg-Sl-eYf"/>
+                            <constraint firstItem="Zhg-3a-kiY" firstAttribute="centerX" secondItem="Rl2-Hy-TXf" secondAttribute="centerX" id="QEW-XT-8jT"/>
+                            <constraint firstItem="bAm-tJ-UQ8" firstAttribute="leading" secondItem="Nn4-fg-dBr" secondAttribute="leading" id="Xls-jT-Jj6"/>
+                            <constraint firstItem="Nn4-fg-dBr" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Zhg-3a-kiY" secondAttribute="trailing" constant="50" id="g0K-CX-7YM"/>
+                            <constraint firstItem="Zhg-3a-kiY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Nn4-fg-dBr" secondAttribute="leading" constant="50" id="vbx-aN-Bvg"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Gno-Of-AzM"/>
+                    <connections>
+                        <outlet property="label" destination="Zhg-3a-kiY" id="YOj-lq-382"/>
+                        <outlet property="sceneView" destination="bAm-tJ-UQ8" id="Vl3-dp-bC6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vY1-0d-B1m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4123.188405797102" y="-668.30357142857144"/>
         </scene>
     </scenes>
     <resources>
         <image name="list.bullet" catalog="system" width="128" height="88"/>
+        <image name="square.stack.3d.forward.dottedline" catalog="system" width="128" height="113"/>
         <namedColor name="PrimaryColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

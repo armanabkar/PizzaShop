@@ -21,6 +21,8 @@ Food Ordering iOS application. Built with UIKit, SwiftUI, MapKit, CoreData, MVVM
 - [x] Cart screen (using Core Data)
 - [x] Reservation screen
 - [x] Profile Page; UI from code (no storyboard) with preview (canvas)
+- [x] ARKit - See the pizza on surfaces with AR
+- [x] Haptic Feedbacks
 - [x] Async image loader
 - [x] UI Alerts
 - [x] Unit/Integration Tests

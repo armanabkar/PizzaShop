@@ -35,6 +35,12 @@ struct K {
         static let entityName = "Cart"
     }
     
+    struct AR {
+        static let pizzaModelLocation = "art.scnassets/Pizza.scn"
+        static let omniLight = "omniLight"
+        static let pizza = "pizza"
+    }
+    
     struct Alert {
         static let title = "Error"
         static let cartTitle = "Cart"
