@@ -34,6 +34,8 @@ class FoodDetailViewController: UIViewController {
             switch result {
                 case .success(_):
                     UIAlertController.showAlert(title: K.Alert.cartTitle, message: "\(foodName) added to the cart.", from: self)
+                    let generator = UINotificationFeedbackGenerator()
+                    generator.notificationOccurred(.success)
                 case .failure(let error):
                     UIAlertController.showAlert(message: "Error saving cart: \(error.localizedDescription)",
                                                 from: self)

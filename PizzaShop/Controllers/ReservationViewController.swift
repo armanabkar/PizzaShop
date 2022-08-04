@@ -39,6 +39,8 @@ class ReservationViewController: UIViewController {
                         UIAlertController.showAlert(title: K.Alert.orderTitle,
                                                     message: K.Alert.reservationMessage,
                                                     from: self)
+                        let generator = UINotificationFeedbackGenerator()
+                        generator.notificationOccurred(.success)
                     }
                 } catch let error {
                     UIAlertController.showAlert(message: error.localizedDescription,

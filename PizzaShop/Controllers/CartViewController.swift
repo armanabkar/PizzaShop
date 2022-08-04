@@ -69,6 +69,8 @@ class CartViewController: UIViewController {
                                 UIAlertController.showAlert(title: K.Alert.orderTitle,
                                                             message: K.Alert.orderMessage,
                                                             from: self)
+                                let generator = UINotificationFeedbackGenerator()
+                                generator.notificationOccurred(.success)
                             case .failure(let error):
                                 UIAlertController.showAlert(message: error.localizedDescription,
                                                             from: self)
