@@ -168,30 +168,43 @@
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bAm-tJ-UQ8">
                                 <rect key="frame" x="0.0" y="44" width="414" height="798"/>
                             </arscnView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap on a surface to see the pizza!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zhg-3a-kiY">
-                                <rect key="frame" x="83" y="392.5" width="248" height="57.5"/>
-                                <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6PU-V6-dTh">
+                                <rect key="frame" x="160" y="64" width="94.5" height="32"/>
+                                <buttonConfiguration key="configuration" style="gray" title=" Dismiss">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" systemColor="secondaryLabelColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="dismissTapped:" destination="txg-R5-dYd" eventType="touchUpInside" id="kuq-M6-S4m"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uH9-Mb-Uob">
+                                <rect key="frame" x="86" y="428" width="242" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Tap on a surface to see the pizza!">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" systemColor="secondaryLabelColor"/>
+                                </buttonConfiguration>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Nn4-fg-dBr"/>
                         <color key="backgroundColor" name="PrimaryColor"/>
                         <constraints>
                             <constraint firstItem="Nn4-fg-dBr" firstAttribute="trailing" secondItem="bAm-tJ-UQ8" secondAttribute="trailing" id="1sI-SY-Kzw"/>
-                            <constraint firstItem="Zhg-3a-kiY" firstAttribute="centerY" secondItem="Rl2-Hy-TXf" secondAttribute="centerY" id="9mr-hc-SFg"/>
+                            <constraint firstItem="6PU-V6-dTh" firstAttribute="centerX" secondItem="Rl2-Hy-TXf" secondAttribute="centerX" id="BJ9-ux-1iy"/>
+                            <constraint firstItem="Nn4-fg-dBr" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="uH9-Mb-Uob" secondAttribute="trailing" constant="86" id="FBl-Sa-0gK"/>
                             <constraint firstItem="Nn4-fg-dBr" firstAttribute="bottom" secondItem="bAm-tJ-UQ8" secondAttribute="bottom" id="Kv6-41-BFd"/>
                             <constraint firstItem="bAm-tJ-UQ8" firstAttribute="top" secondItem="Nn4-fg-dBr" secondAttribute="top" id="Nhg-Sl-eYf"/>
-                            <constraint firstItem="Zhg-3a-kiY" firstAttribute="centerX" secondItem="Rl2-Hy-TXf" secondAttribute="centerX" id="QEW-XT-8jT"/>
+                            <constraint firstItem="6PU-V6-dTh" firstAttribute="top" secondItem="Nn4-fg-dBr" secondAttribute="top" constant="20" id="Qk6-Uv-sdp"/>
                             <constraint firstItem="bAm-tJ-UQ8" firstAttribute="leading" secondItem="Nn4-fg-dBr" secondAttribute="leading" id="Xls-jT-Jj6"/>
-                            <constraint firstItem="Nn4-fg-dBr" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Zhg-3a-kiY" secondAttribute="trailing" constant="50" id="g0K-CX-7YM"/>
-                            <constraint firstItem="Zhg-3a-kiY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Nn4-fg-dBr" secondAttribute="leading" constant="50" id="vbx-aN-Bvg"/>
+                            <constraint firstItem="uH9-Mb-Uob" firstAttribute="leading" relation="lessThanOrEqual" secondItem="Nn4-fg-dBr" secondAttribute="leading" constant="86" id="nD0-2O-xDM"/>
+                            <constraint firstItem="uH9-Mb-Uob" firstAttribute="centerX" secondItem="Rl2-Hy-TXf" secondAttribute="centerX" id="nWe-er-OZ5"/>
+                            <constraint firstItem="uH9-Mb-Uob" firstAttribute="top" secondItem="6PU-V6-dTh" secondAttribute="bottom" constant="332" id="pxj-fF-x85"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Gno-Of-AzM"/>
                     <connections>
-                        <outlet property="label" destination="Zhg-3a-kiY" id="YOj-lq-382"/>
+                        <outlet property="label" destination="uH9-Mb-Uob" id="IUo-k8-AcW"/>
                         <outlet property="sceneView" destination="bAm-tJ-UQ8" id="Vl3-dp-bC6"/>
                     </connections>
                 </viewController>
@@ -206,5 +219,8 @@
         <namedColor name="PrimaryColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

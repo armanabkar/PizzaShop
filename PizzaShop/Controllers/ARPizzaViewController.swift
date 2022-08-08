@@ -12,7 +12,7 @@ import SceneKit
 class ARPizzaViewController: UIViewController {
     
     @IBOutlet var sceneView: ARSCNView!
-    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var label: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +52,10 @@ class ARPizzaViewController: UIViewController {
         let anchor = ARAnchor(transform: hitTestResult.worldTransform)
         sceneView.session.add(anchor: anchor)
         label.isHidden = true
+    }
+    
+    @IBAction func dismissTapped(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     func addOmniLight() {
