@@ -28,9 +28,11 @@ final class WebService: API {
     
     private init() {}
     static let shared = WebService()
+    private let foodsCacheKey = "foods"
     private let postMethod = "POST"
     private let contentType = "Application/json"
     private let HTTPHeaderField = "Content-Type"
+    private var foodsCache = NSCache<AnyObject, AnyObject>()
     
     /// Start the remote server because it shut downs
     func start() async throws -> Int {
@@ -43,14 +45,16 @@ final class WebService: API {
     
     /// Fetch all foods from the server
     func getAllFoods() async throws -> [Food] {
-        if let foods = UserDefaultsService.shared.foods, !foods.isEmpty { return foods }
+        if let foods = self.foodsCache.object(forKey: foodsCacheKey as AnyObject) as? [Food] {
+            return foods
+        }
         
         guard let url = URL(string: K.URL.foodUrl) else { throw NetworkError.badURL }
         let request = URLRequest(url: url)
         let (data, response) = try await URLSession.shared.data(for: request)
         guard (response as? HTTPURLResponse)?.statusCode == 200 else { throw NetworkError.noData }
         let decodedFoods = try JSONDecoder().decode([Food].self, from: data)
-        UserDefaultsService.shared.saveFoodsToCache(foods: decodedFoods)
+        self.foodsCache.setObject(decodedFoods as AnyObject, forKey: foodsCacheKey as AnyObject)
         
         return decodedFoods
     }

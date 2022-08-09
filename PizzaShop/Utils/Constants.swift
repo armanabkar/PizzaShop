@@ -15,9 +15,9 @@ struct K {
         static let locationLongitude = -119.726045
         static let description1 = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, tempor incididunt ut magna aliqua. ut labore et dolore magna aliqua."
         static let description2 = "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. tempor incididunt magna magna et dolrore!"
-        static let description3 = "Cant' wait to see you!"
         static let supportPhone = "(805) 681- 4200"
         static let address = "26 W Mission St , Santa Barbara, CA"
+        static let copyright = "© 2022 Arman Abkar"
     }
     
     struct Identifiers {
@@ -39,6 +39,10 @@ struct K {
         static let pizzaModelLocation = "art.scnassets/Pizza.scn"
         static let omniLight = "omniLight"
         static let pizza = "pizza"
+    }
+    
+    struct Fonts {
+        static let pizzaHut = "PizzaHutFont"
     }
     
     struct Alert {
@@ -68,6 +72,12 @@ struct K {
     
     struct Images {
         static let storeImage = "store"
+        static let img1 = "Img1"
+        static let img2 = "Img2"
+        static let img3 = "Img3"
+        static let img4 = "Img4"
+        static let img5 = "Img5"
+        static let img6 = "Img6"
     }
     
 }

@@ -10,31 +10,18 @@ import MapKit
 
 final class HomeViewModel: ObservableObject {
     
+    var images: [String] = [K.Images.img1, K.Images.img2, K.Images.img3, K.Images.img4, K.Images.img5, K.Images.img6]
     let places = [
         Place(name: K.Information.appName,
               latitude: K.Information.locationLatitude,
               longitude: K.Information.locationLongitude)
     ]
-    var images: [String] = []
     @Published var region = MKCoordinateRegion(
         center: CLLocationCoordinate2D(latitude: K.Information.locationLatitude,
                                        longitude: K.Information.locationLongitude),
         span: MKCoordinateSpan(latitudeDelta: 0.1,
                                longitudeDelta: 0.1)
     )
-    
-    init() {
-        Task.init {
-            let foods = try await WebService.shared.getAllFoods()
-            foods
-                .filter({ food in
-                    food.type == "pizza"
-                })
-                .forEach { food in
-                images.append("\(K.URL.baseUrl)/\(food.image)")
-            }
-        }
-    }
     
 }
 

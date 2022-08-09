@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -44,7 +45,7 @@
                     <tabBarItem key="tabBarItem" title="Menu" image="list.bullet" catalog="system" id="MPI-xG-GQ6"/>
                     <connections>
                         <outlet property="tableView" destination="ehn-ew-scV" id="CL7-nH-BCf"/>
-                        <segue destination="dRb-JT-rfw" kind="show" identifier="toFoodDetailViewController" id="KST-mp-yuK"/>
+                        <segue destination="dRb-JT-rfw" kind="presentation" identifier="toFoodDetailViewController" id="KST-mp-yuK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vSs-yh-MiD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -111,7 +112,7 @@
                                     <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="txg-R5-dYd" kind="showDetail" identifier="toARPizzaViewController" id="C0U-Fd-eea"/>
+                                    <segue destination="txg-R5-dYd" kind="presentation" identifier="toARPizzaViewController" modalPresentationStyle="fullScreen" id="C0U-Fd-eea"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N9O-95-aka">
@@ -162,11 +163,11 @@
             <objects>
                 <viewController id="txg-R5-dYd" customClass="ARPizzaViewController" customModule="PizzaShop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Rl2-Hy-TXf">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bAm-tJ-UQ8">
-                                <rect key="frame" x="0.0" y="44" width="414" height="798"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                             </arscnView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6PU-V6-dTh">
                                 <rect key="frame" x="160" y="64" width="94.5" height="32"/>

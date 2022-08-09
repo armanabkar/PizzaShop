@@ -98,14 +98,14 @@ class CartViewController: UIViewController {
     
     func loadCartItems() {
         cartItems = []
-        CoreDataService.shared.loadCartItems { result in
+        CoreDataService.shared.loadCartItems { [weak self] result in
             switch result {
                 case .success(let cartItems):
-                    self.cartItems.append(contentsOf: cartItems)
-                    self.tableView.reloadData()
+                    self?.cartItems.append(contentsOf: cartItems)
+                    self?.tableView.reloadData()
                 case .failure(let error):
                     UIAlertController.showAlert(message: "Error loading cart: \(error.localizedDescription)",
-                                                from: self)
+                                                from: self!)
             }
         }
     }

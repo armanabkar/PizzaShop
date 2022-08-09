@@ -22,66 +22,71 @@ struct HomeView: View {
                 
                 VStack(spacing: 15) {
                     Text(K.Information.appName)
-                        .font(.system(size: 40, weight: .heavy, design: .rounded))
-                        .foregroundColor(.black)
-                        .padding(.horizontal)
-                        .background()
-                        .clipShape(RoundedRectangle(cornerRadius: 8))
-                    
+                        .font(.custom(K.Fonts.pizzaHut, size: 50))
                     Text(K.Information.description1)
-                        .foregroundColor(.white.opacity(0.85))
                         .multilineTextAlignment(.center)
                         .font(.title2)
                     Text(K.Information.description2)
-                        .foregroundColor(.white.opacity(0.85))
                         .multilineTextAlignment(.center)
                         .font(.title2)
                     
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack {
-                            ForEach(0..<homeViewModel.images.count, id:\.self) { i in
-                                AsyncImage(url: URL(string: "\(homeViewModel.images[i])")) { image in
-                                    image
-                                        .resizable()
-                                        .frame(width: 140, height: 100)
-                                        .aspectRatio(contentMode: .fill)
-                                        .cornerRadius(8)
-                                } placeholder: {
-                                    Color.white
-                                        .frame(width: 140, height: 100)
-                                        .cornerRadius(8)
-                                }
-                            }
-                        }
-                    }
-                    .padding(.vertical, 10)
+                    GalleryView()
                     
-                    Text("☎️ \(K.Information.supportPhone)")
-                        .foregroundColor(.white)
-                        .font(.title3)
-                    Text("🌴 \(K.Information.address)")
-                        .foregroundColor(.white)
-                        .font(.title3)
+                    ContactView(title: "Phone", K.Information.supportPhone)
+                    ContactView(title: "Address", K.Information.address)
                     
-                    Map(coordinateRegion: $homeViewModel.region,
-                        showsUserLocation: false,
-                        annotationItems: homeViewModel.places) {
-                        MapMarker(coordinate: $0.coordinate)
-                    }
-                        .frame(height: 100)
-                        .clipShape(RoundedRectangle(cornerRadius: 8))
+                    MapView()
                     
-                    Text("\(K.Information.description3)")
-                        .foregroundColor(.white)
-                        .font(.title2)
-                        .fontWeight(.semibold)
-                    
+                    Text(K.Information.copyright)
                     Spacer(minLength: 75)
                 }
                 .padding(.horizontal)
                 .padding(.vertical, 20)
             }
             .ignoresSafeArea()
+        }
+        .foregroundColor(.white)
+    }
+    
+    @ViewBuilder
+    func GalleryView() -> some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack {
+                ForEach(homeViewModel.images ,
+                        id:\.self) { image in
+                    Image(image)
+                        .resizable()
+                        .frame(width: 140, height: 100)
+                        .aspectRatio(contentMode: .fill)
+                        .cornerRadius(8)
+                }
+            }
+        }
+        .padding(.vertical, 10)
+    }
+    
+    @ViewBuilder
+    func MapView() -> some View {
+        Map(coordinateRegion: $homeViewModel.region,
+            showsUserLocation: false,
+            annotationItems: homeViewModel.places) {
+            MapMarker(coordinate: $0.coordinate)
+        }
+            .frame(height: 100)
+            .clipShape(RoundedRectangle(cornerRadius: 8))
+    }
+    
+    @ViewBuilder
+    func ContactView(title: String, _ value: String) -> some View {
+        HStack {
+            Text(title)
+                .font(.callout)
+                .fontWeight(.semibold)
+                .foregroundColor(.gray)
+            Spacer()
+            Text(value)
+                .fontWeight(.bold)
+                .multilineTextAlignment(.trailing)
         }
     }
 }

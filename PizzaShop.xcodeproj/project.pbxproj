@@ -55,6 +55,7 @@
 		F0741F31272D856B0073F60D /* FoodDetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0741F30272D856B0073F60D /* FoodDetailViewControllerTests.swift */; };
 		F0741F332730517D0073F60D /* CartViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0741F322730517D0073F60D /* CartViewControllerTests.swift */; };
 		F0741F35273279D90073F60D /* ReservationViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0741F34273279D90073F60D /* ReservationViewControllerTests.swift */; };
+		F0D10EB928A23D0500246564 /* pizzahut-font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F0D10EB828A238D700246564 /* pizzahut-font.ttf */; };
 		F0FE14B427661E0400BDE5C2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FE14B327661E0400BDE5C2 /* HomeView.swift */; };
 		F0FE14B727662A7800BDE5C2 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FE14B627662A7800BDE5C2 /* UIViewControllerExtension.swift */; };
 		F0FE14BA2769CEEA00BDE5C2 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FE14B92769CEEA00BDE5C2 /* HomeViewModel.swift */; };
@@ -134,6 +135,7 @@
 		F0741F30272D856B0073F60D /* FoodDetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailViewControllerTests.swift; sourceTree = "<group>"; };
 		F0741F322730517D0073F60D /* CartViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewControllerTests.swift; sourceTree = "<group>"; };
 		F0741F34273279D90073F60D /* ReservationViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewControllerTests.swift; sourceTree = "<group>"; };
+		F0D10EB828A238D700246564 /* pizzahut-font.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pizzahut-font.ttf"; sourceTree = "<group>"; };
 		F0FE14B327661E0400BDE5C2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F0FE14B627662A7800BDE5C2 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		F0FE14B92769CEEA00BDE5C2 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -300,6 +302,7 @@
 		F0349DA526D78E6E00C6B154 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
+				F0D10EB728A238C700246564 /* Fonts */,
 				F0349D8026D78E4500C6B154 /* Info.plist */,
 				F0349D7226D78E4400C6B154 /* AppDelegate.swift */,
 				F0349D7426D78E4400C6B154 /* SceneDelegate.swift */,
@@ -338,6 +341,14 @@
 				F06742E4276C665100488A5C /* MenuCell.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		F0D10EB728A238C700246564 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F0D10EB828A238D700246564 /* pizzahut-font.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		F0FE14B527662A6300BDE5C2 /* Extensions */ = {
@@ -462,6 +473,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0D10EB928A23D0500246564 /* pizzahut-font.ttf in Resources */,
 				F0125C0027103CBA00C5AA8C /* Menu.storyboard in Resources */,
 				F06742E5276C665100488A5C /* MenuCell.xib in Resources */,
 				F0125B5E26F4990800C5AA8C /* Auth.storyboard in Resources */,
