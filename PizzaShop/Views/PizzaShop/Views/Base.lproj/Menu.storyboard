@@ -96,11 +96,11 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kuE-i3-ApZ">
-                                <rect key="frame" x="169" y="581.5" width="76.5" height="35"/>
+                                <rect key="frame" x="138" y="581.5" width="138" height="35"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" image="square.stack.3d.forward.dottedline" catalog="system" subtitle="">
+                                <buttonConfiguration key="configuration" style="tinted" image="cube.transparent" catalog="system" subtitle="">
                                     <attributedString key="attributedTitle">
-                                        <fragment content=" AR">
+                                        <fragment content=" View in AR">
                                             <attributes>
                                                 <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <font key="NSFont" size="18" name="SFPro-Medium"/>
@@ -215,8 +215,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="cube.transparent" catalog="system" width="128" height="124"/>
         <image name="list.bullet" catalog="system" width="128" height="88"/>
-        <image name="square.stack.3d.forward.dottedline" catalog="system" width="128" height="113"/>
         <namedColor name="PrimaryColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

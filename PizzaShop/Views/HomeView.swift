@@ -10,7 +10,7 @@ import MapKit
 
 struct HomeView: View {
     
-    @ObservedObject private var homeViewModel = HomeViewModel()
+    @StateObject private var homeViewModel = HomeViewModel()
     
     var body: some View {
         ZStack {
@@ -32,8 +32,10 @@ struct HomeView: View {
                     
                     GalleryView()
                     
-                    ContactView(title: "Phone", K.Information.supportPhone)
-                    ContactView(title: "Address", K.Information.address)
+                    ContactView(title: "Phone",
+                                K.Information.supportPhone)
+                    ContactView(title: "Address",
+                                K.Information.address)
                     
                     MapView()
                     

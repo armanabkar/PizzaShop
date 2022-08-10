@@ -5,14 +5,8 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="pizzahut-font.ttf">
-            <string>PizzaHutFont</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
@@ -22,39 +16,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="8Ig-11-QdJ">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="9ai-eD-ePG">
+                                <rect key="frame" x="30" y="192" width="354" height="512"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hp1-Kx-oxb">
-                                <rect key="frame" x="0.0" y="144" width="414" height="443"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.94999999999999996" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="P0K-cd-cI5">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="358"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pizza Shop" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lRB-gs-Hqb">
-                                        <rect key="frame" x="0.0" y="368" width="414" height="75"/>
-                                        <color key="backgroundColor" systemColor="secondaryLabelColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="75" id="4hN-o8-3My"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="PizzaHutFont" family="PizzaHut Font" pointSize="48"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Arman Abkar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r5B-cs-S0B">
+                                <rect key="frame" x="147" y="828" width="120.5" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="PrimaryColor"/>
                         <constraints>
-                            <constraint firstItem="hp1-Kx-oxb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="7c0-5w-g0G"/>
-                            <constraint firstItem="8Ig-11-QdJ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="FzL-L6-agF"/>
-                            <constraint firstAttribute="bottom" secondItem="8Ig-11-QdJ" secondAttribute="bottom" id="Jgc-iC-NIU"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hp1-Kx-oxb" secondAttribute="bottom" constant="275" id="KZg-DG-xoP"/>
-                            <constraint firstAttribute="trailing" secondItem="hp1-Kx-oxb" secondAttribute="trailing" id="dMg-44-Kg5"/>
-                            <constraint firstItem="hp1-Kx-oxb" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="gaJ-YW-jyo"/>
-                            <constraint firstItem="8Ig-11-QdJ" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="oF5-5a-F1Q"/>
-                            <constraint firstItem="8Ig-11-QdJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vki-pi-rsR"/>
+                            <constraint firstItem="9ai-eD-ePG" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Agz-JX-8ZR"/>
+                            <constraint firstItem="9ai-eD-ePG" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="MS3-bR-lkf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="r5B-cs-S0B" secondAttribute="bottom" constant="10" id="O80-GG-DnS"/>
+                            <constraint firstAttribute="trailing" secondItem="9ai-eD-ePG" secondAttribute="trailing" constant="30" id="RUY-ZP-eld"/>
+                            <constraint firstItem="r5B-cs-S0B" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="SGq-av-Uiw"/>
+                            <constraint firstItem="9ai-eD-ePG" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="30" id="odu-xC-r5d"/>
+                            <constraint firstItem="9ai-eD-ePG" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="pTg-1P-0py"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -64,13 +45,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="background" width="675" height="1200"/>
-        <image name="logo" width="600" height="600"/>
+        <image name="Logo" width="512" height="512"/>
         <namedColor name="PrimaryColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
     </resources>
 </document>

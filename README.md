@@ -29,9 +29,10 @@ Food Ordering iOS application. Built with UIKit, SwiftUI, MapKit, CoreData, MVVM
 - [x] iOS 15 with Async/Await network requests
 - [x] MVVM Architecture
 - [x] Offline Support
-- [ ] Stripe
+- [X] Custom fonts
 - [ ] Push Notifications
 - [ ] UI Tests
+- Total lines of code: 2371
 
 ### Contributing
 
