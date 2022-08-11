@@ -25,10 +25,10 @@ struct HomeView: View {
                         .font(.custom(K.Fonts.pizzaHut, size: 50))
                     Text(K.Information.description1)
                         .multilineTextAlignment(.center)
-                        .font(.title2)
+                        .font(.title3)
                     Text(K.Information.description2)
                         .multilineTextAlignment(.center)
-                        .font(.title2)
+                        .font(.title3)
                     
                     GalleryView()
                     
@@ -43,7 +43,7 @@ struct HomeView: View {
                     Spacer(minLength: 75)
                 }
                 .padding(.horizontal)
-                .padding(.vertical, 20)
+                .padding(.vertical)
             }
             .ignoresSafeArea()
         }

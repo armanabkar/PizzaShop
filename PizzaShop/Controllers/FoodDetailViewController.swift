@@ -9,7 +9,8 @@ import UIKit
 
 class FoodDetailViewController: UIViewController {
     
-    var food: Food? = nil
+    var food: Food?
+    var cartTabItem: UITabBarItem?
     
     @IBOutlet weak var foodImageView: UIImageView!
     @IBOutlet weak var foodNameLabel: UILabel!
@@ -24,6 +25,7 @@ class FoodDetailViewController: UIViewController {
     
     @IBAction func addToCartTapped(_ sender: UIButton) {
         addToCart()
+        UITabBarController.updateCartTabBadge(tabItem: cartTabItem!, from: self)
     }
     
     func addToCart() {

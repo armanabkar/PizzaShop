@@ -6,9 +6,8 @@
 //
 
 import UIKit
-import Combine
 
-final class ProfileViewModel: ObservableObject {
+final class ProfileViewModel {
     
     func getAppVersion() -> String {
         let dictionary = Bundle.main.infoDictionary!

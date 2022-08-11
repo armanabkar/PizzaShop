@@ -19,8 +19,8 @@ final class HomeViewModel: ObservableObject {
     @Published var region = MKCoordinateRegion(
         center: CLLocationCoordinate2D(latitude: K.Information.locationLatitude,
                                        longitude: K.Information.locationLongitude),
-        span: MKCoordinateSpan(latitudeDelta: 0.1,
-                               longitudeDelta: 0.1)
+        span: MKCoordinateSpan(latitudeDelta: 0.01,
+                               longitudeDelta: 0.075)
     )
     
 }

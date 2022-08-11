@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <accessibilityOverrides dynamicTypePreference="2"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -13,14 +14,15 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="9ai-eD-ePG">
-                                <rect key="frame" x="30" y="192" width="354" height="512"/>
+                                <rect key="frame" x="50" y="166" width="290" height="512"/>
+                                <color key="backgroundColor" name="PrimaryColor"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Arman Abkar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r5B-cs-S0B">
-                                <rect key="frame" x="147" y="828" width="120.5" height="24"/>
+                                <rect key="frame" x="135" y="776" width="120.33333333333331" height="24"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -29,13 +31,12 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="PrimaryColor"/>
                         <constraints>
-                            <constraint firstItem="9ai-eD-ePG" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Agz-JX-8ZR"/>
-                            <constraint firstItem="9ai-eD-ePG" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="MS3-bR-lkf"/>
+                            <constraint firstItem="9ai-eD-ePG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="5jH-Uq-hob"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="r5B-cs-S0B" secondAttribute="bottom" constant="10" id="O80-GG-DnS"/>
-                            <constraint firstAttribute="trailing" secondItem="9ai-eD-ePG" secondAttribute="trailing" constant="30" id="RUY-ZP-eld"/>
                             <constraint firstItem="r5B-cs-S0B" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="SGq-av-Uiw"/>
-                            <constraint firstItem="9ai-eD-ePG" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="30" id="odu-xC-r5d"/>
-                            <constraint firstItem="9ai-eD-ePG" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="pTg-1P-0py"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9ai-eD-ePG" secondAttribute="trailing" constant="50" id="T24-CW-JSj"/>
+                            <constraint firstItem="9ai-eD-ePG" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Tdf-Rl-AJu"/>
+                            <constraint firstItem="9ai-eD-ePG" firstAttribute="centerX" secondItem="r5B-cs-S0B" secondAttribute="centerX" id="tiC-Ri-g9V"/>
                         </constraints>
                     </view>
                 </viewController>

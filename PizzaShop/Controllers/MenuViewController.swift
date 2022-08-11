@@ -57,6 +57,7 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
             if let item = viewModel.items[indexPath.row] {
                 let food = Food(name: item.name, type: nil, price: item.price, ingredients: item.ingredients, image: "\(K.URL.baseUrl)/\(item.image)")
                 destinationVC.food = food
+                destinationVC.cartTabItem = tabBarController?.tabBar.items?[2]
             }
         }
     }
