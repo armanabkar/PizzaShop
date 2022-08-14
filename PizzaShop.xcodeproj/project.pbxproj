@@ -27,7 +27,7 @@
 		F0125AE626DE18E400C5AA8C /* UserDefaultsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125AE526DE18E400C5AA8C /* UserDefaultsServiceTests.swift */; };
 		F0125AF726E0E7B100C5AA8C /* CoreDataServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125AF626E0E7B100C5AA8C /* CoreDataServiceTests.swift */; };
 		F0125B0026E0EE6000C5AA8C /* ImageLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125AFF26E0EE6000C5AA8C /* ImageLoaderTests.swift */; };
-		F0125B1326E4E38900C5AA8C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125B1226E4E38900C5AA8C /* MainViewController.swift */; };
+		F0125B1326E4E38900C5AA8C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125B1226E4E38900C5AA8C /* HomeViewController.swift */; };
 		F0125B1826E4E7D800C5AA8C /* ReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125B1726E4E7D800C5AA8C /* ReservationViewController.swift */; };
 		F0125B1D26E6AD3600C5AA8C /* Reservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125B1C26E6AD3600C5AA8C /* Reservation.swift */; };
 		F0125B2A26E8B40E00C5AA8C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125B2926E8B40E00C5AA8C /* LoginViewController.swift */; };
@@ -102,7 +102,7 @@
 		F0125AE526DE18E400C5AA8C /* UserDefaultsServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsServiceTests.swift; sourceTree = "<group>"; };
 		F0125AF626E0E7B100C5AA8C /* CoreDataServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataServiceTests.swift; sourceTree = "<group>"; };
 		F0125AFF26E0EE6000C5AA8C /* ImageLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderTests.swift; sourceTree = "<group>"; };
-		F0125B1226E4E38900C5AA8C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		F0125B1226E4E38900C5AA8C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F0125B1726E4E7D800C5AA8C /* ReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewController.swift; sourceTree = "<group>"; };
 		F0125B1C26E6AD3600C5AA8C /* Reservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reservation.swift; sourceTree = "<group>"; };
 		F0125B2926E8B40E00C5AA8C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -324,7 +324,7 @@
 				F0125A3826D82AD800C5AA8C /* ProfileViewController.swift */,
 				F0125A5126D8AB2100C5AA8C /* MenuCell.swift */,
 				F0125A5626D8AB2F00C5AA8C /* OrderCell.swift */,
-				F0125B1226E4E38900C5AA8C /* MainViewController.swift */,
+				F0125B1226E4E38900C5AA8C /* HomeViewController.swift */,
 				F0125B1726E4E7D800C5AA8C /* ReservationViewController.swift */,
 				F0125B2926E8B40E00C5AA8C /* LoginViewController.swift */,
 				F01A69792899AB3400B7AC60 /* ARPizzaViewController.swift */,
@@ -518,7 +518,7 @@
 				F0125A6526DA5F4400C5AA8C /* WebService.swift in Sources */,
 				F0125A4D26D8A93700C5AA8C /* Order.swift in Sources */,
 				F0125B1D26E6AD3600C5AA8C /* Reservation.swift in Sources */,
-				F0125B1326E4E38900C5AA8C /* MainViewController.swift in Sources */,
+				F0125B1326E4E38900C5AA8C /* HomeViewController.swift in Sources */,
 				F0125A1426D81CB900C5AA8C /* MenuViewController.swift in Sources */,
 				F0349D7326D78E4400C6B154 /* AppDelegate.swift in Sources */,
 				F0125A5226D8AB2100C5AA8C /* MenuCell.swift in Sources */,
@@ -674,7 +674,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -729,7 +729,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -748,7 +748,7 @@
 				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = QMW26WR72K;
 				INFOPLIST_FILE = "PizzaShop/Support Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -770,7 +770,7 @@
 				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = QMW26WR72K;
 				INFOPLIST_FILE = "PizzaShop/Support Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

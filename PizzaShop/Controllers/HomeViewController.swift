@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  HomeViewController.swift
 //  PizzaShop
 //
 //  Created by Arman Abkar on 9/5/21.
@@ -8,7 +8,7 @@
 import UIKit
 import MapKit
 
-class MainViewController: UIViewController {
+class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()

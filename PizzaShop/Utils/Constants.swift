@@ -47,6 +47,7 @@ struct K {
     
     struct Alert {
         static let title = "Error"
+        static let confirmationTitle = "Are you sure?"
         static let cartTitle = "Cart"
         static let orderTitle = "Thank You"
         static let orderMessage = "Your order has been received. We will deliver it to you as soon as possible."

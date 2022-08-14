@@ -69,7 +69,9 @@ class ProfileViewController: UIViewController {
     }
     
     @objc func logOutTapped(_ sender: UIButton) {
-        viewModel.removeAndResetUserData(from: self)
+        UIAlertController.confirmationAlert(from: self) { [weak self] _ in
+            self?.viewModel.removeAndResetUserData(from: self!)
+        }
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -82,8 +84,8 @@ class ProfileViewController: UIViewController {
         addressLabel.text = UserDefaultsService.shared.address
         appVersionLabel.text = viewModel.getAppVersion()
         logOutButton.addTarget(self,
-                         action: #selector(logOutTapped(_ :)),
-                         for: .touchUpInside)
+                               action: #selector(logOutTapped(_ :)),
+                               for: .touchUpInside)
     }
     
     func configureViews() {
