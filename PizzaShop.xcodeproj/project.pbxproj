@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F00C46E128A8E67000070617 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F00C46E028A8E67000070617 /* WidgetKit.framework */; };
+		F00C46E328A8E67000070617 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F00C46E228A8E67000070617 /* SwiftUI.framework */; };
+		F00C46E628A8E67000070617 /* PizzaShopWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00C46E528A8E67000070617 /* PizzaShopWidget.swift */; };
+		F00C46E928A8E67100070617 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F00C46E828A8E67100070617 /* Assets.xcassets */; };
+		F00C46EB28A8E67100070617 /* PizzaShopWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = F00C46E728A8E67100070617 /* PizzaShopWidget.intentdefinition */; };
+		F00C46EC28A8E67100070617 /* PizzaShopWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = F00C46E728A8E67100070617 /* PizzaShopWidget.intentdefinition */; };
+		F00C46EF28A8E67100070617 /* PizzaShopWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F00C46DE28A8E67000070617 /* PizzaShopWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F0125A0F26D81CA300C5AA8C /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125A0E26D81CA300C5AA8C /* RegisterViewController.swift */; };
 		F0125A1426D81CB900C5AA8C /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125A1326D81CB900C5AA8C /* MenuViewController.swift */; };
 		F0125A1A26D81CCF00C5AA8C /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125A1926D81CCF00C5AA8C /* CartViewController.swift */; };
@@ -40,6 +47,8 @@
 		F0125C0F2722C65400C5AA8C /* WebServiceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125C0E2722C65400C5AA8C /* WebServiceStub.swift */; };
 		F0125C172722D53800C5AA8C /* MainViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125C162722D53700C5AA8C /* MainViewControllerTests.swift */; };
 		F0125C1C2722D9FC00C5AA8C /* ProfileViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125C1B2722D9FC00C5AA8C /* ProfileViewControllerTests.swift */; };
+		F016193428A8EAE400621D30 /* pizzahut-font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F0D10EB828A238D700246564 /* pizzahut-font.ttf */; };
+		F016193528A8EB3E00621D30 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125A2A26D81F8D00C5AA8C /* Constants.swift */; };
 		F01A697A2899AB3400B7AC60 /* ARPizzaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01A69792899AB3400B7AC60 /* ARPizzaViewController.swift */; };
 		F01A697D2899B22700B7AC60 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = F01A697C2899B22700B7AC60 /* art.scnassets */; };
 		F02B9D642896947C001552EF /* SFSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02B9D632896947C001552EF /* SFSymbols.swift */; };
@@ -65,6 +74,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		F00C46ED28A8E67100070617 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F0349D6726D78E4400C6B154 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F00C46DD28A8E67000070617;
+			remoteInfo = PizzaShopWidgetExtension;
+		};
 		F0349D8626D78E4500C6B154 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F0349D6726D78E4400C6B154 /* Project object */;
@@ -81,7 +97,28 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		F00C46F328A8E67100070617 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				F00C46EF28A8E67100070617 /* PizzaShopWidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		F00C46DE28A8E67000070617 /* PizzaShopWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PizzaShopWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		F00C46E028A8E67000070617 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		F00C46E228A8E67000070617 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		F00C46E528A8E67000070617 /* PizzaShopWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaShopWidget.swift; sourceTree = "<group>"; };
+		F00C46E728A8E67100070617 /* PizzaShopWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = PizzaShopWidget.intentdefinition; sourceTree = "<group>"; };
+		F00C46E828A8E67100070617 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F00C46EA28A8E67100070617 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0125A0E26D81CA300C5AA8C /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		F0125A1326D81CB900C5AA8C /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		F0125A1926D81CCF00C5AA8C /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +183,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		F00C46DB28A8E67000070617 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F00C46E328A8E67000070617 /* SwiftUI.framework in Frameworks */,
+				F00C46E128A8E67000070617 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F0349D6C26D78E4400C6B154 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -170,6 +216,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F00C46DF28A8E67000070617 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F00C46E028A8E67000070617 /* WidgetKit.framework */,
+				F00C46E228A8E67000070617 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F00C46E428A8E67000070617 /* PizzaShopWidget */ = {
+			isa = PBXGroup;
+			children = (
+				F00C46E528A8E67000070617 /* PizzaShopWidget.swift */,
+				F00C46E728A8E67100070617 /* PizzaShopWidget.intentdefinition */,
+				F00C46E828A8E67100070617 /* Assets.xcassets */,
+				F00C46EA28A8E67100070617 /* Info.plist */,
+			);
+			path = PizzaShopWidget;
+			sourceTree = "<group>";
+		};
 		F0125A2926D81F6F00C5AA8C /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -250,6 +316,8 @@
 				F0349D7126D78E4400C6B154 /* PizzaShop */,
 				F0349D8826D78E4500C6B154 /* PizzaShopTests */,
 				F0349D9326D78E4500C6B154 /* PizzaShopUITests */,
+				F00C46E428A8E67000070617 /* PizzaShopWidget */,
+				F00C46DF28A8E67000070617 /* Frameworks */,
 				F0349D7026D78E4400C6B154 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -260,6 +328,7 @@
 				F0349D6F26D78E4400C6B154 /* PizzaShop.app */,
 				F0349D8526D78E4500C6B154 /* PizzaShopTests.xctest */,
 				F0349D9026D78E4500C6B154 /* PizzaShopUITests.xctest */,
+				F00C46DE28A8E67000070617 /* PizzaShopWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -376,6 +445,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		F00C46DD28A8E67000070617 /* PizzaShopWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F00C46F028A8E67100070617 /* Build configuration list for PBXNativeTarget "PizzaShopWidgetExtension" */;
+			buildPhases = (
+				F00C46DA28A8E67000070617 /* Sources */,
+				F00C46DB28A8E67000070617 /* Frameworks */,
+				F00C46DC28A8E67000070617 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PizzaShopWidgetExtension;
+			productName = PizzaShopWidgetExtension;
+			productReference = F00C46DE28A8E67000070617 /* PizzaShopWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		F0349D6E26D78E4400C6B154 /* PizzaShop */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F0349D9926D78E4500C6B154 /* Build configuration list for PBXNativeTarget "PizzaShop" */;
@@ -383,10 +469,12 @@
 				F0349D6B26D78E4400C6B154 /* Sources */,
 				F0349D6C26D78E4400C6B154 /* Frameworks */,
 				F0349D6D26D78E4400C6B154 /* Resources */,
+				F00C46F328A8E67100070617 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				F00C46EE28A8E67100070617 /* PBXTargetDependency */,
 			);
 			name = PizzaShop;
 			productName = PizzaShop;
@@ -435,9 +523,12 @@
 		F0349D6726D78E4400C6B154 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1240;
+				LastSwiftUpdateCheck = 1330;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
+					F00C46DD28A8E67000070617 = {
+						CreatedOnToolsVersion = 13.3;
+					};
 					F0349D6E26D78E4400C6B154 = {
 						CreatedOnToolsVersion = 12.4;
 					};
@@ -467,11 +558,21 @@
 				F0349D6E26D78E4400C6B154 /* PizzaShop */,
 				F0349D8426D78E4500C6B154 /* PizzaShopTests */,
 				F0349D8F26D78E4500C6B154 /* PizzaShopUITests */,
+				F00C46DD28A8E67000070617 /* PizzaShopWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		F00C46DC28A8E67000070617 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F016193428A8EAE400621D30 /* pizzahut-font.ttf in Resources */,
+				F00C46E928A8E67100070617 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F0349D6D26D78E4400C6B154 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -504,6 +605,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		F00C46DA28A8E67000070617 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F00C46EB28A8E67100070617 /* PizzaShopWidget.intentdefinition in Sources */,
+				F00C46E628A8E67000070617 /* PizzaShopWidget.swift in Sources */,
+				F016193528A8EB3E00621D30 /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F0349D6B26D78E4400C6B154 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -529,6 +640,7 @@
 				F01A697A2899AB3400B7AC60 /* ARPizzaViewController.swift in Sources */,
 				F0125A9D26DC1B6900C5AA8C /* UIAlertControllerExtension.swift in Sources */,
 				F0FE14BE276B9B0D00BDE5C2 /* UseAutoLayout.swift in Sources */,
+				F00C46EC28A8E67100070617 /* PizzaShopWidget.intentdefinition in Sources */,
 				F06EE82928A4CA81006C5FF0 /* UITabBarControllerExtension.swift in Sources */,
 				F0125A1A26D81CCF00C5AA8C /* CartViewController.swift in Sources */,
 				F0125B1826E4E7D800C5AA8C /* ReservationViewController.swift in Sources */,
@@ -575,6 +687,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		F00C46EE28A8E67100070617 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F00C46DD28A8E67000070617 /* PizzaShopWidgetExtension */;
+			targetProxy = F00C46ED28A8E67100070617 /* PBXContainerItemProxy */;
+		};
 		F0349D8726D78E4500C6B154 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F0349D6E26D78E4400C6B154 /* PizzaShop */;
@@ -623,6 +740,62 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		F00C46F128A8E67100070617 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 4;
+				DEVELOPMENT_TEAM = QMW26WR72K;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PizzaShopWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PizzaShopWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 3.2.1;
+				PRODUCT_BUNDLE_IDENTIFIER = co.armanabkar.PizzaShop.PizzaShopWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F00C46F228A8E67100070617 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 4;
+				DEVELOPMENT_TEAM = QMW26WR72K;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PizzaShopWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PizzaShopWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 3.2.1;
+				PRODUCT_BUNDLE_IDENTIFIER = co.armanabkar.PizzaShop.PizzaShopWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		F0349D9726D78E4500C6B154 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -742,6 +915,7 @@
 		F0349D9A26D78E4500C6B154 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -764,6 +938,7 @@
 		F0349D9B26D78E4500C6B154 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -870,6 +1045,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F00C46F028A8E67100070617 /* Build configuration list for PBXNativeTarget "PizzaShopWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F00C46F128A8E67100070617 /* Debug */,
+				F00C46F228A8E67100070617 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F0349D6A26D78E4400C6B154 /* Build configuration list for PBXProject "PizzaShop" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
