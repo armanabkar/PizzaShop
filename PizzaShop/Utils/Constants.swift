@@ -29,6 +29,7 @@ struct K {
         static let menuSegue = "toMenuViewController"
         static let authSegue = "toAuthViewController"
         static let detailSegue = "toFoodDetailViewController"
+        static let arSegue = "toARPizzaViewController"
     }
     
     struct CoreData {

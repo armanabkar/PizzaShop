@@ -11,12 +11,15 @@ import SceneKit
 
 class ARPizzaViewController: UIViewController {
     
-    @IBOutlet var sceneView: ARSCNView!
+    var food: Food?
+    @IBOutlet weak var sceneView: ARSCNView!
     @IBOutlet weak var label: UIButton!
+    @IBOutlet weak var navigationBar: UINavigationBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationBar.topItem?.title = food?.name
         sceneView.delegate = self
         sceneView.scene = SCNScene()
         sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints]
@@ -25,7 +28,6 @@ class ARPizzaViewController: UIViewController {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self,
                                                           action: #selector(tapped))
         self.sceneView.addGestureRecognizer(tapGestureRecognizer)
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,7 +56,7 @@ class ARPizzaViewController: UIViewController {
         label.isHidden = true
     }
     
-    @IBAction func dismissTapped(_ sender: UIButton) {
+    @IBAction func closeTapped(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
     }
     

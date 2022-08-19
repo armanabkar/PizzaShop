@@ -112,7 +112,7 @@
                                     <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="txg-R5-dYd" kind="presentation" identifier="toARPizzaViewController" modalPresentationStyle="fullScreen" id="C0U-Fd-eea"/>
+                                    <action selector="viewARTapped:" destination="dRb-JT-rfw" eventType="touchUpInside" id="pvy-tn-bJ2"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N9O-95-aka">
@@ -152,6 +152,7 @@
                         <outlet property="foodIngredientsLabel" destination="L3N-Rt-IMV" id="kCr-na-qUQ"/>
                         <outlet property="foodNameLabel" destination="VlZ-Rd-Ebv" id="4p5-fj-nfN"/>
                         <outlet property="foodPriceLabel" destination="zja-ix-RhY" id="JWP-Ff-m0N"/>
+                        <segue destination="txg-R5-dYd" kind="presentation" identifier="toARPizzaViewController" modalPresentationStyle="fullScreen" id="NUX-4K-UIb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vBm-sQ-ZKr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -169,43 +170,51 @@
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bAm-tJ-UQ8">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                             </arscnView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6PU-V6-dTh">
-                                <rect key="frame" x="160" y="64" width="94.5" height="32"/>
-                                <buttonConfiguration key="configuration" style="gray" title=" Dismiss">
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="baseBackgroundColor" systemColor="secondaryLabelColor"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="dismissTapped:" destination="txg-R5-dYd" eventType="touchUpInside" id="kuq-M6-S4m"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uH9-Mb-Uob">
-                                <rect key="frame" x="86" y="428" width="242" height="31"/>
+                                <rect key="frame" x="86" y="432.5" width="242" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="Tap on a surface to see the pizza!">
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="baseBackgroundColor" systemColor="secondaryLabelColor"/>
                                 </buttonConfiguration>
                             </button>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dDQ-6n-ivS">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Title" id="PBv-xN-Lhb">
+                                        <barButtonItem key="leftBarButtonItem" title="Close" id="etd-kC-zdr">
+                                            <connections>
+                                                <action selector="closeTapped:" destination="txg-R5-dYd" id="Xpp-3H-NZh"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Nn4-fg-dBr"/>
-                        <color key="backgroundColor" name="PrimaryColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Nn4-fg-dBr" firstAttribute="trailing" secondItem="bAm-tJ-UQ8" secondAttribute="trailing" id="1sI-SY-Kzw"/>
-                            <constraint firstItem="6PU-V6-dTh" firstAttribute="centerX" secondItem="Rl2-Hy-TXf" secondAttribute="centerX" id="BJ9-ux-1iy"/>
                             <constraint firstItem="Nn4-fg-dBr" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="uH9-Mb-Uob" secondAttribute="trailing" constant="86" id="FBl-Sa-0gK"/>
                             <constraint firstItem="Nn4-fg-dBr" firstAttribute="bottom" secondItem="bAm-tJ-UQ8" secondAttribute="bottom" id="Kv6-41-BFd"/>
                             <constraint firstItem="bAm-tJ-UQ8" firstAttribute="top" secondItem="Nn4-fg-dBr" secondAttribute="top" id="Nhg-Sl-eYf"/>
-                            <constraint firstItem="6PU-V6-dTh" firstAttribute="top" secondItem="Nn4-fg-dBr" secondAttribute="top" constant="20" id="Qk6-Uv-sdp"/>
+                            <constraint firstItem="dDQ-6n-ivS" firstAttribute="trailing" secondItem="Nn4-fg-dBr" secondAttribute="trailing" id="Rys-jH-1fk"/>
+                            <constraint firstItem="uH9-Mb-Uob" firstAttribute="centerY" secondItem="Rl2-Hy-TXf" secondAttribute="centerY" id="UqZ-bi-qL5"/>
                             <constraint firstItem="bAm-tJ-UQ8" firstAttribute="leading" secondItem="Nn4-fg-dBr" secondAttribute="leading" id="Xls-jT-Jj6"/>
+                            <constraint firstItem="dDQ-6n-ivS" firstAttribute="top" secondItem="Nn4-fg-dBr" secondAttribute="top" id="daF-pO-s9S"/>
+                            <constraint firstItem="dDQ-6n-ivS" firstAttribute="leading" secondItem="Nn4-fg-dBr" secondAttribute="leading" id="hxH-qI-45q"/>
                             <constraint firstItem="uH9-Mb-Uob" firstAttribute="leading" relation="lessThanOrEqual" secondItem="Nn4-fg-dBr" secondAttribute="leading" constant="86" id="nD0-2O-xDM"/>
                             <constraint firstItem="uH9-Mb-Uob" firstAttribute="centerX" secondItem="Rl2-Hy-TXf" secondAttribute="centerX" id="nWe-er-OZ5"/>
-                            <constraint firstItem="uH9-Mb-Uob" firstAttribute="top" secondItem="6PU-V6-dTh" secondAttribute="bottom" constant="332" id="pxj-fF-x85"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Gno-Of-AzM"/>
                     <connections>
                         <outlet property="label" destination="uH9-Mb-Uob" id="IUo-k8-AcW"/>
+                        <outlet property="navigationBar" destination="dDQ-6n-ivS" id="7J9-6H-ZWx"/>
                         <outlet property="sceneView" destination="bAm-tJ-UQ8" id="Vl3-dp-bC6"/>
                     </connections>
                 </viewController>

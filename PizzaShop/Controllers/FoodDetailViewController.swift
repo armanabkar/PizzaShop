@@ -28,6 +28,10 @@ class FoodDetailViewController: UIViewController {
         UITabBarController.updateCartTabBadge(tabItem: cartTabItem!, from: self)
     }
     
+    @IBAction func viewARTapped(_ sender: UIButton) {
+        performSegue(withIdentifier: K.Identifiers.arSegue, sender: self)
+    }
+    
     func addToCart() {
         guard let foodName = food?.name,
               let foodPrice = food?.price else { return }
@@ -62,6 +66,11 @@ class FoodDetailViewController: UIViewController {
         if food?.ingredients == nil {
             self.foodIngredientsLabel.isHidden = true
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as! ARPizzaViewController
+        destinationVC.food = food
     }
     
 }
