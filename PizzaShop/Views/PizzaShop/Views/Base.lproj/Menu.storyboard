@@ -168,7 +168,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bAm-tJ-UQ8">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                             </arscnView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uH9-Mb-Uob">
                                 <rect key="frame" x="86" y="432.5" width="242" height="31"/>
@@ -178,7 +178,7 @@
                                     <color key="baseBackgroundColor" systemColor="secondaryLabelColor"/>
                                 </buttonConfiguration>
                             </button>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dDQ-6n-ivS">
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDQ-6n-ivS">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <textAttributes key="titleTextAttributes">
@@ -200,8 +200,8 @@
                         <constraints>
                             <constraint firstItem="Nn4-fg-dBr" firstAttribute="trailing" secondItem="bAm-tJ-UQ8" secondAttribute="trailing" id="1sI-SY-Kzw"/>
                             <constraint firstItem="Nn4-fg-dBr" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="uH9-Mb-Uob" secondAttribute="trailing" constant="86" id="FBl-Sa-0gK"/>
-                            <constraint firstItem="Nn4-fg-dBr" firstAttribute="bottom" secondItem="bAm-tJ-UQ8" secondAttribute="bottom" id="Kv6-41-BFd"/>
                             <constraint firstItem="bAm-tJ-UQ8" firstAttribute="top" secondItem="Nn4-fg-dBr" secondAttribute="top" id="Nhg-Sl-eYf"/>
+                            <constraint firstAttribute="bottom" secondItem="bAm-tJ-UQ8" secondAttribute="bottom" id="Rov-xz-dhU"/>
                             <constraint firstItem="dDQ-6n-ivS" firstAttribute="trailing" secondItem="Nn4-fg-dBr" secondAttribute="trailing" id="Rys-jH-1fk"/>
                             <constraint firstItem="uH9-Mb-Uob" firstAttribute="centerY" secondItem="Rl2-Hy-TXf" secondAttribute="centerY" id="UqZ-bi-qL5"/>
                             <constraint firstItem="bAm-tJ-UQ8" firstAttribute="leading" secondItem="Nn4-fg-dBr" secondAttribute="leading" id="Xls-jT-Jj6"/>
