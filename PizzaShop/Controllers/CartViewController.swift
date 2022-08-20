@@ -42,23 +42,20 @@ class CartViewController: UIViewController {
             return
         }
         
-        var orderNames: [String] {
-            var names: [String] = []
-            cartItems.forEach { item in
-                if let name = item.name {
-                    names.append(name)
-                }
-            }
-            return names
-        }
+        let orderNames = cartItems.map { $0.name! }
         let newOrder: Order = Order(name: UserDefaultsService.shared.name,
                                     phone: UserDefaultsService.shared.phone,
                                     address: UserDefaultsService.shared.address,
                                     items: orderNames,
                                     totalPrice: totalPrice)
+        
+        sendOrderRequest(order: newOrder)
+    }
+    
+    private func sendOrderRequest(order: Order) {
         Task.init {
             do {
-                let responseCode = try await webService.submitOrder(order: newOrder)
+                let responseCode = try await webService.submitOrder(order: order)
                 if responseCode == 200 {
                     CoreDataService.shared.resetAllRecords(in: K.CoreData.entityName) { result in
                         switch result {
@@ -72,7 +69,7 @@ class CartViewController: UIViewController {
                                 let generator = UINotificationFeedbackGenerator()
                                 generator.notificationOccurred(.success)
                                 UITabBarController.updateCartTabBadge(tabItem: (self.tabBarController?.tabBar.items?[2])!,
-                                                                          from: self)
+                                                                      from: self)
                             case .failure(let error):
                                 UIAlertController.showAlert(message: error.localizedDescription,
                                                             from: self)
@@ -86,7 +83,7 @@ class CartViewController: UIViewController {
         }
     }
     
-    func saveCartItems() {
+    private func saveCartItems() {
         CoreDataService.shared.saveCartItems { result in
             switch result {
                 case .success(_):
@@ -98,7 +95,7 @@ class CartViewController: UIViewController {
         }
     }
     
-    func loadCartItems() {
+    private func loadCartItems() {
         cartItems = []
         CoreDataService.shared.loadCartItems { [weak self] result in
             switch result {
