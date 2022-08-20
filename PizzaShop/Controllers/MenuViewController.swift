@@ -56,7 +56,7 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.Identifiers.menuCellIdentifier, for: indexPath) as! MenuCell
         if let food = viewModel.items[indexPath.section][indexPath.row] {
             cell.foodNameLabel.text = food.name
-            cell.foodPriceLabel.text = String(food.price)
+            cell.foodPriceLabel.text = "\(String(food.price))$"
             ImageLoader.sharedInstance.imageForUrl(urlString: "\(K.URL.baseUrl)/\(food.image)") { (image, url) in
                 if image != nil {
                     cell.foodImageView.image = image

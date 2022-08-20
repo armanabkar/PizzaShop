@@ -22,35 +22,30 @@
                                 <color key="backgroundColor" name="PrimaryColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="orderCell" id="2lz-LT-c9H" customClass="OrderCell" customModule="PizzaShop" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="38"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="40.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2lz-LT-c9H" id="74R-iE-SGM">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="38"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="40.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2uv-jW-T0K">
-                                                    <rect key="frame" x="10" y="5" width="394" height="28"/>
+                                                    <rect key="frame" x="10" y="5" width="394" height="30.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bacon Pizza" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GdI-vY-3A6">
-                                                            <rect key="frame" x="0.0" y="0.0" width="129.5" height="28"/>
-                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                                            <rect key="frame" x="0.0" y="2" width="124" height="26.5"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="115.99$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxb-XH-IfH">
-                                                            <rect key="frame" x="306" y="0.0" width="88" height="28"/>
-                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                                            <rect key="frame" x="325" y="4.5" width="69" height="21.5"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="GdI-vY-3A6" firstAttribute="top" secondItem="2uv-jW-T0K" secondAttribute="top" id="2Zl-cx-dU7"/>
-                                                        <constraint firstItem="GdI-vY-3A6" firstAttribute="leading" secondItem="2uv-jW-T0K" secondAttribute="leading" id="GZf-2N-lNr"/>
-                                                        <constraint firstAttribute="bottom" secondItem="GdI-vY-3A6" secondAttribute="bottom" id="aqo-fU-lTW"/>
-                                                        <constraint firstAttribute="trailing" secondItem="hxb-XH-IfH" secondAttribute="trailing" id="g9f-yX-n7f"/>
-                                                        <constraint firstAttribute="bottom" secondItem="hxb-XH-IfH" secondAttribute="bottom" id="vLt-ek-c12"/>
-                                                        <constraint firstItem="hxb-XH-IfH" firstAttribute="top" secondItem="2uv-jW-T0K" secondAttribute="top" id="xuS-ol-s1z"/>
+                                                        <constraint firstAttribute="height" constant="30" id="4am-o3-vrb"/>
                                                     </constraints>
                                                 </stackView>
                                             </subviews>
@@ -93,7 +88,6 @@
                             <constraint firstItem="Req-rj-6Id" firstAttribute="trailing" secondItem="IYu-1H-61n" secondAttribute="trailing" id="GUB-2g-I0u"/>
                             <constraint firstItem="Req-rj-6Id" firstAttribute="top" secondItem="hkg-kl-xhs" secondAttribute="bottom" id="jXv-Ua-vnb"/>
                             <constraint firstItem="IYu-1H-61n" firstAttribute="bottom" secondItem="Req-rj-6Id" secondAttribute="bottom" id="qW6-up-zQz"/>
-                            <constraint firstItem="Req-rj-6Id" firstAttribute="top" secondItem="hkg-kl-xhs" secondAttribute="bottom" id="tcV-pa-7GM"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Cart" image="cart" catalog="system" id="9vE-Ap-0pv"/>
