@@ -68,8 +68,8 @@ class CartViewController: UIViewController {
                                                             from: self)
                                 let generator = UINotificationFeedbackGenerator()
                                 generator.notificationOccurred(.success)
-                                UITabBarController.updateCartTabBadge(tabItem: (self.tabBarController?.tabBar.items?[2])!,
-                                                                      from: self)
+                                NotificationCenter.default.post(name: K.Identifiers.badgeNotification,
+                                                                object: nil)
                             case .failure(let error):
                                 UIAlertController.showAlert(message: error.localizedDescription,
                                                             from: self)
@@ -132,8 +132,8 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
             self.tableView.deleteRows(at: [indexPath], with: .fade)
             navigationBar.topItem?.title = "Total: \(totalPrice)$"
             self.saveCartItems()
-            UITabBarController.updateCartTabBadge(tabItem: (tabBarController?.tabBar.items?[2])!,
-                                                      from: self)
+            NotificationCenter.default.post(name: K.Identifiers.badgeNotification,
+                                            object: nil)
         }
     }
     

@@ -30,6 +30,7 @@ struct K {
         static let authSegue = "toAuthViewController"
         static let detailSegue = "toFoodDetailViewController"
         static let arSegue = "toARPizzaViewController"
+        static let badgeNotification = Notification.Name(rawValue: "co.armanabkar.cartBadge")
     }
     
     struct CoreData {

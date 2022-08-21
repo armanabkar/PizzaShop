@@ -170,102 +170,93 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u1C-uA-l7E">
                                 <rect key="frame" x="0.0" y="140" width="414" height="673"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Yup-b4-pVv">
-                                        <rect key="frame" x="40" y="156" width="334" height="255.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="gaA-0f-3YD">
+                                        <rect key="frame" x="40" y="165" width="334" height="283"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dear Example Name," textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IfA-4W-SDk">
-                                                <rect key="frame" x="72" y="0.0" width="190.5" height="24"/>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When do you want to come?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wed-PY-DAz">
+                                                <rect key="frame" x="0.0" y="0.0" width="334" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="gaA-0f-3YD">
-                                                <rect key="frame" x="7" y="40" width="320" height="215.5"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="-40" translatesAutoresizingMaskIntoConstraints="NO" id="Z63-8G-8VA">
+                                                <rect key="frame" x="0.0" y="39" width="334" height="40"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When do you want to come?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wed-PY-DAz">
-                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="25.5"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="-34" translatesAutoresizingMaskIntoConstraints="NO" id="Z63-8G-8VA">
-                                                        <rect key="frame" x="0.0" y="40.5" width="320" height="34.5"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o7Y-Il-zKI">
-                                                                <rect key="frame" x="0.0" y="0.0" width="320" height="34.5"/>
-                                                                <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="filled">
-                                                                    <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                </buttonConfiguration>
-                                                            </button>
-                                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="Hcb-uF-psl">
-                                                                <rect key="frame" x="0.0" y="0.5" width="320" height="34"/>
-                                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            </datePicker>
-                                                        </subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o7Y-Il-zKI">
+                                                        <rect key="frame" x="0.0" y="0.0" width="334" height="40"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="bottom" secondItem="o7Y-Il-zKI" secondAttribute="bottom" id="2h6-9g-kQ7"/>
-                                                            <constraint firstItem="o7Y-Il-zKI" firstAttribute="leading" secondItem="Z63-8G-8VA" secondAttribute="leading" id="8WI-tG-BNX"/>
-                                                            <constraint firstItem="o7Y-Il-zKI" firstAttribute="top" secondItem="Z63-8G-8VA" secondAttribute="top" id="EWB-Na-U0d"/>
-                                                            <constraint firstItem="Hcb-uF-psl" firstAttribute="top" secondItem="Z63-8G-8VA" secondAttribute="top" constant="0.5" id="Jb6-B9-ybX"/>
+                                                            <constraint firstAttribute="height" constant="40" id="qlc-nA-oQl"/>
                                                         </constraints>
-                                                    </stackView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the table size:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gH3-zT-mVO">
-                                                        <rect key="frame" x="0.0" y="90" width="320" height="25.5"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="98a-C5-Syj">
-                                                        <rect key="frame" x="0.0" y="130.5" width="320" height="36"/>
-                                                        <color key="backgroundColor" systemColor="systemGray2Color"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="35" id="na5-3q-T4f"/>
-                                                        </constraints>
-                                                        <segments>
-                                                            <segment title="Small"/>
-                                                            <segment title="Medium"/>
-                                                            <segment title="Large"/>
-                                                        </segments>
-                                                    </segmentedControl>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Any other request" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0pt-Z6-XC6">
-                                                        <rect key="frame" x="0.0" y="180.5" width="320" height="35"/>
-                                                        <color key="backgroundColor" systemColor="systemGray2Color"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="filled">
+                                                            <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </buttonConfiguration>
+                                                    </button>
+                                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="Hcb-uF-psl">
+                                                        <rect key="frame" x="0.0" y="0.0" width="334" height="40"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </datePicker>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="o7Y-Il-zKI" secondAttribute="bottom" id="2h6-9g-kQ7"/>
+                                                    <constraint firstItem="o7Y-Il-zKI" firstAttribute="leading" secondItem="Z63-8G-8VA" secondAttribute="leading" id="8WI-tG-BNX"/>
+                                                    <constraint firstItem="o7Y-Il-zKI" firstAttribute="top" secondItem="Z63-8G-8VA" secondAttribute="top" id="EWB-Na-U0d"/>
+                                                    <constraint firstItem="Hcb-uF-psl" firstAttribute="top" secondItem="Z63-8G-8VA" secondAttribute="top" id="Jb6-B9-ybX"/>
+                                                </constraints>
                                             </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the table size:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gH3-zT-mVO">
+                                                <rect key="frame" x="0.0" y="94" width="334" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="98a-C5-Syj">
+                                                <rect key="frame" x="0.0" y="133" width="334" height="41"/>
+                                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="CVV-dS-Kdc"/>
+                                                </constraints>
+                                                <segments>
+                                                    <segment title="Small"/>
+                                                    <segment title="Medium"/>
+                                                    <segment title="Large"/>
+                                                </segments>
+                                            </segmentedControl>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Any other request" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0pt-Z6-XC6">
+                                                <rect key="frame" x="0.0" y="188" width="334" height="40"/>
+                                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="y9x-NV-AzO"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="76C-5w-mJK">
+                                                <rect key="frame" x="0.0" y="243" width="334" height="40"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="yGW-u9-ial"/>
+                                                </constraints>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Submit">
+                                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
+                                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="submitReservationTapped:" destination="eb8-Gt-aLN" eventType="touchUpInside" id="VGX-Em-24E"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="255.5" id="dwj-Po-J5Y"/>
-                                            <constraint firstAttribute="width" constant="334" id="ig4-Kd-LEb"/>
-                                            <constraint firstItem="gaA-0f-3YD" firstAttribute="leading" secondItem="Yup-b4-pVv" secondAttribute="leading" constant="7" id="pnf-Il-Suf"/>
-                                        </constraints>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="76C-5w-mJK">
-                                        <rect key="frame" x="159.5" y="441.5" width="95.5" height="40.5"/>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Submit">
-                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="22"/>
-                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="submitReservationTapped:" destination="eb8-Gt-aLN" eventType="touchUpInside" id="VGX-Em-24E"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" name="PrimaryColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="Yup-b4-pVv" secondAttribute="trailing" constant="40" id="GaE-nF-aDj"/>
-                                    <constraint firstItem="76C-5w-mJK" firstAttribute="top" secondItem="Yup-b4-pVv" secondAttribute="bottom" constant="30" id="ItZ-Z2-EoI"/>
-                                    <constraint firstItem="Yup-b4-pVv" firstAttribute="centerX" secondItem="u1C-uA-l7E" secondAttribute="centerX" id="RUc-mD-T1t"/>
-                                    <constraint firstItem="76C-5w-mJK" firstAttribute="centerX" secondItem="u1C-uA-l7E" secondAttribute="centerX" id="ZDQ-xE-jwH"/>
-                                    <constraint firstItem="Yup-b4-pVv" firstAttribute="leading" secondItem="u1C-uA-l7E" secondAttribute="leading" constant="40" id="eTu-eS-4h7"/>
-                                    <constraint firstItem="Yup-b4-pVv" firstAttribute="centerY" secondItem="u1C-uA-l7E" secondAttribute="centerY" constant="-52.75" id="s9u-2W-noY"/>
+                                    <constraint firstItem="gaA-0f-3YD" firstAttribute="centerX" secondItem="u1C-uA-l7E" secondAttribute="centerX" id="Qfv-Rt-wO3"/>
+                                    <constraint firstItem="gaA-0f-3YD" firstAttribute="leading" secondItem="u1C-uA-l7E" secondAttribute="leading" constant="40" id="U3F-F4-lTb"/>
+                                    <constraint firstItem="gaA-0f-3YD" firstAttribute="centerY" secondItem="u1C-uA-l7E" secondAttribute="centerY" constant="-30" id="Ybl-2z-jzj"/>
+                                    <constraint firstAttribute="trailing" secondItem="gaA-0f-3YD" secondAttribute="trailing" constant="40" id="e6d-4W-Efo"/>
                                 </constraints>
                             </view>
                             <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jd2-zA-2W4">
@@ -280,23 +271,18 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="u1C-uA-l7E" firstAttribute="top" secondItem="Jd2-zA-2W4" secondAttribute="bottom" id="0cm-fj-fpv"/>
-                            <constraint firstItem="u1C-uA-l7E" firstAttribute="top" secondItem="Jd2-zA-2W4" secondAttribute="bottom" id="ER2-kx-v6U"/>
                             <constraint firstItem="u1C-uA-l7E" firstAttribute="leading" secondItem="JfA-3s-ecr" secondAttribute="leading" id="GYh-S8-nSg"/>
                             <constraint firstItem="u1C-uA-l7E" firstAttribute="bottom" secondItem="JfA-3s-ecr" secondAttribute="bottom" id="HJd-vK-hyr"/>
                             <constraint firstItem="Jd2-zA-2W4" firstAttribute="leading" secondItem="JfA-3s-ecr" secondAttribute="leading" id="h8i-v3-vgL"/>
-                            <constraint firstItem="Jd2-zA-2W4" firstAttribute="trailing" secondItem="JfA-3s-ecr" secondAttribute="trailing" id="iWx-Rx-mua"/>
                             <constraint firstItem="Jd2-zA-2W4" firstAttribute="top" secondItem="JfA-3s-ecr" secondAttribute="top" id="oJe-Se-07b"/>
-                            <constraint firstItem="Jd2-zA-2W4" firstAttribute="top" secondItem="JfA-3s-ecr" secondAttribute="top" id="pAD-g2-MQ0"/>
                             <constraint firstItem="u1C-uA-l7E" firstAttribute="trailing" secondItem="JfA-3s-ecr" secondAttribute="trailing" id="qeG-SZ-aGi"/>
                             <constraint firstItem="Jd2-zA-2W4" firstAttribute="trailing" secondItem="JfA-3s-ecr" secondAttribute="trailing" id="rra-Pn-X49"/>
                             <constraint firstItem="u1C-uA-l7E" firstAttribute="top" secondItem="Jd2-zA-2W4" secondAttribute="bottom" id="s8B-q9-vgz"/>
-                            <constraint firstItem="Jd2-zA-2W4" firstAttribute="leading" secondItem="JfA-3s-ecr" secondAttribute="leading" id="zao-3q-5yD"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Reservation" image="bell" catalog="system" id="ffP-2Y-IxZ"/>
                     <connections>
                         <outlet property="datePicker" destination="Hcb-uF-psl" id="fsb-mg-mj9"/>
-                        <outlet property="nameLabel" destination="IfA-4W-SDk" id="afg-3a-xmw"/>
                         <outlet property="requestField" destination="0pt-Z6-XC6" id="WNF-XS-8nT"/>
                         <outlet property="segmentControlView" destination="98a-C5-Syj" id="zde-oK-Iao"/>
                     </connections>

@@ -25,7 +25,8 @@ class FoodDetailViewController: UIViewController {
     
     @IBAction func addToCartTapped(_ sender: UIButton) {
         addToCart()
-        UITabBarController.updateCartTabBadge(tabItem: cartTabItem!, from: self)
+        NotificationCenter.default.post(name: K.Identifiers.badgeNotification,
+                                        object: nil)
     }
     
     @IBAction func viewARTapped(_ sender: UIButton) {

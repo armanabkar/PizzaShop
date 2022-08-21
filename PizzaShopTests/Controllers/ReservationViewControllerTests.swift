@@ -20,13 +20,6 @@ class ReservationViewControllerTests: XCTestCase {
         UserDefaultsService.shared.removeUser()
     }
 
-    func test_viewDidLoad_nameLabel() throws {
-        let sut = try makeSUT()
-        sut.loadViewIfNeeded()
-        
-        XCTAssertEqual(sut.nameLabel.text, "Dear \(testUser.name),")
-    }
-
     private func makeSUT() throws -> ReservationViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc: ReservationViewController = storyboard.instantiateViewController(withIdentifier: "ReservationViewController") as! ReservationViewController
@@ -35,4 +28,5 @@ class ReservationViewControllerTests: XCTestCase {
         vc.webService = WebServiceStub()
         return vc
     }
+    
 }
