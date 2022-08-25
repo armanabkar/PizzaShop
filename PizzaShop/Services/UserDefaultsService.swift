@@ -27,7 +27,7 @@ final class UserDefaultsService {
     var address: String {
         UD.string(forKey: addressKey) ?? ""
     }
-
+    
     /// Save the user's information to the User Defaults
     func saveUser(user: User) {
         UD.set(user.name, forKey: nameKey)
@@ -41,5 +41,5 @@ final class UserDefaultsService {
         UD.removeObject(forKey: phoneKey)
         UD.removeObject(forKey: addressKey)
     }
-
+    
 }

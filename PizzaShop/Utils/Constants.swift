@@ -60,7 +60,8 @@ struct K {
         static let userAlreadyExists = "User already exists. Try login or register with another number."
         static let fetchingError = "Error while fetching data. Please try again later."
         static let emptyCart = "The cart is empty. Please add some items."
-        static let shake = "Be careful not to drop the phone! We know you can't wait to eat a pizza."
+        static let shakeTitle = "Watch out!"
+        static let shakeMessage = "Be careful not to drop your phone! We know you can't wait to eat pizza!"
     }
     
     struct URL {

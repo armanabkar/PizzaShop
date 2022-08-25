@@ -31,10 +31,14 @@ class LoginViewController: UIViewController {
     func loginUser() {
         guard let phone = phoneField.text,
               !phone.isEmpty else {
-                  UIAlertController.showAlert(message: K.Alert.invalidFieldMessage, from: self)
-                  return
-              }
+            UIAlertController.showAlert(message: K.Alert.invalidFieldMessage, from: self)
+            return
+        }
         
+        sendLoginRequest(phone: phone)
+    }
+    
+    private func sendLoginRequest(phone: String) {
         Task.init {
             do {
                 let user = try await webService.login(user: User(name: "", phone: phone, address: ""))

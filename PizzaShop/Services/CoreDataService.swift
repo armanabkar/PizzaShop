@@ -23,7 +23,7 @@ final class CoreDataService {
     private init() {}
     
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        
+    
     /// Add the item to the cart
     func addToCart(foodName: String, foodPrice: String, completion: @escaping CoreDataCRUDClosure) {
         let newCart = Cart(context: self.context)
@@ -63,7 +63,7 @@ final class CoreDataService {
     func deleteCartItem(item: Cart) {
         context.delete(item)
     }
-
+    
     /// Remove all items from Core Data
     func resetAllRecords(in entity : String, completion: @escaping CoreDataCRUDClosure) {
         let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: entity)

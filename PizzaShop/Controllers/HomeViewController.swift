@@ -51,7 +51,9 @@ class HomeViewController: UIViewController {
     
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
-            UIAlertController.showAlert(message: K.Alert.shake, from: self)
+            UIAlertController.showAlert(title: K.Alert.shakeTitle,
+                                        message: K.Alert.shakeMessage,
+                                        from: self)
         }
     }
     

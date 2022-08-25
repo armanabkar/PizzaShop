@@ -51,14 +51,18 @@ class RegisterViewController: UIViewController {
               let phone = phoneField.text,
               let address = addressField.text,
               !name.isEmpty && !phone.isEmpty && !address.isEmpty else {
-                  UIAlertController.showAlert(message: K.Alert.invalidFieldMessage, from: self)
-                  return
-              }
+            UIAlertController.showAlert(message: K.Alert.invalidFieldMessage, from: self)
+            return
+        }
         
         let newUser = User(name: name, phone: phone, address: address)
+        sendRegisterRequest(user: newUser)
+    }
+    
+    private func sendRegisterRequest(user: User) {
         Task.init {
             do {
-                let user = try await webService.register(user: newUser)
+                let user = try await webService.register(user: user)
                 UserDefaultsService.shared.saveUser(user: user)
                 self.performSegue(withIdentifier: K.Identifiers.menuSegue, sender: nil)
             } catch {
