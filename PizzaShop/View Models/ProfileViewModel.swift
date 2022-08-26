@@ -14,7 +14,7 @@ final class ProfileViewModel {
         let version = dictionary[K.Identifiers.CFBundleShortVersionString] as! String
         let build = dictionary[K.Identifiers.CFBundleVersion] as! String
         
-        return "Version \(version)(\(build))"
+        return "Version \(version) (\(build))"
     }
     
     func removeAndResetUserData(from vc: UIViewController) {

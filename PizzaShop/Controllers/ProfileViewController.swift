@@ -19,19 +19,19 @@ class ProfileViewController: UIViewController {
     @UseAutoLayout var nameLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
-        label.font = UIFont.systemFont(ofSize: 38, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: 36, weight: .bold)
         return label
     }()
     @UseAutoLayout var phoneLabel: UILabel = {
         let label = UILabel()
         label.textColor = .systemGray6
-        label.font = UIFont.systemFont(ofSize: 26, weight: .medium)
+        label.font = UIFont.systemFont(ofSize: 24, weight: .medium)
         return label
     }()
     @UseAutoLayout var addressLabel: UILabel = {
         let label = UILabel()
         label.textColor = .systemGray3
-        label.font = UIFont.systemFont(ofSize: 26)
+        label.font = UIFont.systemFont(ofSize: 22)
         label.textAlignment = .center
         label.numberOfLines = 0
         return label
@@ -39,13 +39,13 @@ class ProfileViewController: UIViewController {
     @UseAutoLayout var appVersionLabel: UILabel = {
         let label = UILabel()
         label.textColor = .systemGray3
-        label.font = UIFont.systemFont(ofSize: 22)
+        label.font = UIFont.systemFont(ofSize: 20)
         return label
     }()
     @UseAutoLayout var logOutButton: UIButton = {
         let button = UIButton()
         let buttonTitle = AttributedString("Log Out", attributes: AttributeContainer([
-            .font: UIFont.systemFont(ofSize: 26, weight: .semibold),
+            .font: UIFont.systemFont(ofSize: 24, weight: .bold),
             .foregroundColor: UIColor.black,
         ]))
         button.configuration = .filled()
@@ -53,6 +53,22 @@ class ProfileViewController: UIViewController {
         button.tintColor = .white
         button.setTitleColor(.black, for: .normal)
         return button
+    }()
+    @UseAutoLayout var stackView1: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis  = NSLayoutConstraint.Axis.vertical
+        stackView.distribution  = UIStackView.Distribution.fill
+        stackView.alignment = UIStackView.Alignment.center
+        stackView.spacing   = 15.0
+        return stackView
+    }()
+    @UseAutoLayout var stackView2: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis  = NSLayoutConstraint.Axis.vertical
+        stackView.distribution  = UIStackView.Distribution.fill
+        stackView.alignment = UIStackView.Alignment.center
+        stackView.spacing   = 15.0
+        return stackView
     }()
     
     override func loadView() {
@@ -89,29 +105,25 @@ class ProfileViewController: UIViewController {
     }
     
     func configureViews() {
-        view.addSubviews([profileImage,
-                          nameLabel,
-                          phoneLabel,
-                          addressLabel,
-                          appVersionLabel,
-                          logOutButton])
+        stackView1.addArrangedSubview(profileImage)
+        stackView1.addArrangedSubview(nameLabel)
+        stackView1.addArrangedSubview(phoneLabel)
+        stackView1.addArrangedSubview(addressLabel)
+        stackView2.addArrangedSubview(appVersionLabel)
+        stackView2.addArrangedSubview(logOutButton)
+        view.addSubviews([stackView1,
+                          stackView2])
         NSLayoutConstraint.activate([
-            profileImage.centerXAnchor.constraint(equalTo: view.layoutMarginsGuide.centerXAnchor),
-            profileImage.widthAnchor.constraint(equalToConstant: 180),
-            profileImage.heightAnchor.constraint(equalToConstant: 180),
-            profileImage.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor, constant: 35),
-            nameLabel.topAnchor.constraint(equalTo: profileImage.bottomAnchor, constant: 25),
-            nameLabel.centerXAnchor.constraint(equalTo: view.layoutMarginsGuide.centerXAnchor),
-            phoneLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 25),
-            phoneLabel.centerXAnchor.constraint(equalTo: view.layoutMarginsGuide.centerXAnchor),
-            addressLabel.topAnchor.constraint(equalTo: phoneLabel.bottomAnchor, constant: 5),
-            addressLabel.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.centerXAnchor),
-            addressLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
-            addressLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25),
-            appVersionLabel.centerXAnchor.constraint(equalTo: view.layoutMarginsGuide.centerXAnchor),
-            appVersionLabel.bottomAnchor.constraint(equalTo: logOutButton.topAnchor, constant: -25),
-            logOutButton.centerXAnchor.constraint(equalTo: view.layoutMarginsGuide.centerXAnchor),
-            logOutButton.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor, constant: -35)
+            profileImage.widthAnchor.constraint(equalToConstant: 150),
+            profileImage.heightAnchor.constraint(equalToConstant: 150),
+            stackView1.centerXAnchor.constraint(equalTo: view.layoutMarginsGuide.centerXAnchor),
+            stackView1.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor, constant: 30),
+            stackView1.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor, constant: 30),
+            stackView1.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor, constant: -30),
+            stackView2.centerXAnchor.constraint(equalTo: view.layoutMarginsGuide.centerXAnchor),
+            stackView2.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor, constant: -35),
+            stackView2.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+            stackView2.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
         ])
     }
     
