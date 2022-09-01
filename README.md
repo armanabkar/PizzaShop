@@ -31,10 +31,10 @@ Food Ordering iOS application. Built with UIKit, SwiftUI, MapKit, ARKit, CoreDat
 - [X] Custom font for logo
 - [x] [@UseAutoLayout](https://medium.com/@armanabkar/useautolayout-ef063bf39c3)
 - [x] Widget for offers (Work in progress)
-- [ ] Offline Support
 - [ ] Push Notifications
 - [ ] UI Tests
 - Total lines of code: 2585
+- No External Dependency
 
 ### Contributing
 

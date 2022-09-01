@@ -19,7 +19,7 @@ class ImageLoaderTests: XCTestCase {
     func testImageForUrl() throws {
         var exampleImage: UIImage = UIImage()
         let imageExpectation = expectation(description: "Load image asynchronously")
-        ImageLoader.sharedInstance.imageForUrl(urlString: "https://pizzashop-server.herokuapp.com/images/bbq_chicken.jpg") { (image, url) in
+        ImageLoader.sharedInstance.imageForUrl(urlString: "\(K.URL.baseUrl)/images/bbq_chicken.jpg") { (image, url) in
             if let image = image {
                 exampleImage = image
                 imageExpectation.fulfill()
