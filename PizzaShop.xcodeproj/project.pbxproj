@@ -51,6 +51,7 @@
 		F016193528A8EB3E00621D30 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125A2A26D81F8D00C5AA8C /* Constants.swift */; };
 		F01A697A2899AB3400B7AC60 /* ARPizzaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01A69792899AB3400B7AC60 /* ARPizzaViewController.swift */; };
 		F01A697D2899B22700B7AC60 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = F01A697C2899B22700B7AC60 /* art.scnassets */; };
+		F01BCFB428E0349400B37545 /* MockWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01BCFB328E0349400B37545 /* MockWebService.swift */; };
 		F02B9D642896947C001552EF /* SFSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02B9D632896947C001552EF /* SFSymbols.swift */; };
 		F0349D7326D78E4400C6B154 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0349D7226D78E4400C6B154 /* AppDelegate.swift */; };
 		F0349D7526D78E4400C6B154 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0349D7426D78E4400C6B154 /* SceneDelegate.swift */; };
@@ -153,6 +154,7 @@
 		F0125C1B2722D9FC00C5AA8C /* ProfileViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewControllerTests.swift; sourceTree = "<group>"; };
 		F01A69792899AB3400B7AC60 /* ARPizzaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARPizzaViewController.swift; sourceTree = "<group>"; };
 		F01A697C2899B22700B7AC60 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
+		F01BCFB328E0349400B37545 /* MockWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockWebService.swift; sourceTree = "<group>"; };
 		F02B9D632896947C001552EF /* SFSymbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbols.swift; sourceTree = "<group>"; };
 		F0349D6F26D78E4400C6B154 /* PizzaShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PizzaShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0349D7226D78E4400C6B154 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 				F0125A6426DA5F4400C5AA8C /* WebService.swift */,
 				F0125AA626DC20E200C5AA8C /* CoreDataService.swift */,
 				F0125AC126DD353D00C5AA8C /* UserDefaultsService.swift */,
+				F01BCFB328E0349400B37545 /* MockWebService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -628,6 +631,7 @@
 				F0125B1D26E6AD3600C5AA8C /* Reservation.swift in Sources */,
 				F0125B1326E4E38900C5AA8C /* HomeViewController.swift in Sources */,
 				F0125A1426D81CB900C5AA8C /* MenuViewController.swift in Sources */,
+				F01BCFB428E0349400B37545 /* MockWebService.swift in Sources */,
 				F0349D7326D78E4400C6B154 /* AppDelegate.swift in Sources */,
 				F0125A5226D8AB2100C5AA8C /* MenuCell.swift in Sources */,
 				F0125A8E26DB564B00C5AA8C /* CartModel.xcdatamodeld in Sources */,

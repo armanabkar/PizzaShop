@@ -33,7 +33,7 @@ Food Ordering iOS application. Built with UIKit, SwiftUI, MapKit, ARKit, CoreDat
 - [x] Widget for offers (Work in progress)
 - [ ] Push Notifications
 - [ ] UI Tests
-- Total lines of code: 2585
+- [Total lines of code](https://medium.com/@armanabkar/how-to-calculate-total-lines-of-code-in-xcode-projects-6d5a826f7d30): 2585
 - No External Dependency
 
 ### Contributing

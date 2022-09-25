@@ -57,7 +57,7 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
         if let food = viewModel.items[indexPath.section][indexPath.row] {
             cell.foodNameLabel.text = food.name
             cell.foodPriceLabel.text = "\(String(food.price))$"
-            ImageLoader.sharedInstance.imageForUrl(urlString: "\(K.URL.baseUrl)/\(food.image)") { (image, url) in
+            ImageLoader.sharedInstance.imageForUrl(urlString: food.imageUrl) { (image, url) in
                 if image != nil {
                     cell.foodImageView.image = image
                 }
@@ -74,7 +74,7 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
         let destinationVC = segue.destination as! FoodDetailViewController
         if let indexPath = tableView.indexPathForSelectedRow {
             if let item = viewModel.items[indexPath.section][indexPath.row] {
-                let food = Food(name: item.name, type: item.type, price: item.price, ingredients: item.ingredients, image: "\(K.URL.baseUrl)/\(item.image)")
+                let food = Food(name: item.name, type: item.type, price: item.price, ingredients: item.ingredients, image: item.imageUrl)
                 destinationVC.food = food
                 destinationVC.cartTabItem = tabBarController?.tabBar.items?[2]
             }

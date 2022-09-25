@@ -16,11 +16,6 @@ class WebServiceTests: XCTestCase {
     override func tearDownWithError() throws {
     }
     
-    func test_start() async throws {
-        let responseCode = try await WebService.shared.start()
-        XCTAssertEqual(responseCode, 200)
-    }
-    
     func test_getAllFoods() async throws {
         let foods: [Food] = try await WebService.shared.getAllFoods()
         XCTAssertEqual(foods[0].name, "BBQ Chicken Pizza")

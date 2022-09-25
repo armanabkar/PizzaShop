@@ -14,3 +14,9 @@ struct Food: Codable {
     let ingredients: String?
     let image: String
 }
+
+extension Food {
+    var imageUrl: String {
+        return "\(K.URL.baseUrl)/\(image)"
+    }
+}

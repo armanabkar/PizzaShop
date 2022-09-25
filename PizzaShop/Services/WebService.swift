@@ -15,7 +15,6 @@ enum NetworkError: Error {
 }
 
 protocol API {
-    func start() async throws -> Int
     func getAllFoods() async throws -> [Food]
     func submitOrder(order: Order) async throws -> Int
     func submitReservation(reservation: Reservation) async throws -> Int
@@ -27,21 +26,13 @@ protocol API {
 final class WebService: API {
     
     private init() {}
-    static let shared = WebService()
+    // static let shared = WebService()
+    static let shared = MockWebService()
     private let foodsCacheKey = "foods"
     private let postMethod = "POST"
     private let contentType = "Application/json"
     private let HTTPHeaderField = "Content-Type"
     private var foodsCache = NSCache<AnyObject, AnyObject>()
-    
-    /// Start the remote server because it shut downs
-    func start() async throws -> Int {
-        guard let url = URL(string: K.URL.startUrl) else { throw NetworkError.badURL }
-        let urlRequest = URLRequest(url: url)
-        let (_, response) = try await URLSession.shared.data(for: urlRequest)
-        guard let response = response as? HTTPURLResponse, response.statusCode == 200 else { throw NetworkError.noData }
-        return response.statusCode
-    }
     
     /// Fetch all foods from the server
     func getAllFoods() async throws -> [Food] {

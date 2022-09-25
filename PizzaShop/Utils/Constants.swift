@@ -65,7 +65,8 @@ struct K {
     }
     
     struct URL {
-        static let baseUrl = "https://pizzashop-server.herokuapp.com"
+        // static let baseUrl = "https://pizzashop-server.herokuapp.com"
+        static let baseUrl = "https://pizzashop-server.cyclic.app"
         static let startUrl = "\(baseUrl)/start"
         static let foodUrl = "\(baseUrl)/api/v1/foods"
         static let newOrderUrl = "\(baseUrl)/api/v1/orders/add"
