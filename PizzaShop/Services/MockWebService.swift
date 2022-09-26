@@ -45,7 +45,7 @@ final class MockWebService: API {
     }
     
     func register(user: User) async throws -> User {
-        return User(name: "John Doe", phone: "09131110000", address: "2391 S Muddy String Rd, Thayne, WY, 83127")
+        return User(name: user.name, phone: user.phone, address: user.address)
     }
     
 }
