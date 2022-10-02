@@ -16,9 +16,23 @@ struct HomeView: View {
         ZStack {
             Color.black.ignoresSafeArea()
             ScrollView {
-                Image(K.Images.storeImage)
-                    .resizable()
-                    .scaledToFill()
+                ZStack(alignment: .bottomLeading) {
+                    Image(K.Images.storeImage)
+                        .resizable()
+                        .scaledToFill()
+                    HStack {
+                        Text("#مهسا ـ امینی")
+                            .fontWeight(.medium)
+                        Spacer()
+                        Text("#MahsaAmini")
+                            .fontWeight(.medium)
+                    }
+                    .font(.title3)
+                    .padding(5)
+                    .background(Color.white.opacity(0.75))
+                    .foregroundColor(.black)
+                    .frame(width: .infinity)
+                }
                 
                 VStack(spacing: 15) {
                     Text(K.Information.appName)
