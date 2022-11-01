@@ -25,7 +25,6 @@ Food Ordering iOS application. Built with UIKit, SwiftUI, MapKit, ARKit, CoreDat
 - [x] Async image loader + Caching
 - [x] Custom UI Alerts
 - [x] Unit/Integration Tests
-- [x] iOS 15 features
 - [x] Async/Await network requests
 - [x] MVVM Architecture
 - [X] Custom font for logo
@@ -35,6 +34,7 @@ Food Ordering iOS application. Built with UIKit, SwiftUI, MapKit, ARKit, CoreDat
 - [ ] UI Tests
 - [Total lines of code](https://medium.com/@armanabkar/how-to-calculate-total-lines-of-code-in-xcode-projects-6d5a826f7d30): 2585
 - No External Dependency
+- Requires **iOS 16.1** or later.
 
 ### Contributing
 
