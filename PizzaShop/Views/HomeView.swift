@@ -16,27 +16,21 @@ struct HomeView: View {
         ZStack {
             Color.black.ignoresSafeArea()
             ScrollView {
-                ZStack(alignment: .bottomLeading) {
+                ZStack(alignment: .bottomTrailing) {
                     Image(K.Images.storeImage)
                         .resizable()
                         .scaledToFill()
-                    HStack {
-                        Text("#مهسا ـ امینی")
-                            .fontWeight(.medium)
-                        Spacer()
-                        Text("#MahsaAmini")
-                            .fontWeight(.medium)
-                    }
-                    .font(.title3)
-                    .padding(5)
-                    .background(Color.white.opacity(0.75))
-                    .foregroundColor(.black)
-                    .frame(width: .infinity)
+                        .cornerRadius(8)
+                    Text(K.Information.appName)
+                        .font(.custom(K.Fonts.pizzaHut, size: 40))
+                        .padding(5)
+                        .background(Color.black.opacity(0.75))
+                        .cornerRadius(8)
+                        .padding(10)
                 }
+                .padding(.bottom)
                 
                 VStack(spacing: 15) {
-                    Text(K.Information.appName)
-                        .font(.custom(K.Fonts.pizzaHut, size: 50))
                     Text(K.Information.description1)
                         .multilineTextAlignment(.center)
                         .font(.title3)
@@ -54,12 +48,10 @@ struct HomeView: View {
                     MapView()
                     
                     Text(K.Information.copyright)
-                    Spacer(minLength: 75)
                 }
-                .padding(.horizontal)
-                .padding(.vertical)
             }
-            .ignoresSafeArea()
+            .padding(.horizontal)
+            .padding(.vertical)
         }
         .foregroundColor(.white)
     }

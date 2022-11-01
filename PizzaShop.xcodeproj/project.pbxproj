@@ -13,7 +13,7 @@
 		F00C46E928A8E67100070617 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F00C46E828A8E67100070617 /* Assets.xcassets */; };
 		F00C46EB28A8E67100070617 /* PizzaShopWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = F00C46E728A8E67100070617 /* PizzaShopWidget.intentdefinition */; };
 		F00C46EC28A8E67100070617 /* PizzaShopWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = F00C46E728A8E67100070617 /* PizzaShopWidget.intentdefinition */; };
-		F00C46EF28A8E67100070617 /* PizzaShopWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F00C46DE28A8E67000070617 /* PizzaShopWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F00C46EF28A8E67100070617 /* PizzaShopWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F00C46DE28A8E67000070617 /* PizzaShopWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F0125A0F26D81CA300C5AA8C /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125A0E26D81CA300C5AA8C /* RegisterViewController.swift */; };
 		F0125A1426D81CB900C5AA8C /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125A1326D81CB900C5AA8C /* MenuViewController.swift */; };
 		F0125A1A26D81CCF00C5AA8C /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0125A1926D81CCF00C5AA8C /* CartViewController.swift */; };
@@ -98,15 +98,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		F00C46F328A8E67100070617 /* Embed App Extensions */ = {
+		F00C46F328A8E67100070617 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				F00C46EF28A8E67100070617 /* PizzaShopWidgetExtension.appex in Embed App Extensions */,
+				F00C46EF28A8E67100070617 /* PizzaShopWidgetExtension.appex in Embed Foundation Extensions */,
 			);
-			name = "Embed App Extensions";
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -469,7 +469,7 @@
 				F0349D6B26D78E4400C6B154 /* Sources */,
 				F0349D6C26D78E4400C6B154 /* Frameworks */,
 				F0349D6D26D78E4400C6B154 /* Resources */,
-				F00C46F328A8E67100070617 /* Embed App Extensions */,
+				F00C46F328A8E67100070617 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
@@ -524,7 +524,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1330;
-				LastUpgradeCheck = 1240;
+				LastUpgradeCheck = 1410;
 				TargetAttributes = {
 					F00C46DD28A8E67000070617 = {
 						CreatedOnToolsVersion = 13.3;
@@ -753,6 +753,7 @@
 				INFOPLIST_FILE = PizzaShopWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = PizzaShopWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -781,6 +782,7 @@
 				INFOPLIST_FILE = PizzaShopWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = PizzaShopWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -847,7 +849,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -902,7 +904,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -922,7 +924,9 @@
 				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = QMW26WR72K;
 				INFOPLIST_FILE = "PizzaShop/Support Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				INFOPLIST_KEY_CFBundleDisplayName = PizzaShop;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -930,8 +934,11 @@
 				MARKETING_VERSION = 3.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = co.armanabkar.PizzaShop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -945,7 +952,9 @@
 				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = QMW26WR72K;
 				INFOPLIST_FILE = "PizzaShop/Support Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				INFOPLIST_KEY_CFBundleDisplayName = PizzaShop;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -953,8 +962,11 @@
 				MARKETING_VERSION = 3.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = co.armanabkar.PizzaShop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -966,7 +978,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QMW26WR72K;
 				INFOPLIST_FILE = PizzaShopTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -988,7 +1000,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QMW26WR72K;
 				INFOPLIST_FILE = PizzaShopTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

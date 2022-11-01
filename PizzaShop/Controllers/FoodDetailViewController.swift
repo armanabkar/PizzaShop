@@ -58,7 +58,7 @@ class FoodDetailViewController: UIViewController {
         self.foodNameLabel.text = foodName
         self.foodPriceLabel.text = "\(foodPrice)$"
         ImageLoader.sharedInstance.imageForUrl(urlString: foodImage) { [weak self] (image, url) in
-            if let image = image {
+            if let image {
                 self?.foodImageView.image = image
             }
         }

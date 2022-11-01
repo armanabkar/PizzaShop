@@ -20,7 +20,7 @@ class ImageLoaderTests: XCTestCase {
         var exampleImage: UIImage = UIImage()
         let imageExpectation = expectation(description: "Load image asynchronously")
         ImageLoader.sharedInstance.imageForUrl(urlString: "\(K.URL.baseUrl)/images/bbq_chicken.jpg") { (image, url) in
-            if let image = image {
+            if let image {
                 exampleImage = image
                 imageExpectation.fulfill()
             }

@@ -28,7 +28,7 @@ extension UIViewController {
         let constraints = [
             hostingController.view.topAnchor.constraint(equalTo: view.topAnchor),
             hostingController.view.leftAnchor.constraint(equalTo: view.leftAnchor),
-            view.bottomAnchor.constraint(equalTo: hostingController.view.bottomAnchor),
+            view.bottomAnchor.constraint(equalTo: hostingController.view.bottomAnchor, constant: self.tabBarController?.tabBar.frame.height ?? 0),
             view.rightAnchor.constraint(equalTo: hostingController.view.rightAnchor)
         ]
         
