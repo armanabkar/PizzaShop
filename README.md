@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://raw.githubusercontent.com/armanabkar/PizzaShop/main/PizzaShop/Support%20Files/Assets.xcassets/AppIcon.appiconset/512.png" width="150" height="150" />
+<img src="https://github.com/armanabkar/PizzaShop/blob/main/PizzaShop/Support%20Files/Assets.xcassets/AppIcon.appiconset/1024.png?raw=true" width="150" height="150" />
 <h1><strong>🍕 Pizza Shop 🍕</strong></h1>
 </div>
 <br>
