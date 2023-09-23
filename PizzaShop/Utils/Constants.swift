@@ -11,6 +11,7 @@ struct K {
     
     struct Information {
         static let appName = "Pizza Shop"
+        static let freeIran = "Woman, Life, Freedom"
         static let locationLatitude = 34.402341
         static let locationLongitude = -119.726045
         static let description1 = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, tempor incididunt ut magna aliqua. ut labore et dolore magna aliqua."
@@ -74,15 +75,5 @@ struct K {
         static let login = "\(baseUrl)/api/v1/users/login"
         static let register = "\(baseUrl)/api/v1/users/register"
     }
-    
-    struct Images {
-        static let storeImage = "store"
-        static let img1 = "Img1"
-        static let img2 = "Img2"
-        static let img3 = "Img3"
-        static let img4 = "Img4"
-        static let img5 = "Img5"
-        static let img6 = "Img6"
-    }
-    
+
 }

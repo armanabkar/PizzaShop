@@ -65,6 +65,9 @@
 		F0741F31272D856B0073F60D /* FoodDetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0741F30272D856B0073F60D /* FoodDetailViewControllerTests.swift */; };
 		F0741F332730517D0073F60D /* CartViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0741F322730517D0073F60D /* CartViewControllerTests.swift */; };
 		F0741F35273279D90073F60D /* ReservationViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0741F34273279D90073F60D /* ReservationViewControllerTests.swift */; };
+		F07692F52ABEF6200077458A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F07692F22ABEF6200077458A /* README.md */; };
+		F07692F62ABEF6200077458A /* Screenshots.png in Resources */ = {isa = PBXBuildFile; fileRef = F07692F32ABEF6200077458A /* Screenshots.png */; };
+		F07692F72ABEF6200077458A /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = F07692F42ABEF6200077458A /* LICENSE */; };
 		F0D10EB928A23D0500246564 /* pizzahut-font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F0D10EB828A238D700246564 /* pizzahut-font.ttf */; };
 		F0FE14B427661E0400BDE5C2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FE14B327661E0400BDE5C2 /* HomeView.swift */; };
 		F0FE14B727662A7800BDE5C2 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FE14B627662A7800BDE5C2 /* UIViewControllerExtension.swift */; };
@@ -174,6 +177,9 @@
 		F0741F30272D856B0073F60D /* FoodDetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailViewControllerTests.swift; sourceTree = "<group>"; };
 		F0741F322730517D0073F60D /* CartViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewControllerTests.swift; sourceTree = "<group>"; };
 		F0741F34273279D90073F60D /* ReservationViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewControllerTests.swift; sourceTree = "<group>"; };
+		F07692F22ABEF6200077458A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F07692F32ABEF6200077458A /* Screenshots.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshots.png; sourceTree = "<group>"; };
+		F07692F42ABEF6200077458A /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		F0D10EB828A238D700246564 /* pizzahut-font.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pizzahut-font.ttf"; sourceTree = "<group>"; };
 		F0FE14B327661E0400BDE5C2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F0FE14B627662A7800BDE5C2 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
@@ -314,6 +320,9 @@
 		F0349D6626D78E4400C6B154 = {
 			isa = PBXGroup;
 			children = (
+				F07692F42ABEF6200077458A /* LICENSE */,
+				F07692F22ABEF6200077458A /* README.md */,
+				F07692F32ABEF6200077458A /* Screenshots.png */,
 				F0349D7126D78E4400C6B154 /* PizzaShop */,
 				F0349D8826D78E4500C6B154 /* PizzaShopTests */,
 				F0349D9326D78E4500C6B154 /* PizzaShopUITests */,
@@ -583,7 +592,10 @@
 				F06742E5276C665100488A5C /* MenuCell.xib in Resources */,
 				F0125B5E26F4990800C5AA8C /* Auth.storyboard in Resources */,
 				F01A697D2899B22700B7AC60 /* art.scnassets in Resources */,
+				F07692F72ABEF6200077458A /* LICENSE in Resources */,
+				F07692F62ABEF6200077458A /* Screenshots.png in Resources */,
 				F0349D7F26D78E4500C6B154 /* LaunchScreen.storyboard in Resources */,
+				F07692F52ABEF6200077458A /* README.md in Resources */,
 				F0349D7C26D78E4500C6B154 /* Assets.xcassets in Resources */,
 				F0349D7A26D78E4400C6B154 /* Main.storyboard in Resources */,
 			);

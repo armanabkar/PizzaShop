@@ -17,16 +17,20 @@ struct HomeView: View {
             Color.black.ignoresSafeArea()
             ScrollView {
                 ZStack(alignment: .bottomTrailing) {
-                    Image(K.Images.storeImage)
+                    Image(.store)
                         .resizable()
                         .scaledToFill()
                         .cornerRadius(8)
-                    Text(K.Information.appName)
-                        .font(.custom(K.Fonts.pizzaHut, size: 40))
-                        .padding(5)
-                        .background(Color.black.opacity(0.75))
-                        .cornerRadius(8)
-                        .padding(10)
+                    VStack (spacing: 0) {
+                        Text(K.Information.appName)
+                            .font(.custom(K.Fonts.pizzaHut, size: 40))
+                        Text(K.Information.freeIran)
+                            .font(.custom(K.Fonts.pizzaHut, size: 16))
+                    }
+                    .padding(5)
+                    .background(Color.black.opacity(0.75))
+                    .cornerRadius(8)
+                    .padding(10)
                 }
                 .padding(.bottom)
                 
@@ -75,13 +79,12 @@ struct HomeView: View {
     
     @ViewBuilder
     func MapView() -> some View {
-        Map(coordinateRegion: $homeViewModel.region,
-            showsUserLocation: false,
-            annotationItems: homeViewModel.places) {
-            MapMarker(coordinate: $0.coordinate)
+        Map(position: $homeViewModel.position) {
+            Marker(K.Information.appName,
+                   coordinate: homeViewModel.coordinate)
         }
-            .frame(height: 100)
-            .clipShape(RoundedRectangle(cornerRadius: 8))
+        .frame(height: 100)
+        .clipShape(RoundedRectangle(cornerRadius: 8))
     }
     
     @ViewBuilder
@@ -99,8 +102,6 @@ struct HomeView: View {
     }
 }
 
-struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView()
-    }
+#Preview {
+    HomeView()
 }

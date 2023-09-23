@@ -18,7 +18,7 @@ Food Ordering iOS application. Built with UIKit, SwiftUI, MapKit, ARKit, CoreDat
 - [x] Menu screen with categories and detail for each item (UITableView)
 - [x] Cart built with Core Data
 - [x] Reservation screen
-- [x] Profile Page: UI from code (no storyboard) with preview (canvas)
+- [x] Profile Page: UI from code (no storyboard)
 - [x] ARKit - See the pizza on surfaces in augmented reality (AR)
 - [x] Notification and Observer pattern (NotificationCenter) for updating Cart's badge
 - [x] Haptic Feedbacks
@@ -34,7 +34,7 @@ Food Ordering iOS application. Built with UIKit, SwiftUI, MapKit, ARKit, CoreDat
 - [ ] UI Tests
 - [Total lines of code](https://medium.com/@armanabkar/how-to-calculate-total-lines-of-code-in-xcode-projects-6d5a826f7d30): 2585
 - No External Dependency
-- Requires **iOS 16.1** or later.
+- Requires **iOS 17.0** or later.
 
 ### Contributing
 

@@ -10,18 +10,15 @@ import MapKit
 
 final class HomeViewModel: ObservableObject {
     
-    var images: [String] = [K.Images.img1, K.Images.img2, K.Images.img3, K.Images.img4, K.Images.img5, K.Images.img6]
-    let places = [
-        Place(name: K.Information.appName,
-              latitude: K.Information.locationLatitude,
-              longitude: K.Information.locationLongitude)
-    ]
-    @Published var region = MKCoordinateRegion(
+    var images: [ImageResource] = [.img1, .img2, .img3, .img4, .img5, .img6]
+    let coordinate = CLLocationCoordinate2D(latitude: K.Information.locationLatitude,
+                                                                longitude: K.Information.locationLongitude)
+    @Published var position = MapCameraPosition.region(MKCoordinateRegion(
         center: CLLocationCoordinate2D(latitude: K.Information.locationLatitude,
                                        longitude: K.Information.locationLongitude),
         span: MKCoordinateSpan(latitudeDelta: 0.01,
                                longitudeDelta: 0.075)
-    )
+    ))
     
 }
 

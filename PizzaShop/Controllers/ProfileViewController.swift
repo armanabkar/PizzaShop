@@ -129,13 +129,7 @@ class ProfileViewController: UIViewController {
     
 }
 
-#if DEBUG
-import SwiftUI
-
-@available(iOS 13, *)
-struct ProfileViewControllerPreview: PreviewProvider {
-    static var previews: some View {
-        UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "ProfileViewController").toPreview()
-    }
+#Preview {
+    let view = ProfileViewController()
+    return view
 }
-#endif
