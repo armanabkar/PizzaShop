@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="pizzahut-font.ttf">
+            <string>PizzaHutFont</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Menu-->
         <scene sceneID="s5u-v2-gRv">
@@ -18,12 +24,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ehn-ew-scV">
-                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
+                                <rect key="frame" x="0.0" y="144" width="414" height="718"/>
                                 <color key="backgroundColor" name="PrimaryColor"/>
                                 <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oPQ-Ti-kaK">
-                                <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                                <rect key="frame" x="0.0" y="48" width="414" height="96"/>
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
                                     <navigationItem title="Menu" id="fgP-aw-84T"/>
@@ -57,28 +63,27 @@
             <objects>
                 <viewController storyboardIdentifier="FoodDetailViewController" id="dRb-JT-rfw" customClass="FoodDetailViewController" customModule="PizzaShop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dCf-au-kvO">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="886"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KYz-Es-2MR">
-                                <rect key="frame" x="0.0" y="44" width="414" height="310.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="310.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="310.5" id="BqH-eZ-DRV"/>
                                     <constraint firstAttribute="width" constant="414" id="sw6-Cr-LYD"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pizza Bacon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VlZ-Rd-Ebv">
-                                <rect key="frame" x="0.0" y="354.5" width="414" height="60"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="0.0" y="310.5" width="414" height="80"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="PyO-Ef-nd0"/>
+                                    <constraint firstAttribute="height" constant="80" id="PyO-Ef-nd0"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
-                                <color key="textColor" name="PrimaryColor"/>
+                                <fontDescription key="fontDescription" name="PizzaHutFont" family="PizzaHut Font" pointSize="39"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="SA3-o8-CvS">
-                                <rect key="frame" x="30" y="444.5" width="354" height="111"/>
+                                <rect key="frame" x="30" y="400.5" width="354" height="111"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L3N-Rt-IMV">
                                         <rect key="frame" x="7" y="0.0" width="340.5" height="57.5"/>
@@ -95,47 +100,51 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kuE-i3-ApZ">
-                                <rect key="frame" x="137" y="575.5" width="140" height="35.5"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" image="cube.transparent" catalog="system" title=" View in AR" subtitle="">
-                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="18"/>
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="viewARTapped:" destination="dRb-JT-rfw" eventType="touchUpInside" id="pvy-tn-bJ2"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N9O-95-aka">
-                                <rect key="frame" x="120.5" y="631" width="173.5" height="47.5"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Add to Cart">
-                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="28"/>
-                                    <color key="baseForegroundColor" name="PrimaryColor"/>
-                                    <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="addToCartTapped:" destination="dRb-JT-rfw" eventType="touchUpInside" id="0Kg-3h-DHw"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="plG-wf-t84">
+                                <rect key="frame" x="63" y="551.5" width="288" height="47.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N9O-95-aka">
+                                        <rect key="frame" x="0.0" y="0.0" width="173.5" height="47.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Add to Cart">
+                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="28"/>
+                                            <color key="baseForegroundColor" name="PrimaryColor"/>
+                                            <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="addToCartTapped:" destination="dRb-JT-rfw" eventType="touchUpInside" id="0Kg-3h-DHw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kuE-i3-ApZ">
+                                        <rect key="frame" x="193.5" y="0.0" width="94.5" height="47.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="tinted" title=" AR" subtitle="">
+                                            <imageReference key="image" image="cube.transparent" catalog="system" symbolScale="large"/>
+                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="28"/>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="viewARTapped:" destination="dRb-JT-rfw" eventType="touchUpInside" id="pvy-tn-bJ2"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="QFc-rA-Fhc"/>
                         <color key="backgroundColor" name="PrimaryColor"/>
                         <constraints>
                             <constraint firstItem="KYz-Es-2MR" firstAttribute="top" secondItem="QFc-rA-Fhc" secondAttribute="top" id="09z-EI-ORP"/>
-                            <constraint firstItem="N9O-95-aka" firstAttribute="centerX" secondItem="dCf-au-kvO" secondAttribute="centerX" id="7NT-Rj-iPR"/>
-                            <constraint firstItem="SA3-o8-CvS" firstAttribute="top" secondItem="VlZ-Rd-Ebv" secondAttribute="bottom" constant="30" id="FVF-i8-000"/>
+                            <constraint firstItem="SA3-o8-CvS" firstAttribute="top" secondItem="VlZ-Rd-Ebv" secondAttribute="bottom" constant="10" id="FVF-i8-000"/>
                             <constraint firstItem="VlZ-Rd-Ebv" firstAttribute="leading" secondItem="QFc-rA-Fhc" secondAttribute="leading" id="JLg-FT-9dX"/>
                             <constraint firstItem="SA3-o8-CvS" firstAttribute="leading" secondItem="QFc-rA-Fhc" secondAttribute="leading" constant="30" id="KJ2-eo-yb1"/>
-                            <constraint firstItem="kuE-i3-ApZ" firstAttribute="top" secondItem="SA3-o8-CvS" secondAttribute="bottom" constant="20" id="L7H-JI-F2X"/>
-                            <constraint firstItem="kuE-i3-ApZ" firstAttribute="centerX" secondItem="dCf-au-kvO" secondAttribute="centerX" id="Pja-W9-wXH"/>
                             <constraint firstItem="VlZ-Rd-Ebv" firstAttribute="top" secondItem="KYz-Es-2MR" secondAttribute="bottom" id="REN-Va-LaL"/>
                             <constraint firstItem="VlZ-Rd-Ebv" firstAttribute="trailing" secondItem="QFc-rA-Fhc" secondAttribute="trailing" id="SVt-QH-Wqo"/>
                             <constraint firstAttribute="trailing" secondItem="SA3-o8-CvS" secondAttribute="trailing" constant="30" id="aY8-1p-MOA"/>
+                            <constraint firstItem="plG-wf-t84" firstAttribute="centerX" secondItem="dCf-au-kvO" secondAttribute="centerX" id="biJ-N0-8ps"/>
                             <constraint firstItem="KYz-Es-2MR" firstAttribute="trailing" secondItem="QFc-rA-Fhc" secondAttribute="trailing" id="eur-O5-Sqp"/>
                             <constraint firstItem="KYz-Es-2MR" firstAttribute="leading" secondItem="QFc-rA-Fhc" secondAttribute="leading" id="gET-Bw-fwi"/>
-                            <constraint firstItem="N9O-95-aka" firstAttribute="top" secondItem="kuE-i3-ApZ" secondAttribute="bottom" constant="20" id="vID-Yl-rbQ"/>
+                            <constraint firstItem="plG-wf-t84" firstAttribute="top" secondItem="SA3-o8-CvS" secondAttribute="bottom" constant="40" id="zNk-ho-cka"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="cdd-tA-s2Q"/>
@@ -160,10 +169,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bAm-tJ-UQ8">
-                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </arscnView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uH9-Mb-Uob">
-                                <rect key="frame" x="86" y="432.5" width="242" height="31"/>
+                                <rect key="frame" x="67.5" y="429" width="279.5" height="38.5"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="Tap on a surface to see the pizza!">
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -171,7 +180,7 @@
                                 </buttonConfiguration>
                             </button>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDQ-6n-ivS">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <textAttributes key="titleTextAttributes">
                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -216,13 +225,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cube.transparent" catalog="system" width="128" height="124"/>
-        <image name="list.bullet" catalog="system" width="128" height="88"/>
+        <image name="cube.transparent" catalog="system" width="128" height="123"/>
+        <image name="list.bullet" catalog="system" width="128" height="87"/>
         <namedColor name="PrimaryColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

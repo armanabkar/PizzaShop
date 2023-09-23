@@ -4,9 +4,9 @@
 </div>
 <br>
 
-Food Ordering iOS application. Built with UIKit, SwiftUI, MapKit, ARKit, CoreData, MVVM Architecture, and Node.js server with automated testing and deployment.
+PizzaShop is a food ordering iOS app that allows users to browse the menu, order pizza and beverages, book a table, and view the pizzas in augmented reality. It is built with the latest iOS technologies, including SwiftUI, MapKit, ARKit, CoreData, and MVVM architecture. It also has a Node.js server with automated testing and deployment.
 
-- [Website](https://github.com/armanabkar/pizza_shop_server)
+- [Website](https://pizzashop-server.cyclic.app )
 - [Node.js Server Repository](https://github.com/armanabkar/pizza_shop_server)
 
 ![PizzaShop Screenshots](./Screenshots.png)
@@ -19,7 +19,7 @@ Food Ordering iOS application. Built with UIKit, SwiftUI, MapKit, ARKit, CoreDat
 - [x] Cart built with Core Data
 - [x] Reservation screen
 - [x] Profile Page: UI from code (no storyboard)
-- [x] ARKit - See the pizza on surfaces in augmented reality (AR)
+- [x] ARKit support for viewing pizza in augmented reality (AR)
 - [x] Notification and Observer pattern (NotificationCenter) for updating Cart's badge
 - [x] Haptic Feedbacks
 - [x] Async image loader + Caching
@@ -32,8 +32,8 @@ Food Ordering iOS application. Built with UIKit, SwiftUI, MapKit, ARKit, CoreDat
 - [x] Widget for offers (Work in progress)
 - [ ] Push Notifications
 - [ ] UI Tests
-- [Total lines of code](https://medium.com/@armanabkar/how-to-calculate-total-lines-of-code-in-xcode-projects-6d5a826f7d30): 2585
-- No External Dependency
+- [Total lines of code](https://medium.com/@armanabkar/how-to-calculate-total-lines-of-code-in-xcode-projects-6d5a826f7d30): 2613
+- External Dependencies: None
 - Requires **iOS 17.0** or later.
 
 ### Contributing
