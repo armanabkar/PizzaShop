@@ -13,24 +13,24 @@ class ProfileViewController: UIViewController {
     @UseAutoLayout var profileImage: UIImageView = {
         let image = UIImageView()
         image.image = SFSymbols.avatar
-        image.tintColor = .white
+        image.tintColor = .black
         return image
     }()
     @UseAutoLayout var nameLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .white
+        label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 36, weight: .bold)
         return label
     }()
     @UseAutoLayout var phoneLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .systemGray6
+        label.textColor = .gray
         label.font = UIFont.systemFont(ofSize: 24, weight: .medium)
         return label
     }()
     @UseAutoLayout var addressLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .systemGray3
+        label.textColor = .gray
         label.font = UIFont.systemFont(ofSize: 22)
         label.textAlignment = .center
         label.numberOfLines = 0
@@ -38,7 +38,7 @@ class ProfileViewController: UIViewController {
     }()
     @UseAutoLayout var appVersionLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .systemGray3
+        label.textColor = .systemGray2
         label.font = UIFont.systemFont(ofSize: 20)
         return label
     }()
@@ -46,12 +46,12 @@ class ProfileViewController: UIViewController {
         let button = UIButton()
         let buttonTitle = AttributedString("Log Out", attributes: AttributeContainer([
             .font: UIFont.systemFont(ofSize: 24, weight: .bold),
-            .foregroundColor: UIColor.black,
+            .foregroundColor: UIColor.white,
         ]))
         button.configuration = .filled()
         button.configuration?.attributedTitle = buttonTitle
-        button.tintColor = .white
-        button.setTitleColor(.black, for: .normal)
+        button.tintColor = .black
+        button.setTitleColor(.white, for: .normal)
         return button
     }()
     @UseAutoLayout var stackView1: UIStackView = {
@@ -81,7 +81,7 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         
         setUpLabels()
-        view.backgroundColor = .black
+        view.backgroundColor = .white
     }
     
     @objc func logOutTapped(_ sender: UIButton) {
@@ -91,13 +91,16 @@ class ProfileViewController: UIViewController {
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
+        return .darkContent
     }
     
     func setUpLabels() {
-        nameLabel.text = UserDefaultsService.shared.name
-        phoneLabel.text = UserDefaultsService.shared.phone
-        addressLabel.text = UserDefaultsService.shared.address
+//        nameLabel.text = UserDefaultsService.shared.name
+//        phoneLabel.text = UserDefaultsService.shared.phone
+//        addressLabel.text = UserDefaultsService.shared.address
+        nameLabel.text = "Arman Abkar"
+        phoneLabel.text = "09363868196"
+        addressLabel.text = "Somewhere in the earth, 310202"
         appVersionLabel.text = viewModel.getAppVersion()
         logOutButton.addTarget(self,
                                action: #selector(logOutTapped(_ :)),

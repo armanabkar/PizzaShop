@@ -21,7 +21,7 @@ class LoginViewController: UIViewController {
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
+        return .darkContent
     }
     
     @IBAction func loginTapped(_ sender: Any) {

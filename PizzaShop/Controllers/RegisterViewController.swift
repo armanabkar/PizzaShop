@@ -27,7 +27,7 @@ class RegisterViewController: UIViewController {
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
+        return .darkContent
     }
     
     @IBAction func registerTapped(_ sender: UIButton) {

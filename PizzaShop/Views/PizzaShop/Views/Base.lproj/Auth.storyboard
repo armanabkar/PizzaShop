@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -28,13 +27,13 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcom to" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSr-t6-RoJ">
                                         <rect key="frame" x="91" y="0.0" width="128" height="31.333333333333332"/>
                                         <fontDescription key="fontDescription" name="PizzaHutFont" family="PizzaHut Font" pointSize="30"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pizza Shop" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="usH-bu-rYi">
                                         <rect key="frame" x="49.333333333333329" y="41.333333333333314" width="211.66666666666669" height="52.333333333333343"/>
                                         <fontDescription key="fontDescription" name="PizzaHutFont" family="PizzaHut Font" pointSize="50"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -47,7 +46,7 @@
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Your Name" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uc7-ZJ-42M">
                                                 <rect key="frame" x="0.0" y="0.0" width="310" height="40"/>
-                                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                                <color key="backgroundColor" systemColor="systemGray5Color"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="WuK-yW-4Vc"/>
                                                 </constraints>
@@ -57,7 +56,7 @@
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Your Phone Number" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CUu-Kz-ylv">
                                                 <rect key="frame" x="0.0" y="50" width="310" height="40"/>
-                                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                                <color key="backgroundColor" systemColor="systemGray5Color"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="W1y-Ee-0NN"/>
                                                 </constraints>
@@ -67,7 +66,7 @@
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Your Address" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="Dee-cj-qF4">
                                                 <rect key="frame" x="0.0" y="100" width="310" height="40"/>
-                                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                                <color key="backgroundColor" systemColor="systemGray5Color"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="6qx-Zz-87A"/>
                                                 </constraints>
@@ -88,8 +87,8 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Register">
                                                     <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="24"/>
-                                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="baseBackgroundColor" systemColor="labelColor"/>
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="registerTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bwr-LN-LlB"/>
@@ -104,7 +103,7 @@
                                                 <buttonConfiguration key="configuration" style="filled" title="Already have an account?">
                                                     <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="18"/>
                                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <color key="baseBackgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="baseBackgroundColor" systemColor="systemGray6Color"/>
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <segue destination="ScL-sm-giF" kind="presentation" modalPresentationStyle="fullScreen" id="FeL-LR-Gxo"/>
@@ -116,7 +115,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" name="PrimaryColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="X3I-Vp-pTh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="0o2-2C-8QL"/>
                             <constraint firstItem="X3I-Vp-pTh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="I4Y-oe-uHS"/>
@@ -151,7 +150,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pizza Shop" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="voP-wx-glX">
                                 <rect key="frame" x="40" y="219.66666666666666" width="310" height="52.333333333333343"/>
                                 <fontDescription key="fontDescription" name="PizzaHutFont" family="PizzaHut Font" pointSize="50"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="hcN-F8-wDg">
@@ -159,11 +158,10 @@
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="09131110000" borderStyle="roundedRect" placeholder="Enter Your Phone Number" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cJX-1J-Xm3">
                                         <rect key="frame" x="0.0" y="0.0" width="310" height="40"/>
-                                        <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Vd4-nb-6F7"/>
                                         </constraints>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
@@ -178,8 +176,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Login">
                                                     <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="24"/>
-                                                    <color key="baseForegroundColor" name="PrimaryColor"/>
-                                                    <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="baseBackgroundColor" systemColor="labelColor"/>
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="loginTapped:" destination="ScL-sm-giF" eventType="touchUpInside" id="SdF-GC-MQs"/>
@@ -193,8 +190,8 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Don't have an account yet?">
                                                     <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="18"/>
-                                                    <color key="baseForegroundColor" name="PrimaryColor"/>
-                                                    <color key="baseBackgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="baseBackgroundColor" systemColor="systemGray6Color"/>
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="MlK-bj-M8P"/>
@@ -206,7 +203,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="K0B-jj-0o8"/>
-                        <color key="backgroundColor" name="PrimaryColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="K0B-jj-0o8" firstAttribute="trailing" secondItem="hcN-F8-wDg" secondAttribute="trailing" constant="40" id="934-b6-AUw"/>
                             <constraint firstItem="hcN-F8-wDg" firstAttribute="leading" secondItem="K0B-jj-0o8" secondAttribute="leading" constant="40" id="DeA-9B-jaZ"/>
@@ -238,14 +235,17 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="s6F-5q-Lnm"/>
+        <segue reference="0de-wV-Sul"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <namedColor name="PrimaryColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
