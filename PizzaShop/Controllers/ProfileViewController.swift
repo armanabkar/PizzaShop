@@ -95,12 +95,9 @@ class ProfileViewController: UIViewController {
     }
     
     func setUpLabels() {
-//        nameLabel.text = UserDefaultsService.shared.name
-//        phoneLabel.text = UserDefaultsService.shared.phone
-//        addressLabel.text = UserDefaultsService.shared.address
-        nameLabel.text = "Arman Abkar"
-        phoneLabel.text = "09363868196"
-        addressLabel.text = "Somewhere in the earth, 310202"
+        nameLabel.text = UserDefaultsService.shared.name
+        phoneLabel.text = UserDefaultsService.shared.phone
+        addressLabel.text = UserDefaultsService.shared.address
         appVersionLabel.text = viewModel.getAppVersion()
         logOutButton.addTarget(self,
                                action: #selector(logOutTapped(_ :)),
