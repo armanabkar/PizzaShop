@@ -4,7 +4,17 @@
 </div>
 <br>
 
-PizzaShop is a food ordering iOS app that allows users to browse the menu, order pizza and beverages, book a table, and view the pizzas in augmented reality. It is built with the latest iOS technologies, including SwiftUI, MapKit, ARKit, CoreData, and MVVM architecture. It also has a Node.js server with automated testing and deployment.
+## Your One-Stop Pizza App
+
+**Craving the perfect pizza?** PizzaShop delivers a seamless food ordering experience right to your iPhone. Packed with innovative features, our app puts you in control of your pizza journey:
+
+- **Browse & Order:** Explore our extensive menu, featuring mouth-watering pizza creations and refreshing beverages. Order with just a few taps for delivery or pickup.
+- **Reserve Your Table:** Secure your spot at your favorite PizzaShop location with our integrated table reservation system. No more waiting lines!
+- **AR Pizza Visualization:** Experience the future of pizza! Our groundbreaking ARKit feature lets you visualize your chosen pizza in augmented reality before you order.
+
+#### Powered by Cutting-Edge Technology:
+
+PizzaShop is built on a robust foundation of the latest iOS technologies, including SwiftUI for a user-friendly interface, MapKit for seamless location integration, ARKit for the incredible AR pizza experience, CoreData for efficient data management, and MVVM architecture for a clean and maintainable codebase. Additionally, our Node.js server with automated testing and deployment ensures reliability and constant improvement.
 
 - [Website](https://pizzashop-server.cyclic.app )
 - [Node.js Server Repository](https://github.com/armanabkar/pizza_shop_server)
