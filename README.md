@@ -4,7 +4,7 @@
 </div>
 <br>
 
-## Your One-Stop Pizza App
+#### Your One-Stop Pizza App
 
 **Craving the perfect pizza?** PizzaShop delivers a seamless food ordering experience right to your iPhone. Packed with innovative features, our app puts you in control of your pizza journey:
 
